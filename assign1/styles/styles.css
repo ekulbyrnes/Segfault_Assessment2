@@ -1,0 +1,118 @@
+html, body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+header, nav, article, section, aside, article {
+    display: block;
+}
+/* header and nav elements */
+.header {
+    position: sticky;
+    z-index: 1000;
+    background-color: black;
+    font-size: 20px;
+}
+.navpadding {
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+    margin: 0px auto 0px auto;
+    align-items: center !important;
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.header aside {
+    justify-content: flex-start;
+}
+.logo {
+    display: inline-block;
+}
+.logo img {
+    width: auto;
+    max-height: 20px;
+}
+
+.header nav {
+    justify-content: flex-end;
+    align-content: center;
+    top: 0px;
+    color: white;
+}
+.header nav ul {
+/* margin and padding should come from navpadding */
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+
+}
+.header nav li {
+    /* keeps items in float left with flex-justify */
+    margin-right: 1em;
+    float: left;
+}
+/* nav links */
+.navpage {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+.navpage:hover {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    transform: rotate(-5deg);
+}
+
+/* secret button on the right */
+.rightnav {
+    float:right;
+    color: white;
+    height: 100%;
+    background-color: black;
+    transition: 0.5s;
+}
+.rightnav a {
+    float: right;
+    color: white;
+    text-decoration: none;
+
+}
+.rightnav p {
+    opacity: 0;
+}
+.rightnav:hover {
+    float:right;
+    background-color: red;
+    padding: 0px 0px 50px 0px;
+}
+/* end secret button, can remove */
+
+/* body css */
+#wrapper {
+
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.newline-flex {
+    flex-basis: 100%;
+}
+.slideshow {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    background-image: url(https://placehold.co/600x300);
+    background-size: cover;
+}
+
+.slideshow h1 {
+    flex-basis: 20%;
+}
