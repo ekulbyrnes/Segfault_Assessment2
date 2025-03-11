@@ -116,3 +116,42 @@ header, nav, article, section, aside, article {
 .slideshow h1 {
     flex-basis: 20%;
 }
+
+.
+
+.centerimage {
+    display: block;
+    margin: 0 auto;
+}
+
+.centretext {
+    text-align: center;
+}
+
+
+/* creating the footer */
+.staticfooter {
+    position: sticky;
+    z-index: 999;
+    background-color: black;
+    color: white;
+    bottom: 0px;
+    height: 20px;
+}
+.pagefooter {
+    background-color: black;
+    color: white;
+}
+.pagefooter aside {
+    float: right;
+    margin: 10px 20px 0px 0px;
+}
+.pagefooter li {
+    list-style-type: none;
+}
+.pagefooter p {
+    margin: 0.5em;
+}
+.pagefooter img {
+    margin: 10px;
+}
