@@ -68,6 +68,15 @@ header, nav, article, section, aside, article {
     transform: rotate(-5deg);
 }
 
+.centerimage {
+    display: block;
+    margin: 0 auto;
+}
+
+.centertext {
+    text-align: center;
+}
+
 /* secret button on the right */
 .rightnav {
     float:right;
@@ -105,29 +114,32 @@ header, nav, article, section, aside, article {
 .newline-flex {
     flex-basis: 100%;
 }
+.terminalblink {
+    animation: blinker 0.3s infinite;
+
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 .slideshow {
     position: relative;
     min-height: 300px;
     overflow: hidden;
-    background-image: url(https://placehold.co/600x300);
+    background-image: url(../images/glasses.png);
     background-size: cover;
+    color: white;
 }
 
 .slideshow h1 {
     flex-basis: 20%;
 }
 
-.
-
-.centerimage {
-    display: block;
-    margin: 0 auto;
+.profile {
+    border-radius: 1em;
 }
-
-.centretext {
-    text-align: center;
-}
-
 
 /* creating the footer */
 .staticfooter {
