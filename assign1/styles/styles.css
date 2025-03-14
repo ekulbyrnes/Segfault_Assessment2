@@ -8,6 +8,10 @@ header, nav, article, section, aside, article {
     display: block;
     overflow:hidden;
 }
+
+h1 {
+    font-size: 2.75em;
+}
 /* header and nav elements */
 .header {
     position: sticky;
@@ -82,6 +86,10 @@ header, nav, article, section, aside, article {
     display: inline-block;
 }
 
+.two-grid {
+    width: 45%;
+}
+
 .left {
     float: left;
 }
@@ -89,36 +97,82 @@ header, nav, article, section, aside, article {
     float:right;
 }
 
-/* secret button on the right */
-.rightnav {
-    float:right;
-    color: white;
+
+/* body css wrapper */
+
+/* this is a flex box that creates a table of a 40/60 ratio with item3 being a linebreak (flex-basis 100%)
+you can reorder the 'leftbox' onto the right by swapping the flex-grow variable */
+
+.details-flex {
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: stretch;
     height: 100%;
-    background-color: black;
+    gap: 5px;
+
+  }
+
+  .details-flex > * > * {
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .details-flex > * picture img {
+    border-radius: 1em;
+    transform: translate(-20%);
+    transition: 0.3s;
+  }
+  .details-flex > * picture img:hover {
+    transform: translate(-2%);
+  }
+
+
+  .left-item {
+    /* flex:0 1 30%; */
+    flex-grow:0;
+    transition: 0.3s;
+  }
+  .left-item:hover {
+    padding: 0 1em;
+  }
+
+  .right-item {
+    /* flex:1 1 auto; */
+    flex-grow:1;
+    flex-shrink: 1;
+  }
+
+  .overflow-item {
+    /* flex:1 1 100%; */
+    order:3;
+    flex-grow:1;
+    flex-basis:100%;
+    align-self:auto;
+  }
+
+.side-panel {
+    transform: translate(-20%, 0%);
     transition: 0.5s;
 }
-.rightnav a {
-    float: right;
-    color: white;
-    text-decoration: none;
-
+.side-panel:hover {
+    transform: translate(-6%, 0%);
+    /* using -6 to cancel out focus padding */
 }
-.rightnav p {
-    opacity: 0;
+.section-image {
+    box-sizing: border-box;
+    overflow: visible;
 }
-.rightnav:hover {
-    float:right;
-    background-color: red;
-    padding: 0px 0px 50px 0px;
-}
-/* end secret button, can remove */
-
-/* body css */
-#wrapper {
-
+.section-image img {
+    width: 100%;
+    border-radius: 1em;
 }
 .center-flex {
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -138,7 +192,7 @@ header, nav, article, section, aside, article {
 }
 
 .focus {
-    padding: 0 3em 0 3em;
+    margin: 0 3em 2em 3em;
 }
 .slideshow {
     position: relative;
@@ -153,9 +207,7 @@ header, nav, article, section, aside, article {
     flex-basis: 20%;
 }
 
-.inline {
 
-}
 .profile {
     border-radius: 1em;
 }
@@ -186,6 +238,9 @@ header, nav, article, section, aside, article {
     margin-block-end: 0.66em;
 }
 
+.verticaltable {
+    scope
+}
 
 /* creating the footer */
 .staticfooter {
