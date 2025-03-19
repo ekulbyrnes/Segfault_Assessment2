@@ -3,87 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This website is a group project for class COS1002. It is a job board project.">
+    <meta name="description" content="This website is a group project for class COS10032. It is a job board project.">
     <meta name="keyword" content="job, money, job-board, broke">
     <meta name="author" content="Vandy, Luke, Marcus, Nicole">
     <title>Team name</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!--<link rel="stylesheet" href="./styles/index.css">Get this outta here!-->
 </head>
 <body>
-    <div id="header">
-        <img id="logo" src="./images/logo.png" alt="logo" width="120px">
-        <!--All of this should be link to its own page-->
-        <nav>
-            <div id="link-div">
-                <a class="header-link" href="#">Home</a>
-                <a class="header-link" href="#">Jobs</a>
-                <a class="header-link" href="#">About-us</a>
-            </div>
+<!-- Header with aside logo and navbar -->
+<header class="header">
+    <div class="navpadding">
+        <aside>
+            <a href="#" class="logo"><img src="logo.png" width="80"></a>
+        </aside>
+        <nav class="navbar">
+            <ul class="navmenu">
+                <li><a href="./index.html" class="navpage">Homepage</a></li>
+                <li><a href="./jobs.html"class="navpage">Work with Us</a></li>
+                <li><a href="#about"class="navpage">About Us</a></li>
+            </ul>
         </nav>
-
-        <!--Special sign when click/hover there is a drop down we can do it with css-->
-
-        <!--This button should be linked to a sign-up page-->
-        <a href="#"><button id="sign-up">Sign Up</button></a>
-        <hr id="hr1">
     </div>
-<!--keep this for testing so that the website dont look weird while making it-->
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
-<p>asdasdasdasdasdasdasasdasd</p>
+</header>
+<section><!-- Banner section -->
+    <h1>We're hiring!</h1>
+    <div id="about"></div>
+</section>
 
-
-
-<footer id="footer">
-    <div id="footerDiv">
-        <!--We can use CSS to make the card flip-->
-        <!--When the card flip make the other side white-->
-        <div id="card">
-            <p class="cardText">Touch me</p>
-        </div>
-        <div id="col1">
-            <p id="seeker"><strong>SEEKER</strong></p>
-            <a  class="footLink" href="#">Job saved</a>
-            <a  class="footLink" href="#">Job Applied</a>
-        </div>
-        <div id="col2">
-            <p id="contact"><strong>CONTACT</strong></p>
-            <!--Link email to these link-->
-            <a class="footLink" href="#">Vandy</a>
-            <a class="footLink" href="#">Marcus</a>
-            <a class="footLink" href="#">Luke</a>
-            <a class="footLink" href="#">Nicole</a>
-        </div>
+<footer class="staticfooter">
+    <!--We can use CSS to make the card flip-->
+    <!--When the card flip make the other side white-->
+    <div id="card">
+        <p class="cardText">Touch me</p>
+    </div>
+    <div id="col1">
+        <p id="seeker"><strong>SEEKER</strong></p>
+        <a  class="footLink" href="#">Job saved</a>
+        <a  class="footLink" href="#">Job Applied</a>
+    </div>
+    <div id="col2">
+        <p id="contact"><strong>CONTACT</strong></p>
+        <!--Link email to these link-->
+        <a class="footLink" href="#">Vandy</a>
+        <a class="footLink" href="#">Marcus</a>
+        <a class="footLink" href="#">Luke</a>
+        <a class="footLink" href="#">Nicole</a>
     </div>
 </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>
