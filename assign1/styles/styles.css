@@ -198,7 +198,7 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     position: relative;
     min-height: 300px;
     overflow: hidden;
-    background-image: url(../images/glasses.png);
+    background-image: url(./images/glasses.png);
     background-size: cover;
     color: white;
 }
