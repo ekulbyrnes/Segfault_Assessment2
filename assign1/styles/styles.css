@@ -129,20 +129,8 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     transform: translate(-2%);
   }
 
-
-  .left-item {
-    /* flex:0 1 30%; */
-    flex-grow:0;
-    transition: 0.3s;
-  }
-  .left-item:hover {
-    padding: 0 1em;
-  }
-
-  .right-item {
-    /* flex:1 1 auto; */
-    flex-grow:1;
-    flex-shrink: 1;
+  .left-item, .right-item {
+    flex:1 0 40%;
   }
 
   .overflow-item {
@@ -151,6 +139,15 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     flex-grow:1;
     flex-basis:100%;
     align-self:auto;
+  }
+/* dyanmic gallery on jobs.html */
+  .flex-shout {
+    /* flex:0 1 30%; */
+    flex-grow:0;
+    transition: 0.3s;
+  }
+  .flex-shout:hover {
+    padding: 0 1em;
   }
 
 .side-panel {
