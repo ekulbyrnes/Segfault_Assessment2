@@ -235,9 +235,10 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     margin-block-end: 0.66em;
 }
 
+/* !FIXME
 .verticaltable {
-    scope
-}
+    scope: none;
+}*/
 
 /* creating the footer */
 .staticfooter {
