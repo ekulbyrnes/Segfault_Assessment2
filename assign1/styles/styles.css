@@ -12,6 +12,14 @@ header, nav, article, section, aside, article {
 h1 {
     font-size: 2.75em;
 }
+/* ID section - this can be used for anchor linking or single ID CSS assignment */
+#enhancement_1 {
+
+}
+
+#enhancement_2 {
+
+}
 /* header and nav elements */
 .header {
     position: sticky;
@@ -57,7 +65,7 @@ h1 {
     margin-right: 1em;
     float: left;
 }
-/* nav links */
+/* NAV and related CSS */
 .navpage {
     display: block;
     color: white;
@@ -81,7 +89,9 @@ h1 {
 .centertext {
     text-align: center;
 }
-
+.lefttext {
+    text-align: left;
+}
 .inline {
     display: inline-block;
 }
@@ -98,10 +108,15 @@ h1 {
 }
 
 
-/* body css wrapper */
+/* BODY css Content */
 
-/* this is a flex box that creates a table of a 40/60 ratio with item3 being a linebreak (flex-basis 100%)
-you can reorder the 'leftbox' onto the right by swapping the flex-grow variable */
+/* Details-Flex flex display
+This is a flex box that creates a table of a 40/40 grow ratio in left/right-item
+You can use overflow-item as a 1 flexbox long div, creating a 'line-break'.
+
+Flex-shout is used to animate the gallery on apply.html, allowing us to create
+a dynamic image within the flexbox. Enhancement 2
+*/
 
 .details-flex {
 
@@ -177,6 +192,10 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
 .newline-flex {
     flex-basis: 100%;
 }
+
+/* Terminal Blink start, lets us create a blinker animation.
+0.3 finish time and loops infintely, blinker is defined in keyframes
+to change opacity. */
 .terminalblink {
     animation: blinker 0.3s infinite;
 
@@ -187,10 +206,49 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     opacity: 0;
   }
 }
+/* ---Terminal Blink end---, Enhancement 1 */
 
+.pulse {
+    animation: pulse 1s infinite;
+    transition: 0.5s;
+}
+
+@keyframes pulse {
+    20% {
+        transform: scaleX(1.1);
+    }
+}
+
+.pulse:hover {
+    font-size: 0.8em;
+}
+
+/* Section CSS */
 .focus {
     margin: 0 3em 2em 3em;
 }
+
+.no-link-decor {
+    text-decoration: none;
+    color: black;
+}
+.no-list-decor {
+    list-style-type: none;
+}
+/* lets decorate a code block theme :) */
+.code-block {
+    background-color: #2e2e2e;
+    margin: 1em;
+    padding: 0.3em;
+    font-family: monospace;
+    color: white;
+    border-radius: 5px;
+    line-height: 1.5em ;
+}
+.code-block > span {
+    color: #e5b567;
+}
+
 .slideshow {
     position: relative;
     min-height: 300px;
@@ -247,11 +305,12 @@ you can reorder the 'leftbox' onto the right by swapping the flex-grow variable 
     background-color: black;
     color: white;
     bottom: 0px;
-    height: 20px;
+    padding: 5px;
 }
 .pagefooter {
     background-color: black;
     color: white;
+    bottom:0px;
 }
 .pagefooter aside {
     float: right;
