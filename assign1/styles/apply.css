@@ -1,0 +1,23 @@
+table{
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+input[type=text]{
+    width: 93%;
+    padding:4px;
+    margin:2px 0 15px;
+    background-color: whitesmoke;
+    border:2px solid lightgray;
+    border-radius:4px;
+}
+
+input:hover{
+    border:2px solid orange;
+    border-radius:4px;
+}
+
+input:focus{
+    background-color: rgb(250, 250, 250);
+}

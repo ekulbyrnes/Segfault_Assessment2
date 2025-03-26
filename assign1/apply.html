@@ -7,12 +7,12 @@
     <title>Apply Now - SegFault Service</title>
     <!-- Adding in the global styles -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/apply.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-
 
 <body>
         <!-- Header with aside logo and navbar -->
@@ -33,71 +33,143 @@
         </header>
     <div id="wrapper">
         <section class="slideshow center-flex">
-            <h1>Title for the Apply Page</h1><br>
+            <h1>Apply!</h1><br>
             <section>
                 <p class="newline-flex"><span class="terminalblink">_</span>This is a simple paragraph!</p>
             </section>
         </section>
-        <section> <!--Application Form-->
-            <h1>Application Form</h1>
+
+        <!--Application Form-->
+        <section> 
+            <h1><span class="terminalblink">_</span>Application Form</h1>
             <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
                 <fieldset>
-                    <legend>Applicant Details</legend>
-                    <p><label for="jobRefNo">Job reference number
-                        <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
-                    </label></p>
-                    <p><label for="firstName">First Name
-                        <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" required>
-                    </label>
-                    <label for="lastName">Last Name
-                        <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" required>
-                    </label></p>
-                    <p><label for="DOB">Date of birth
-                        <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
-                    </label></p>
-                    <fieldset>
-                        <legend>Gender</legend>
-                            <label for="female">Female
-                                <input type="radio" name="gender" value="female" id="female" required>
-                            </label>
-                            <label for="male">Male
-                                <input type="radio" name="gender" value="male" id="male">
-                            </label>
-                            <label for="nonbinary">Non Binary
-                                <input type="radio" name="gender" value="nonbinary" id="nonbinary">
-                            </label>
-                            <label for="other">Other
-                                <input type="radio" name="gender" value="other" id="other">
-                            </label>
-                            <input type="text" name="othergender" id="othergender">
-                    </fieldset>
-                    <p><label for="address">Street Address
-                        <input type="text" name="address" id="address" pattern=".{1,40}" maxlength="40" required>
-                    </label>
-                    <label for="suburb">Suburb
-                        <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
-                    </label></p>
-                    <p><label for="state">State
-                        <select name="state" id="state" required>
-                            <option value="VIC">VIC</option>
-                            <option value="NSW">NSW</option>
-                            <option value="QLD">QLD</option>
-                            <option value="NT">NT</option>
-                            <option value="WA">WA</option>
-                            <option value="SA">SA</option>
-                            <option value="TAS">ACT</option>
-                        </select>
-                    </label></p>
-                    <p><label for="postcode">Postcode
-                        <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
-                    </label></p>
-                    <p><label for="phonenumber">Phone Number
-                        <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
-                    </label></p>
-                    <p><label for="email">Email Address
-                        <input type="email" name="email" id="email">
-                    </label></p>
-                
+                    <legend class="centertext">Applicant Details</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="jobRefNo">Job reference number</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="firstName" class=>Name</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="First Name" required>
+                            </td>
+                            <td>
+                                <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="Last Name" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="DOB">Date of birth</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <fieldset>
+                                    <legend>Gender</legend>
+                                        <label for="female">Female
+                                            <input type="radio" name="gender" value="female" id="female" required>
+                                        </label>
+                                        <label for="male">Male
+                                            <input type="radio" name="gender" value="male" id="male">
+                                        </label>
+                                        <label for="nonbinary">Non-Binary
+                                            <input type="radio" name="gender" value="nonbinary" id="nonbinary">
+                                        </label>
+                                        <label for="other">Other
+                                            <input type="radio" name="gender" value="other" id="other">
+                                        </label>
+                                        <input type="text" name="othergender" id="othergender">
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Address
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="address">Street Address</label>
+                            </td>
+                            <td>
+                                <label for="suburb">Suburb</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="address" id="address" pattern=".{1,40}" maxlength="40" required>
+                            </td>
+                            <td>
+                                <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="state">State</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="state" id="state" required>
+                                    <option value="VIC">VIC</option>
+                                    <option value="NSW">NSW</option>
+                                    <option value="QLD">QLD</option>
+                                    <option value="NT">NT</option>
+                                    <option value="WA">WA</option>
+                                    <option value="SA">SA</option>
+                                    <option value="TAS">ACT</option>
+                                </select>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="postcode">Postcode</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="phonenumber">Phone Number</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td>
+                                <label for="email">Email Address</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="email" name="email" id="email">
+                            </td>
+                        </tr>
+                    </table>
                     <fieldset>
                         <legend>Skills</legend>
                         <p>
