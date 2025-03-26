@@ -1,3 +1,17 @@
+/*
+STYLES.CSS
+This is the main CSS page for the SegFault website. This has been updated last of 26th March, 2025.
+*/
+
+/* Global HTML tag definitions START */
+/*
+We first define what we would want everything to be within the page if we never defined a class for this.
+The objective is to use as little classes as possible, because we can define multiple classes. ;)
+
+We want the background to be white, any browser-based padding and margins to be 0,
+tags to help us 'contain' conent should not be inline and we can make h1 tags just a bit bigger!
+-Nicole
+*/
 html, body {
     background-color: white;
     padding: 0;
@@ -12,7 +26,12 @@ header, nav, article, section, aside, article {
 h1 {
     font-size: 2.75em;
 }
-/* ID section - this can be used for anchor linking or single ID CSS assignment */
+/* Global HTML tag definitions END */
+
+/* ID section -
+this can be used for anchor linking or single ID CSS assignment
+- Nicole
+*/
 #enhancement_1 {
 
 }
@@ -20,7 +39,16 @@ h1 {
 #enhancement_2 {
 
 }
-/* header and nav elements */
+
+/* Header and Nav START */
+/*
+These are the classes mostly associated with the navigation element, of what the header tag in our HTML contains the unordered list
+and links. We define classes and mostly rely on inheritance here as there is a large amount of content and tags that cover
+a small portion of the screen, such as links, lists and asides.
+
+navpage is for links, and creates a 'small' rotation when hovered on.
+- Nicole
+*/
 .header {
     position: sticky;
     z-index: 1000;
@@ -81,6 +109,17 @@ h1 {
     transform: rotate(-5deg);
 }
 
+/* Header and Nav END */
+
+/* Utility classes START */
+/*
+Since tags in HTML can be assigned multiple CSS classes, and there is inheritance
+we should aim to create some initial 'utility' tags to help us define content when we
+don't have any inheritence to depend on, such as body content or attributes we didn't define within
+tables, sections, or asides.
+- Nicole
+*/
+
 .centerimage {
     display: block;
     margin: 0 auto;
@@ -107,6 +146,16 @@ h1 {
     float:right;
 }
 
+/* No text decoration on links or no bullets on lists, if desired! */
+.no-link-decor {
+    text-decoration: none;
+    color: black;
+}
+.no-list-decor {
+    list-style-type: none;
+}
+
+/* Utility classes END */
 
 /* BODY css Content */
 
@@ -116,6 +165,7 @@ You can use overflow-item as a 1 flexbox long div, creating a 'line-break'.
 
 Flex-shout is used to animate the gallery on apply.html, allowing us to create
 a dynamic image within the flexbox. Enhancement 2
+- Nicole
 */
 
 .details-flex {
@@ -129,12 +179,16 @@ a dynamic image within the flexbox. Enhancement 2
     gap: 5px;
 
   }
-
+  /* All tags in details-flex by default are centered text, and don't have list buttons. - Nicole */
   .details-flex > * > * {
     text-align: center;
     list-style-type: none;
   }
 
+  /*
+  Gives us a border and a way for us to make images in a picture tag
+  just a bit smaller on hover, and creates a rounded effect for all images.
+  */
   .details-flex > * picture img {
     border-radius: 1em;
     transform: translate(-20%);
@@ -143,11 +197,23 @@ a dynamic image within the flexbox. Enhancement 2
   .details-flex > * picture img:hover {
     transform: translate(-2%);
   }
-
+  /*
+  Flex left-/right-item classes.
+  Both left and right items can be used, as they are functionally the same.
+  both ask for a flex grow of one with a ratio of 40%, meaning they attempt to fill 80% of the page.
+  with .focus, this allows for a two column table with margins.
+  - Nicole
+  */
   .left-item, .right-item {
     flex:1 0 40%;
   }
 
+
+/*
+Overflow-item is similar to a line-break <br> tag, but for flexbox items.
+We are asking for this to be the third item in order of the flex both, and has to occupy 100% of the flexbox.
+- Nicole
+*/
   .overflow-item {
     /* flex:1 1 100%; */
     order:3;
@@ -155,7 +221,14 @@ a dynamic image within the flexbox. Enhancement 2
     flex-basis:100%;
     align-self:auto;
   }
-/* dyanmic gallery on jobs.html */
+/*
+This is the flexbox element on gallery on jobs.html
+This allows us to create a small element that can contain elements we want the
+user to see and interact with, like images. On hover psuedoclass, we allow the
+flex-shout/side-panel elements to 'jut out' from the left.
+
+- Nicole
+*/
   .flex-shout {
     /* flex:0 1 30%; */
     flex-grow:0;
@@ -181,6 +254,12 @@ a dynamic image within the flexbox. Enhancement 2
     width: 100%;
     border-radius: 1em;
 }
+
+/* TODO: This could be folded into display-flex technically.
+We use center-flex and newline-flex to organise the flexbox that is in the main 'hero' section, to create a bold header
+and a subheader call-to-action.
+- Nicole
+*/
 .center-flex {
     display: flex;
     flex-wrap: wrap;
@@ -193,9 +272,14 @@ a dynamic image within the flexbox. Enhancement 2
     flex-basis: 100%;
 }
 
-/* Terminal Blink start, lets us create a blinker animation.
+
+/* CSS Animations - Enhancement 1 */
+/*
+Terminal Blink start, lets us create a blinker animation.
 0.3 finish time and loops infintely, blinker is defined in keyframes
-to change opacity. */
+to change opacity.
+ - Nicole
+*/
 .terminalblink {
     animation: blinker 0.3s infinite;
 
@@ -207,7 +291,13 @@ to change opacity. */
   }
 }
 /* ---Terminal Blink end---, Enhancement 1 */
-
+/* -- Pulse start -- */
+/*
+This is an animation that makes the class 'pulse' by growing in width to 110%.
+On hover psuedoclass, we slightly change the font-size. (TODO: This could be calculated to the current font-size value.)
+Transition attribute is used to help us smoothly transition in and out of :hover psuedo class.
+- Nicole
+*/
 .pulse {
     animation: pulse 1s infinite;
     transition: 0.5s;
@@ -224,18 +314,28 @@ to change opacity. */
 }
 
 /* Section CSS */
+/*
+This is where the main content of the CSS that defines how we wish to style sections, tags and classes typically in section and the like to be.
+If it isn't defined within the global HTML tags defined at the start of the document and isn't used in the header/footer, it likely will be here.
+- Nicole
+*/
+/*
+Optional padding for our section tags that have content.
+- Nicole
+ */
 .focus {
     margin: 0 3em 2em 3em;
 }
 
-.no-link-decor {
-    text-decoration: none;
-    color: black;
-}
-.no-list-decor {
-    list-style-type: none;
-}
-/* lets decorate a code block theme :) */
+
+/*
+This was mostly used in enhancements.html, but this allows us to define a codeblock.
+The colour palette is mostly grabbed off the Monokai Pro colour scheme:
+https://gist.github.com/r-malon/8fc669332215c8028697a0bbfbfbb32a
+
+We define keywords (functions, classes, id, etc) in the span tag as it is naturally inline.
+-Nicole
+*/
 .code-block {
     background-color: #2e2e2e;
     margin: 1em;
@@ -249,6 +349,11 @@ to change opacity. */
     color: #e5b567;
 }
 
+/*
+This is the background of the hero title section, and uses a background image we keep in styles/images.
+It is relative and also sets the text to be white.
+- Nicole
+*/
 .slideshow {
     position: relative;
     min-height: 300px;
@@ -267,7 +372,12 @@ to change opacity. */
     border-radius: 1em;
 }
 
-/* for creating a solid table */
+/*
+Solidtable and it's inherited tags allow us to create a table with dotted borders.
+This was originally used in the about.html page to help us collate content against our lab
+classes, and can be used for other tables going forward.
+- Nicole
+*/
 .solidtable {
 
 }
@@ -297,8 +407,15 @@ to change opacity. */
 .verticaltable {
     scope: none;
 }*/
+/* Section content end */
 
-/* creating the footer */
+/* Footer content start */
+/*
+This is a static footer that should be always in the browser.
+The idea is to make an extremely small footer that tracks on the page, which should really only contain vital content.
+In our context, this is mostly the unit code/name for this subject, and possibly any vital links.
+- Nicole
+*/
 .staticfooter {
     position: sticky;
     z-index: 999;
@@ -307,6 +424,12 @@ to change opacity. */
     bottom: 0px;
     padding: 5px;
 }
+
+/*
+This is the footer that should appear at the bottom of the page.
+This can be more flashy, has aside, lists and link tags defined for us to insert more content.
+- Nicole
+*/
 .pagefooter {
     background-color: black;
     color: white;
