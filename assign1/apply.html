@@ -44,29 +44,19 @@
             <h1><span class="terminalblink">_</span>Application Form</h1>
             <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
                 <fieldset>
-                    <legend class="centertext">Applicant Details</legend>
-                    <table>
+                    <legend class="centertext"><h2>Applicant Details</h2></legend>
+                    <table class="formTable">
                         <tr>
-                            <td>
-                                <label for="jobRefNo">Job reference number</label>
+                            <td colspan="6">
+                                <p><label for="jobRefNo">Job reference number</label></p>
+                                <p><input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required></p>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="firstName" class=>Name</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="First Name" required>
-                            </td>
-                            <td>
-                                <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="Last Name" required>
+                            <td colspan>
+                                <p><label for="firstName" class=>Name</label></p>
+                                <p><input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="First Name" required>
+                                    <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="Last Name" required></p>                                
                             </td>
                         </tr>
                         <tr>
@@ -81,51 +71,54 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <fieldset>
-                                    <legend>Gender</legend>
+                                <fieldset class="genderFieldset">
+                                    <legend><b>Gender</b></legend>
                                         <label for="female">Female
                                             <input type="radio" name="gender" value="female" id="female" required>
                                         </label>
                                         <label for="male">Male
                                             <input type="radio" name="gender" value="male" id="male">
                                         </label>
-                                        <label for="nonbinary">Non-Binary
-                                            <input type="radio" name="gender" value="nonbinary" id="nonbinary">
-                                        </label>
                                         <label for="other">Other
                                             <input type="radio" name="gender" value="other" id="other">
                                         </label>
-                                        <input type="text" name="othergender" id="othergender">
+                                        <input type="text" name="othergender" id="othergender" class="genderText">
                                 </fieldset>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Address
+                                <h3 class="formh3">Address</h3>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="address">Street Address</label>
                             </td>
-                            <td>
-                                <label for="suburb">Suburb</label>
-                            </td>
                         </tr>
                         <tr>
                             <td>
                                 <input type="text" name="address" id="address" pattern=".{1,40}" maxlength="40" required>
                             </td>
-                            <td>
-                                <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
-                            </td>
                         </tr>
                         <tr>
+                            <td>
+                                <label for="suburb">Suburb</label>
+                            </td>
                             <td>
                                 <label for="state">State</label>
                             </td>
+                            <td>
+                                <label for="postcode">Postcode</label>
+                            </td>
                         </tr>
                         <tr>
+                            <td>
+                                <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
+                            </td>
+                            <td>
+                                <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
+                            </td>
                             <td>
                                 <select name="state" id="state" required>
                                     <option value="VIC">VIC</option>
@@ -136,62 +129,61 @@
                                     <option value="SA">SA</option>
                                     <option value="TAS">ACT</option>
                                 </select>
-
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <label for="postcode">Postcode</label>
-                            </td>
+                            
                         </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
-                            </td>
-                        </tr>
-                        <tr>
+                        
                             <td>
                                 <label for="phonenumber">Phone Number</label>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
-                            </td>
-                        </tr>   
-                        <tr>
                             <td>
                                 <label for="email">Email Address</label>
                             </td>
                         </tr>
                         <tr>
                             <td>
+                                <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
+                            </td>
+
+                            <td>
                                 <input type="email" name="email" id="email">
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <h3 class="formh3">Skills</h3>
+                            </td>
+                        <tr>
+                            <td colspan="2">
+                                <label for="skill1">skill1
+                                    <input type="checkbox" name="skill1" value="skill1" id="skill1">
+                                </label>
+                                <label for="skill2">skill2
+                                    <input type="checkbox" name="skill2" value="skill2" id="skill2">
+                                </label>
+                                <label for="skill3">skill3
+                                    <input type="checkbox" name="skill3" value="skill3" id="skill3">
+                                </label>
+                                <label for="skillother">other
+                                    <input type="checkbox" name="skillother" value="skillother" id="skillother">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label for="skillOtherDetail">Other Skills<br> 
+                                        <textarea name="skillOtherDetail" id="skillOtherDetail" rows="8" cols="70"></textarea>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Apply">
+                            </td>
+                        </tr>                     
                     </table>
-                    <fieldset>
-                        <legend>Skills</legend>
-                        <p>
-                            <label for="skill1">skill1
-                                <input type="checkbox" name="skill1" value="skill1" id="skill1">
-                            </label>
-                            <label for="skill2">skill2
-                                <input type="checkbox" name="skill2" value="skill2" id="skill2">
-                            </label>
-                            <label for="skill3">skill3
-                                <input type="checkbox" name="skill3" value="skill3" id="skill3">
-                            </label>
-                            <label for="skillother">other
-                                <input type="checkbox" name="skillother" value="skillother" id="skillother">
-                            </label>
-                        </p>
-                        <p><label for="skillOtherDetail">Other Skills<br> 
-                                <textarea name="skillOtherDetail" id="skillOtherDetail" rows="8" cols="70"></textarea>
-                        </label></p>
-                    </fieldset>
-                <input type="submit" value="Apply">
-                </fieldset>
+                </fieldset>    
             </form>
         </section>
         
