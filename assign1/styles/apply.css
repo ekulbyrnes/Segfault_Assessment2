@@ -1,70 +1,41 @@
-fieldset{
-    width: 90%;
-    justify-self: center;
-    margin:auto;
-}
-
-/* 12 column grid container */
-.grid-container-12{
-    display: grid;
-    width: 50%;
+/* flex */
+.form-container{
+    display: flex;
+    width:50%;
     max-width: 700px;
-    min-width: 400px;
-    grid-template-columns: repeat(12, 8.33%);
-    justify-self: center;
-} 
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0px;
 
-/* 12 wide column */
+
+}
+
 .col-12{
-   grid-column: 1 / span 12;
+    flex-basis: 100%;
 }
 
-/* 6 wide columns */
-.col-6-a{
-    grid-column: 1 / span 6;
+.col-6{
+    flex-basis: 50%;
 }
 
-.col-6-b{
-    grid-column: 7 / span 6;
+.col-4{
+    flex-basis: 33.333%;
 }
 
-/* 4 wide columns */
-.col-4-a{
-    grid-column: 1 / span 4;
+.col-3{
+    flex-basis: 25%;
 }
 
-.col-4-b{
-    grid-column: 5 / span 4;
+.col-2{
+    flex-basis: 16.667%;
 }
 
-.col-4-c{
-    grid-column: 9 / span 4;
+.col-1{
+    flex-basis: 8.333%;
 }
 
-/* 2 wide columns */
-.col-2-a{
-    grid-column: 1 / span 2;
-}
-
-.col-2-b{
-    grid-column: 3 / span 2;
-}
-
-.col-2-c{
-    grid-column: 5 / span 2;
-}
-
-.col-2-d{
-    grid-column: 7 / span 2;
-}
-
-.col-2-e{
-    grid-column: 9 / span 2;
-}
-
-.col-2-f{
-    grid-column: 11 / span 2;
-}
 
 /* Style textbox inputs */
 input[type=text],input[type=email]{
