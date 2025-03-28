@@ -49,6 +49,10 @@
 }
 
 #siteInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     margin-top: 3em;
     margin-bottom: 4em;
@@ -59,6 +63,7 @@
 #infoLogo {
     position: relative;
     top: 20px;
+    right: 7px;
     animation: float 1.2s ease-in-out infinite;
 }
 /*This might need to go into the enhancement page*/
@@ -84,7 +89,7 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     justify-content: center;
     align-items: center;
     gap: 100px;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
 }
 
 .heading3 {
@@ -98,7 +103,7 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     gap: 100px;
 }
 
