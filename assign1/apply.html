@@ -40,6 +40,9 @@
             </section>
         </section>
 
+
+        
+
         <!--Application Form-->
         <section> 
             <h1><span class="terminalblink">_</span>Application Form</h1>
@@ -47,105 +50,119 @@
             <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
                 <fieldset>
                     <legend class="centertext"><h2>Applicant Details</h2></legend>
-                    <span class="grid-container-12">
-                        <span class="col-6-a">
-                            <p><label for="jobRefNo">Job reference number</label></p>
-                            <p><input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required></p>
-                        </span>
 
-                        <span class="col-12">
-                            <label for="firstName" class=>Name</label>
-                        </span>
+                    <span class="form-container">
 
-                        <span class="col-6-a">
+                        <span class="col-6">
+                            <label for="jobRefNo" class="col-12">Job reference number</label><br>
+                            <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
+                        </span>
+                        <span class="col-6"></span>
+
+                        <span class="col-6">
+                            <label for="firstName" class="col-6">Name</label>
                             <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="First Name" required>
                         </span>
-                        <span class="col-6-b">
+                        <span class="col-6">
                             <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="Last Name" required>
                         </span>
 
-                        <span class="col-6-a">
-                            <p><label for="DOB">Date of birth</label></p>
-                            <p><input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required></p>
+                        <span class="col-6">
+                            <label for="DOB">Date of birth</label>
+                            <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
                         </span>
-
-                        <span class="col-6-b">
+                    
+                        <span class="col-6">
                             <fieldset class="genderFieldset">
                                 <legend><b>Gender</b></legend>
-                                    <label for="female">Female
+                                <span class="gender-flex-container">
+                                    <span class="flex-gender-text">
                                         <input type="radio" name="gender" value="female" id="female" required>
-                                    </label>
-                                    <label for="male">Male
+                                        <label for="female">Female</label>
+                                    </span>
+                                    <span class="flex-gender-text">
                                         <input type="radio" name="gender" value="male" id="male">
-                                    </label>
-                                    <label for="other">Other
+                                        <label for="male">Male</label>   
+                                    </span>
+                                    <span class="flex-break"></span>
+                                    <span class="flex-gender-text">
                                         <input type="radio" name="gender" value="other" id="other">
-                                    </label>
-                                    <input type="text" name="othergender" id="othergender" class="genderText">
+                                        <label for="other">Other:</label>
+                                    </span>
+                                    <span class="flex-fit">   
+                                        <input type="text" name="othergender" id="othergender" class="gender-text">
+                                    </span>
+                                </span>
                             </fieldset>
                         </span>             
 
                         <span class="col-12">
-                            <h3 class="formh3">Address</h3>
+                            <h3>Address</h3>
                         </span>
 
                         <span class="col-12">
-                            <p><label for="address">Street Address</label></p>
-                            <p><input type="text" name="address" id="address" pattern=".{1,40}" maxlength="40" required></p>
+                            <label for="address">Street Address</label>
+                            <input type="text" class="address-text" name="address" id="address" pattern=".{1,40}" maxlength="40" required>
                         </span>
 
-                        <span class="col-4-a"><label for="suburb">Suburb</label></span>
-                        <span class="col-4-b"><label for="postcode">Postcode</label></span>
-                        <span class="col-4-c"><label for="state">State</label></span>
-                        
-                        <span class="col-4-a"><input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required></span>
-                        <span class="col-4-b"><input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required></span>
-                        <span class="col-4-c"><select name="state" id="state" required>
-                            <option value="VIC">VIC</option>
-                            <option value="NSW">NSW</option>
-                            <option value="QLD">QLD</option>
-                            <option value="NT">NT</option>
-                            <option value="WA">WA</option>
-                            <option value="SA">SA</option>
-                            <option value="TAS">ACT</option>
-                        </select></span>
-
-                        <span class="col-6-a">
-                            <p><label for="phonenumber">Phone Number</label></p>
-                            <p><input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12"></p>
+                        <span class="col-4">
+                            <label for="suburb">Suburb</label><br>
+                            <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
+                        </span>
+                        <span class="col-4">
+                            <label for="postcode">Postcode</label><br>
+                            <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
+                        </span>
+                        <span class="col-4">
+                            <label for="state">State</label><br>
+                            <select name="state" id="state" required>
+                                <option value="VIC">VIC</option>
+                                <option value="NSW">NSW</option>
+                                <option value="QLD">QLD</option>
+                                <option value="NT">NT</option>
+                                <option value="WA">WA</option>
+                                <option value="SA">SA</option>
+                                <option value="TAS">ACT</option>
+                            </select>
                         </span>
 
-                        <span class="col-6-b">
-                            <p><label for="email">Email Address</label></p>
-                            <p><input type="email" name="email" id="email"></p>
+                        <span class="col-6">
+                            <label for="phonenumber">Phone Number</label>
+                            <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
+                        </span>
+
+                        <span class="col-6">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email">
                         </span>
 
                         <span class="col-12">
-                            <h3 class="formh3">Skills</h3>
+                            <h3>Skills</h3>
                         </span>
-                        <span class="col-2-a">
+
+                        <span class="col-2">
+                            <input type="checkbox" name="skill1" value="skill1" id="skill1">
                             <label for="skill1">Java</label>
-                                <input type="checkbox" name="skill1" value="skill1" id="skill1">
                         </span>
-                        <span class="col-2-b">
-                            <label for="skill2">C++</label>
+                        <span class="col-2">
                                 <input type="checkbox" name="skill2" value="skill2" id="skill2">
+                                <label for="skill2">C++</label>
                         </span>
-                        <span class="col-2-c">
-                            <label for="skill3">PHP</label>
+                        <span class="col-2">
                                 <input type="checkbox" name="skill3" value="skill3" id="skill3">
+                                <label for="skill3">PHP</label>
                         </span>
-                        <span class="col-2-d">
-                            <label for="skill4">MySQL</label>
+                        <span class="col-2">
                                 <input type="checkbox" name="skill4" value="skill4" id="skill4">
+                                <label for="skill4">MySQL</label>
                         </span>
-                        <span class="col-2-e">
-                            <label for="skill5">Python</label>
+                        <span class="col-2">
                                 <input type="checkbox" name="skill5" value="skill5" id="skill5">
+                                <label for="skill5">Python</label>
                         </span>
-                        <span class="col-2-f">
-                            <label for="skillother">Other</label>
-                                <input type="checkbox" name="skillother" value="skillother" id="skillother">
+                        <span class="col-2">
+                                <input type="checkbox" name="skillOther" value="skillOther" id="skillOther">
+                                <label for="skillOther">Other</label>
                         </span>
                             
                         <span class="col-12">

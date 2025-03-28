@@ -1,84 +1,86 @@
-/* flex */
-.form-container{
-    display: flex;
-    width:50%;
-    max-width: 700px;
-    justify-content: center;
+fieldset{
+    width: 90%;
     justify-self: center;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: ;
+    margin:auto;
 }
 
+/* 12 column grid container */
+.grid-container-12{
+    display: grid;
+    width: 50%;
+    max-width: 700px;
+    min-width: 400px;
+    grid-template-columns: repeat(12, 8.33%);
+    justify-self: center;
+} 
+
+/* 12 wide column */
 .col-12{
-    flex-basis: 100%;
+   grid-column: 1 / span 12;
 }
 
-.col-6{
-    flex-basis: 50%;
-    min-width: 130px;
+/* 6 wide columns */
+.col-6-a{
+    grid-column: 1 / span 6;
 }
 
-.col-4{
-    flex-basis: 33.333%;
-    min-width: 86px;
-    align-self: stretch;
+.col-6-b{
+    grid-column: 7 / span 6;
 }
 
-.col-3{
-    flex-basis: 25%;
+/* 4 wide columns */
+.col-4-a{
+    grid-column: 1 / span 4;
 }
 
-.col-2{
-    flex-basis: 16.667%;
-    min-width: 85px;
+.col-4-b{
+    grid-column: 5 / span 4;
 }
 
-.col-1{
-    flex-basis: 8.333%;
+.col-4-c{
+    grid-column: 9 / span 4;
 }
 
-.gender-flex-container{
-    display: flex;
-    width:100%;
-    justify-content: left;
-    justify-self: left;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
+/* 2 wide columns */
+.col-2-a{
+    grid-column: 1 / span 2;
 }
 
-.flex-gender-text{
-    flex-basis: 80px;
+.col-2-b{
+    grid-column: 3 / span 2;
 }
 
-.flex-fit{
-    flex-basis: calc(100% - 80px);
-    min-width: 96px;
+.col-2-c{
+    grid-column: 5 / span 2;
 }
 
-.flex-break{
-    flex-basis: 100%;
+.col-2-d{
+    grid-column: 7 / span 2;
+}
+
+.col-2-e{
+    grid-column: 9 / span 2;
+}
+
+.col-2-f{
+    grid-column: 11 / span 2;
 }
 
 /* Style textbox inputs */
 input[type=text],input[type=email]{
-    width: calc(100% - 25px);
+    width: 93%;
     padding:4px;
     margin:2px 0 15px;
     background-color: whitesmoke;
     border:2px solid lightgray;
     border-radius:4px;
-    outline: none;
 }
 
 /* Override width for gender text input */
-.gender-text{
-    width: 100%;
-    max-width: 230px !important;
-    min-width: 60px !important;
-    margin:2px 0 0px !important;
+.genderText{
+    width: 36% !important;
+    max-width: 216px;
+    min-width: 132px;
 }
 
 /* Style textarea */
@@ -100,34 +102,34 @@ input[type=radio]:hover, input[type=checkbox]:hover{
     accent-color: rgb(200, 130, 0);
 }
 
-/* Style dropdown */
+/* Style for dropdown */
 select{
     background-color: whitesmoke;
     border:2px solid lightgray;
     border-radius:4px;
 }
 
-/* Style input and dropdown when hovered */
+/* Give input and dropdown an orange border when hovered, doesn't work for radio or checkbox */
 input:hover, select:hover{
     border:2px solid orange;
     border-radius:4px;
 }
 
-/* Style input and dropdown when in focus */
-input:focus, select:focus{
-    background-color: rgb(255, 240, 230);
-    border:2px solid darkorange;
+/* Lighten input background when in focus */
+input:focus{
+    background-color: rgb(250, 250, 250);
 }
 
-form > fieldset > span > span > h3,h4{
+.formh3{
     margin-bottom: 2px;
+    
 }
 
 /* Fieldset styling */
 fieldset{
     display: block;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-bottom: 3%;
     padding-top: 0.35em;
     padding-bottom: 0.625em;
