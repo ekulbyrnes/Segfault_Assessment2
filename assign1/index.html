@@ -6,8 +6,10 @@
     <meta name="description" content="This website is a group project for class COS10032. It is a job board project.">
     <meta name="keyword" content="job, money, job-board, broke">
     <meta name="author" content="Vandy, Luke, Marcus, Nicole">
-    <title>Team name</title>
+    <title>Segfault</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!--<link rel="stylesheet" href="./styles/index.css">Get this outta here!-->
 </head>
 <body>
@@ -26,30 +28,41 @@
         </nav>
     </div>
 </header>
-<section><!-- Banner section -->
-    <h1>We're hiring!</h1>
-    <div id="about"></div>
+<section class="slideshow center-flex"><!-- Banner section -->
+    <h1>Welcome!</h1><br>
+    <p><span class="terminalblink">_</span>We are currently hiring <br> There is available job below</p>
 </section>
 
+<section id="sideInfo">
+    <p><img id="infoLogo" src="./images/logo.png" alt="logo" width="300px"> is a collaborative group project made up to create a job posting website.</p>
+    <p>The group get to the job we want to display, for more information on this scroll down. This platform </p>
+    <p>features a user-friendly interface job, ensuring an easy time for people to find job</p>
+</section>
+
+<p id="availableJob"><strong>Available Position</strong></p>
+<section id="job">
+    <a class="job-link" href="./jobs.html">
+        <div id="job1">
+            <h2>Kotlin Developer</h2>
+        </div>
+    </a>
+    <a class="job-link" href="./jobs.html">
+        <div id="job2">
+            <h2>Site Reliability Engineer</h2>
+        </div>
+    </a>
+</section>
+
+<section class="pagefooter">
+    <img src="logo.png" width="200">
+    <aside>
+        <ul>
+        <li><a href="mailto:100589839@student.swin.edu.au">✉ Mail Us</a></li>
+    </ul>
+    </aside>
+</section>
 <footer class="staticfooter">
-    <!--We can use CSS to make the card flip-->
-    <!--When the card flip make the other side white-->
-    <div id="card">
-        <p class="cardText">Touch me</p>
-    </div>
-    <div id="col1">
-        <p id="seeker"><strong>SEEKER</strong></p>
-        <a  class="footLink" href="#">Job saved</a>
-        <a  class="footLink" href="#">Job Applied</a>
-    </div>
-    <div id="col2">
-        <p id="contact"><strong>CONTACT</strong></p>
-        <!--Link email to these link-->
-        <a class="footLink" href="#">Vandy</a>
-        <a class="footLink" href="#">Marcus</a>
-        <a class="footLink" href="#">Luke</a>
-        <a class="footLink" href="#">Nicole</a>
-    </div>
+    <span>COS10032 Assignment One &#169;</span>
 </footer>
 </body>
 </html>
