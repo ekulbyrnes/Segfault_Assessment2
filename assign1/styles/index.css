@@ -136,3 +136,7 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
 .child2 {
     color: gray;
 }
+
+#info {
+    color: rgb(63, 63, 63);
+}
