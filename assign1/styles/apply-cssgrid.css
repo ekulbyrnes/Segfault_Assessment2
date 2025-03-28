@@ -1,0 +1,147 @@
+fieldset{
+    width: 90%;
+    justify-self: center;
+    margin:auto;
+}
+
+/* 12 column grid container */
+.grid-container-12{
+    display: grid;
+    width: 50%;
+    max-width: 700px;
+    min-width: 400px;
+    grid-template-columns: repeat(12, 8.33%);
+    justify-self: center;
+} 
+
+/* 12 wide column */
+.col-12{
+   grid-column: 1 / span 12;
+}
+
+/* 6 wide columns */
+.col-6-a{
+    grid-column: 1 / span 6;
+}
+
+.col-6-b{
+    grid-column: 7 / span 6;
+}
+
+/* 4 wide columns */
+.col-4-a{
+    grid-column: 1 / span 4;
+}
+
+.col-4-b{
+    grid-column: 5 / span 4;
+}
+
+.col-4-c{
+    grid-column: 9 / span 4;
+}
+
+/* 2 wide columns */
+.col-2-a{
+    grid-column: 1 / span 2;
+}
+
+.col-2-b{
+    grid-column: 3 / span 2;
+}
+
+.col-2-c{
+    grid-column: 5 / span 2;
+}
+
+.col-2-d{
+    grid-column: 7 / span 2;
+}
+
+.col-2-e{
+    grid-column: 9 / span 2;
+}
+
+.col-2-f{
+    grid-column: 11 / span 2;
+}
+
+/* Style textbox inputs */
+input[type=text],input[type=email]{
+    width: 93%;
+    padding:4px;
+    margin:2px 0 15px;
+    background-color: whitesmoke;
+    border:2px solid lightgray;
+    border-radius:4px;
+}
+
+/* Override width for gender text input */
+.genderText{
+    width: 36% !important;
+    max-width: 216px;
+    min-width: 132px;
+}
+
+/* Style textarea */
+textarea{
+    width: 96.5%;
+    margin:2px 0 15px;
+    background-color: whitesmoke;
+    border:2px solid lightgray;
+    border-radius:4px;
+}
+
+/* Style radio buttons and checkboxes to be orange when selected */
+input[type=radio],input[type=checkbox]{
+    accent-color: orange;
+}
+
+/* Change radio and checkbox colour when hovered */
+input[type=radio]:hover, input[type=checkbox]:hover{
+    accent-color: rgb(200, 130, 0);
+}
+
+/* Style for dropdown */
+select{
+    background-color: whitesmoke;
+    border:2px solid lightgray;
+    border-radius:4px;
+}
+
+/* Give input and dropdown an orange border when hovered, doesn't work for radio or checkbox */
+input:hover, select:hover{
+    border:2px solid orange;
+    border-radius:4px;
+}
+
+/* Lighten input background when in focus */
+input:focus{
+    background-color: rgb(250, 250, 250);
+}
+
+.formh3{
+    margin-bottom: 2px;
+    
+}
+
+/* Fieldset styling */
+fieldset{
+    display: block;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 3%;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove rgba(214, 191, 182, 0.326);
+}
+
+/* Override margins for gender fieldset */
+.genderFieldset{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0.15em;
+}
