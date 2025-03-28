@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     width: 50em;
-    height: 600px;
+    height: 500px;
     border: 3px solid black;
     border-radius: 50px;
 
@@ -37,7 +37,7 @@
     justify-content: center;
     align-items: center;
     width: 50em;
-    height: 600px;
+    height: 500px;
     border: 3px solid black;
     border-radius: 50px;
 
@@ -87,7 +87,47 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     margin-bottom: 10%;
 }
 
-h3 {
-    border-bottom: 1px solid black;
+.heading3 {
+    font-size: 26px;
+    border-bottom: 1px solid rgb(202, 202, 202);
     padding: 15px;
+}
+
+#achieved {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    gap: 100px;
+}
+
+.achievement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    line-height: 0;
+    overflow: visible;
+    width: 20em;
+    height: 10em
+}
+
+#worker {
+    font-size: 34px;
+}
+
+#number1 {
+    font-size: 34px;
+}
+
+.child1 {
+    font-size: 22px;
+}
+
+.child2 {
+    color: gray;
 }
