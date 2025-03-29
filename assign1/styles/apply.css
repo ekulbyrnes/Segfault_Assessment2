@@ -173,4 +173,5 @@ label{
 /* Form headings styling */
 form fieldset span span h3,h4{
     margin-bottom: 2px;
+    margin-top: 0px;
 }

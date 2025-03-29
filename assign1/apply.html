@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta author="SegFault Services">
-    <meta charset="utf-8">
-    <meta keywords="computing, recruiting, services">
+    <meta name="author" content="SegFault Services">
+    <meta name="charset" content="utf-8">
+    <meta name="keywords" content="computing, recruiting, services">
     <title>Apply Now - SegFault Service</title>
     <!-- Adding in the global styles -->
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/apply.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="styles/apply.css">
 </head>
 
 
@@ -20,15 +21,15 @@
     <header class="header">
         <div class="navpadding">
             <aside>
-                <a href="#" class="logo"><img src="logo.png" width="80"></a>
+                <a href="#" class="logo"><img src="logo.png" alt="Segfault logo" width="80"></a>
             </aside>
 
             <nav class="navbar">
                 <ul class="navmenu">
                     <li><a href="./index.html" class="navpage">Homepage</a></li>
-                    <li><a href="./apply.html"class="navpage">Work with Us</a></li>
-                    <li><a href="./about.html"class="navpage">About Us</a></li>
-                    <li><a href="./enhancements.html"class="navpage">Enhancements</a></li>
+                    <li><a href="./apply.html" class="navpage">Work with Us</a></li>
+                    <li><a href="./about.html" class="navpage">About Us</a></li>
+                    <li><a href="./enhancements.html" class="navpage">Enhancements</a></li>
                 </ul>
             </nav>
         </div>
@@ -74,7 +75,7 @@
                     
                         <span class="col-6">
                             <fieldset class="gender-fieldset">
-                                <legend><b>Gender</b></legend>
+                                <legend><h4>Gender</h4></legend>
                                 <span class="gender-flex-container">
                                     <span class="gender-flex-item">
                                         <input type="radio" name="gender" value="female" id="female" required>
@@ -116,6 +117,7 @@
                         <span class="col-2">
                             <label for="state">State</label><br>
                             <select name="state" id="state" required>
+                                <option value="">---</option>
                                 <option value="VIC">VIC</option>
                                 <option value="NSW">NSW</option>
                                 <option value="QLD">QLD</option>
@@ -179,7 +181,7 @@
 
 
         <section class="pagefooter">
-            <img src="logo.png" width="300">
+            <img src="logo.png" alt="Segfault logo" width="300">
             <aside>
                 <ul>
                     <li><a href="mailto:100589839@student.swin.edu.au">✉ Mail Us</a></li>
