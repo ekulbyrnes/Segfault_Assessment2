@@ -128,7 +128,7 @@
 
                         <span class="col-6">
                             <label for="phonenumber">Phone Number</label>
-                            <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12" required>
+                            <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required>
                         </span>
 
                         <span class="col-6">
@@ -162,11 +162,11 @@
                         </span>
                         <span class="col-2">
                                 <input type="checkbox" name="skillOther" value="skillOther" id="skillOther">
-                                <label for="skillOther">Other</label>
+                                <label for="skillOther">Other skills...</label>
                         </span>
                             
                         <span class="col-12">
-                                <textarea name="skillOtherDetail" id="skillOtherDetail" placeholder="Other skills..." rows="8" cols="70"></textarea>
+                                <textarea name="skillOtherDetail" id="skillOtherDetail" placeholder="Other" rows="8" cols="70"></textarea> <!--Check that "Other" is okay as the assignment pdf says it should read "Other skills..."-->
                         </span>
 
                         <span class="col-12">
