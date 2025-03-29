@@ -73,24 +73,24 @@
                         </span>
                     
                         <span class="col-6">
-                            <fieldset class="genderFieldset">
+                            <fieldset class="gender-fieldset">
                                 <legend><b>Gender</b></legend>
                                 <span class="gender-flex-container">
-                                    <span class="flex-gender-text">
+                                    <span class="gender-flex-item">
                                         <input type="radio" name="gender" value="female" id="female" required>
                                         <label for="female">Female</label>
                                     </span>
-                                    <span class="flex-gender-text">
+                                    <span class="gender-flex-item">
                                         <input type="radio" name="gender" value="male" id="male">
                                         <label for="male">Male</label>   
                                     </span>
                                     <span class="flex-break"></span>
-                                    <span class="flex-gender-text">
+                                    <span class="gender-flex-item">
                                         <input type="radio" name="gender" value="other" id="other">
                                         <label for="other">Other:</label>
                                     </span>
-                                    <span class="flex-other-gender-input">   
-                                        <input type="text" name="othergender" id="othergender" class="gender-text">
+                                    <span class="flex-gender-text-input">   
+                                        <input type="text" name="othergender" id="othergender" class="gender-text-input">
                                     </span>
                                 </span>
                             </fieldset>
@@ -128,12 +128,12 @@
 
                         <span class="col-6">
                             <label for="phonenumber">Phone Number</label>
-                            <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12">
+                            <input type="text" name="phonenumber" id="phonenumber" pattern="[0-9]{8,12}" maxlength="12" required>
                         </span>
 
                         <span class="col-6">
                             <label for="email">Email Address</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </span>
 
                         <span class="col-12">

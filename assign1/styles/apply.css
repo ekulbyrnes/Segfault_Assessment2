@@ -1,81 +1,158 @@
 /* flex */
-.form-container{
-    display: flex;
-    width:50%;
-    max-width: 700px;
-    justify-content: center;
-    justify-self: center;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: ;
-}
+    .form-container{
+        display: flex;
+        width:50%;
+        max-width: 700px;
+        justify-content: center;
+        justify-self: center;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: ;
+    }
 
-.col-12{
-    flex-basis: 100%;
-}
+    .col-12{
+        flex-basis: 100%;
+    }
 
-.col-9{
-    flex-basis: 75%;
-}
+    .col-9{
+        flex-basis: 75%;
+    }
 
-.col-8{
-    flex-basis: 66.667%;
-}
+    .col-8{
+        flex-basis: 66.667%;
+    }
 
-.col-6{
-    flex-basis: 50%;
-    min-width: 180px;
-}
+    .col-6{
+        flex-basis: 50%;
+        min-width: 180px;
+    }
 
-.col-4{
-    flex-basis: 33.333%;
-    min-width: 86px;
-    align-self: stretch;
-}
+    .col-4{
+        flex-basis: 33.333%;
+        min-width: 86px;
+    }
 
-.col-3{
-    flex-basis: 25%;
-    align-self: stretch;
-}
+    .col-3{
+        flex-basis: 25%;
+    }
 
-.col-2{
-    flex-basis: 16.667%;
-    min-width: 85px;
-    align-self: stretch;
-}
+    .col-2{
+        flex-basis: 16.667%;
+        min-width: 90px;
+        align-self: stretch;
+    }
 
-.col-1{
-    flex-basis: 8.333%;
-}
+    .col-1{
+        flex-basis: 8.333%;
+    }
 
-.gender-flex-container{
-    display: flex;
-    width:100%;
-    justify-content: left;
-    justify-self: left;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
+    .flex-fit{
+        flex-basis: auto;
+    }
 
-.flex-gender-text{
-    flex-basis: 80px;
-}
+    .flex-break{
+        flex-basis: 100%;
+    }
 
-.flex-other-gender-input{
-    flex-basis: calc(100% - 80px);
-    min-width: 96px;
-}
+/* Gender */
+    /* Flex container for gender items */
+    .gender-flex-container{
+        display: flex;
+        width:100%;
+        justify-content: left;
+        justify-self: left;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        background: yellow;
+    }
 
-.flex-fit{
-    flex-basis: auto;
-}
+    /* Individual flex items within gender field */
+    .gender-flex-item{
+        flex-basis: 90px;
+        background: salmon;
+    }
 
-.flex-break{
-    flex-basis: 100%;
-}
+    /* Flex item for other gender text input */
+    .flex-gender-text-input{
+        flex-basis: 50%;
+        min-width: 140px;
+    }
 
+    /* Override width for gender text input */
+    .gender-text-input{
+        width: 100% !important;
+        max-width: 230px !important;
+        min-width: 60px !important;
+        margin:2px 0 0px !important;
+    }
+    /* Override margins for gender fieldset */
+    .gender-fieldset{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        padding-bottom: 0.15em;
+    }
+
+    /* Label styling within gender field */
+    span.gender-flex-container label{
+        font-size: 1em !important;
+    }
+
+/* Input styling */
+    /* Textbox & email styling */
+    input[type=text],input[type=email]{
+        width: calc(100% - 25px);
+        padding:4px;
+        margin:2px 0 15px;
+        background-color: whitesmoke;
+        border:2px solid lightgray;
+        border-radius:4px;
+        outline: none;
+    }
+
+    /* Textarea styling */
+    textarea{
+        width: 96.5%;
+        margin:2px 0 15px;
+        background-color: whitesmoke;
+        border:2px solid lightgray;
+        border-radius:4px;
+        outline: none;
+    }
+
+    /* Input & dropdown styling when hovered */
+    input:hover, select:hover, textarea:hover{
+        border:2px solid orange;
+        border-radius:4px;
+    }
+
+    /* Input & dropdown styling when in focus */
+    input:focus, select:focus, textarea:focus{
+        background-color: rgb(255, 250, 250);
+        border:2px solid darkorange;
+    }
+
+    /* Radio & checkbox styling */
+    input[type=radio],input[type=checkbox]{
+        accent-color: orange;
+    }
+
+    /* Radio & checkbox styling when hovered */
+    input[type=radio]:hover, input[type=checkbox]:hover{
+        accent-color: rgb(200, 130, 0);
+    }
+
+    /* Dropdown styling */
+    select{
+        background-color: whitesmoke;
+        border:2px solid lightgray;
+        border-radius:4px;
+        height: 28px;
+        margin-top: 2px;
+        width: calc(100% - 15px);
+    }
 
 /* Fieldset styling */
 fieldset{
@@ -90,74 +167,12 @@ fieldset{
     border: 2px groove rgba(214, 191, 182, 0.326);
 }
 
-
-/* Textbox & email styling */
-input[type=text],input[type=email]{
-    width: calc(100% - 25px);
-    padding:4px;
-    margin:2px 0 15px;
-    background-color: whitesmoke;
-    border:2px solid lightgray;
-    border-radius:4px;
-    outline: none;
-}
-
-/* Textarea styling */
-textarea{
-    width: 96.5%;
-    margin:2px 0 15px;
-    background-color: whitesmoke;
-    border:2px solid lightgray;
-    border-radius:4px;
-    outline: none;
-}
-
-/* Input & dropdown styling when hovered */
-input:hover, select:hover, textarea:hover{
-    border:2px solid orange;
-    border-radius:4px;
-}
-
-/* Input & dropdown styling when in focus */
-input:focus, select:focus, textarea:focus{
-    background-color: rgb(255, 250, 250);
-    border:2px solid darkorange;
-}
-
-/* Radio & checkbox styling */
-input[type=radio],input[type=checkbox]{
-    accent-color: orange;
-}
-
-/* Radio & checkbox styling when hovered */
-input[type=radio]:hover, input[type=checkbox]:hover{
-    accent-color: rgb(200, 130, 0);
-}
-
-/* Dropdown styling */
-select{
-    background-color: whitesmoke;
-    border:2px solid lightgray;
-    border-radius:4px;
+/* Label Styling */
+label{
+    font-size: 1.2em;
 }
 
 /* Form headings styling */
-form > fieldset > span > span > h3,h4{
+form fieldset span span h3,h4{
     margin-bottom: 2px;
-}
-
-/* Override margins for gender fieldset */
-.genderFieldset{
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 0.15em;
-}
-
-/* Override width for gender text input */
-.gender-text{
-    width: 100%;
-    max-width: 230px !important;
-    min-width: 60px !important;
-    margin:2px 0 0px !important;
 }
