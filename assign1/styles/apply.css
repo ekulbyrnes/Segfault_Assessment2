@@ -65,13 +65,11 @@
         flex-direction: row;
         align-items: flex-end;
         flex-wrap: wrap;
-        background: yellow;
     }
 
     /* Individual flex items within gender field */
     .gender-flex-item{
         flex-basis: 90px;
-        background: salmon;
     }
 
     /* Flex item for other gender text input */
