@@ -16,22 +16,24 @@
 
 
 <body>
-        <!-- Header with aside logo and navbar -->
-        <header class="header">
-            <div class="navpadding">
-                <aside>
-                    <a href="#" class="logo"><img src="logo.png" width="80"></a>
-                </aside>
+    <!-- Header with aside logo and navbar -->
+    <header class="header">
+        <div class="navpadding">
+            <aside>
+                <a href="#" class="logo"><img src="logo.png" width="80"></a>
+            </aside>
 
             <nav class="navbar">
-            <ul class="navmenu">
-                <li><a href="#" class="navpage">Homepage</a></li>
-                <li><a href="#"class="navpage">Work with Us</a></li>
-                <li><a href="#"class="navpage">About Us</a></li>
-            </ul>
-        </nav>
-            </div>
-        </header>
+                <ul class="navmenu">
+                    <li><a href="./index.html" class="navpage">Homepage</a></li>
+                    <li><a href="./apply.html"class="navpage">Work with Us</a></li>
+                    <li><a href="./about.html"class="navpage">About Us</a></li>
+                    <li><a href="./enhancements.html"class="navpage">Enhancements</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div id="wrapper">
         <section class="slideshow center-flex">
             <h1>Apply!</h1><br>
@@ -40,11 +42,9 @@
             </section>
         </section>
 
-
         
-
         <!--Application Form-->
-        <section> 
+        <section class="focus"> 
             <h1><span class="terminalblink">_</span>Application Form</h1>
             
             <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
@@ -57,7 +57,7 @@
                             <label for="jobRefNo" class="col-12">Job reference number</label><br>
                             <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
                         </span>
-                        <span class="col-6"></span>
+                        <span class="col-6"></span><!--Force new row-->
 
                         <span class="col-6">
                             <label for="firstName" class="col-6">Name</label>
@@ -162,11 +162,11 @@
                         </span>
                         <span class="col-2">
                                 <input type="checkbox" name="skillOther" value="skillOther" id="skillOther">
-                                <label for="skillOther">Other skills...</label>
+                                <label for="skillOther">Other</label><!--Check that "Other" is okay as the assignment pdf says it should read "Other skills..."-->
                         </span>
                             
                         <span class="col-12">
-                                <textarea name="skillOtherDetail" id="skillOtherDetail" placeholder="Other" rows="8" cols="70"></textarea> <!--Check that "Other" is okay as the assignment pdf says it should read "Other skills..."-->
+                                <textarea name="skillOtherDetail" id="skillOtherDetail" placeholder="Other" rows="8" cols="70"></textarea>
                         </span>
 
                         <span class="col-12">
@@ -176,19 +176,20 @@
                 </fieldset>
             </form>  
         </section>
-    </section>
 
 
-    <section class="pagefooter">
-        <img src="logo.png" width="300">
-        <aside>
-            <ul>
-            <li><a href="mailto:100589839@student.swin.edu.au">✉ Mail Us</a></li>
-        </ul>
-        </aside>
-    </section>
-</div>
-<footer class="staticfooter">
-    <span>COS10032 Assignment One</span>
-</footer>
+        <section class="pagefooter">
+            <img src="logo.png" width="300">
+            <aside>
+                <ul>
+                    <li><a href="mailto:100589839@student.swin.edu.au">✉ Mail Us</a></li>
+                </ul>
+            </aside>
+        </section>
+    </div>
+
+    <footer class="staticfooter">
+        <span>COS10032 Assignment One</span>
+    </footer>
+
 </body>
