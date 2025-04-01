@@ -127,11 +127,11 @@ tables, sections, or asides.
     margin: 0 auto;
 }
 
-.centertext {
-    text-align: center;
+.center-text {
+    text-align: center !important;
 }
-.lefttext {
-    text-align: left;
+.left-text {
+    text-align: left !important;
 }
 .inline {
     display: inline-block;
@@ -154,6 +154,9 @@ tables, sections, or asides.
     color: black;
 }
 .no-list-decor {
+    list-style-type: none;
+}
+.no-list-decor li {
     list-style-type: none;
 }
 
@@ -208,6 +211,7 @@ a dynamic image within the flexbox. Enhancement 2
   */
   .left-item, .right-item {
     flex:1 0 40%;
+    margin: 1em;
   }
 
 
