@@ -458,8 +458,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 
-/* OLD APPLY.CSS
-CONFIRM NO OVERLAP WITH STYLES.CSS */
+/* OLD APPLY.CSS */
 /* flex */
 .form-container{
     display: flex;
