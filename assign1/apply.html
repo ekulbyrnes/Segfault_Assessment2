@@ -45,39 +45,43 @@
 
         
         <!--Application Form-->
-        <section class="focus"> 
+        <section class="focus"><!--class focus to create a margin around the main content-->
             <h1><span class="terminalblink">_</span>Application Form</h1>
             
-            <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
-                <fieldset>
-                    <legend class="centertext"><h2>Applicant Details</h2></legend>
+            <!--Start of form-->
+            <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php"><!--Form posts data to the swinburne mercury test server-->
+                <fieldset><!--This fieldset wraps around the entire form-->
+                    <legend class="center-text"><h2>Applicant Details</h2></legend>
 
-                    <span class="form-container">
-
-                        <span class="col-6">
-                            <label for="jobRefNo" class="col-12">Job reference number</label><br>
-                            <input type="text" name="jobRefNo" id="jobRefNo" pattern="[0-9]{5}" maxlength="5" required>
+                    <span class="form-container"><!--Open flex container for the layout of form items-->
+                        <!--The flex container is treated as if it has 12 columns-->
+                        <span class="col-6"><!--class col-6 around the job reference number and it's input to have it take up half the form width-->
+                            <label for="jobRefNo" class="col-12">Job reference number</label><!--Label using "for" attribute linking it to its input-->
+                            <input type="text" name="jobRefNo" id="jobRefNo" pattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
                         </span>
-                        <span class="col-6"></span><!--Force new row-->
+                        <span class="col-6"></span><!--Force a new row by completing the set of 12 "columns"-->
+<!--blank line between each "row" of flex items-->
 
                         <span class="col-6">
                             <label for="firstName" class="col-6">Name</label>
-                            <input type="text" name="firstName" id="firstName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="First Name" required>
+                            <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
+                            <input type="text" name="firstName" id="firstName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="First Name" required>
                         </span>
                         <span class="col-6">
-                            <input type="text" name="lastName" id="lastName" pattern="[a-zA-Z]{1,20}" maxlength="20" placeholder="Last Name" required>
+                            <input type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
                         </span>
 
                         <span class="col-6">
                             <label for="DOB">Date of birth</label>
+                            <!--Text input with regex validating a pattern with 1 or 2 digits, followed by a "/", another 1 or 2 digits, followed by another "/" and then 4 more digits-->
                             <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
                         </span>
                     
                         <span class="col-6">
-                            <fieldset class="gender-fieldset">
+                            <fieldset class="gender-fieldset"><!--Fieldset containing all gender items-->
                                 <legend><h4>Gender</h4></legend>
-                                <span class="gender-flex-container">
-                                    <span class="gender-flex-item">
+                                <span class="gender-flex-container"><!--Flex container containing all gender items-->
+                                    <span class="gender-flex-item"><!--Flex item ensuring that the radio input and label for "Female" wrap at the same time-->
                                         <input type="radio" name="gender" value="female" id="female" required>
                                         <label for="female">Female</label>
                                     </span>
@@ -85,39 +89,39 @@
                                         <input type="radio" name="gender" value="male" id="male">
                                         <label for="male">Male</label>   
                                     </span>
-                                    <span class="flex-break"></span>
+                                    <span class="flex-break"></span><!--Span with class "flex-break" fills the remaining width of the current row, forcing a new row-->
                                     <span class="gender-flex-item">
                                         <input type="radio" name="gender" value="other" id="other">
                                         <label for="other">Other:</label>
                                     </span>
-                                    <span class="flex-gender-text-input">   
-                                        <input type="text" name="othergender" id="othergender" class="gender-text-input">
+                                    <span class="flex-gender-text-input"><!--Flex item ensuring the gender text input remains large enough to use-->
+                                        <input type="text" class="gender-text-input" name="othergender" id="othergender" pattern="[a-zA-Z -]{1,20}">
                                     </span>
                                 </span>
                             </fieldset>
                         </span>             
 
-                        <span class="col-12">
+                        <span class="col-12"><!--Full row flex item to contain address heading-->
                             <h3>Address</h3>
                         </span>
 
                         <span class="col-12">
                             <label for="address">Street Address</label>
-                            <input type="text" class="address-text" name="address" id="address" pattern=".{1,40}" maxlength="40" required>
+                            <input type="text" class="address-text" name="address" id="address" pattern=".{1,40}" maxlength="40" required><!--Text input with regex validating any pattern between 1 and 40 characters-->
                         </span>
 
                         <span class="col-6">
                             <label for="suburb">Suburb</label><br>
                             <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
                         </span>
-                        <span class="col-4">
+                        <span class="col-4"><!--Flex item with column width of 4 to give space for the "state" dropdown on the same line-->
                             <label for="postcode">Postcode</label><br>
-                            <input type="text" name="postcode" id="postcode" pattern="[0-9]{4}" maxlength="4" required>
+                            <input type="text" name="postcode" id="postcode" pattern="\d{4}" maxlength="4" required><!--Text input with regex validating exactly 4 digits-->
                         </span>
-                        <span class="col-2">
+                        <span class="col-2"><!--Flex item with a column width of 2 containing the "state" dropdown-->
                             <label for="state">State</label><br>
                             <select name="state" id="state" required>
-                                <option value="">---</option>
+                                <option value="">---</option><!--Placeholder option, needed due to the select element having the attribute "required"-->
                                 <option value="VIC">VIC</option>
                                 <option value="NSW">NSW</option>
                                 <option value="QLD">QLD</option>
@@ -130,7 +134,7 @@
 
                         <span class="col-6">
                             <label for="phonenumber">Phone Number</label>
-                            <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required>
+                            <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required><!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
                         </span>
 
                         <span class="col-6">
@@ -142,37 +146,38 @@
                             <h3>Skills</h3>
                         </span>
 
+                        <!--Check boxes for skills-->
                         <span class="col-2">
-                            <input type="checkbox" name="skill1" value="skill1" id="skill1">
-                            <label for="skill1">Java</label>
+                            <input type="checkbox" name="skill-java" value="skill-java" id="skill-java">
+                            <label for="skill-java">Java</label>
                         </span>
                         <span class="col-2">
-                                <input type="checkbox" name="skill2" value="skill2" id="skill2">
-                                <label for="skill2">C++</label>
+                                <input type="checkbox" name="skill-cpp" value="skill-cpp" id="skill-cpp">
+                                <label for="skill-cpp">C++</label>
                         </span>
                         <span class="col-2">
-                                <input type="checkbox" name="skill3" value="skill3" id="skill3">
-                                <label for="skill3">PHP</label>
+                                <input type="checkbox" name="skill-php" value="skill-php" id="skill-php">
+                                <label for="skill-php">PHP</label>
                         </span>
                         <span class="col-2">
-                                <input type="checkbox" name="skill4" value="skill4" id="skill4">
-                                <label for="skill4">MySQL</label>
+                                <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
+                                <label for="skill-sql">MySQL</label>
                         </span>
                         <span class="col-2">
-                                <input type="checkbox" name="skill5" value="skill5" id="skill5">
-                                <label for="skill5">Python</label>
+                                <input type="checkbox" name="skill-python" value="skill-python" id="skill-python">
+                                <label for="skill-python">Python</label>
                         </span>
                         <span class="col-2">
-                                <input type="checkbox" name="skillOther" value="skillOther" id="skillOther">
-                                <label for="skillOther">Other</label><!--Check that "Other" is okay as the assignment pdf says it should read "Other skills..."-->
+                                <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
+                                <label for="skill-other">Other</label><!--Check that "Other" is okay as the assignment pdf says it should read "Other skills..."-->
                         </span>
                             
                         <span class="col-12">
-                                <textarea name="skillOtherDetail" id="skillOtherDetail" placeholder="Other" rows="8" cols="70"></textarea>
+                                <textarea name="skill-other-details" id="skill-other-details" placeholder="Other skills..." rows="8" cols="70"></textarea>
                         </span>
 
                         <span class="col-12">
-                            <input type="submit" value="Apply">
+                            <input type="submit" value="Apply"><!--Button to submit form-->
                         </span>
                     </span>
                 </fieldset>
