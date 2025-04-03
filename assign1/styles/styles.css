@@ -478,6 +478,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 /* Flex item with a width of 12 columns */
 .col-12{
     flex-basis: 100%;
+    min-width: 180px;
 }
 
 /* Flex item with a width of 9 columns. UNUSED */
@@ -494,6 +495,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 .col-6{
     flex-basis: 50%;
     min-width: 180px;
+    background: salmon;
 }
 
 /* Flex item with a width of 4 columns */
@@ -542,18 +544,13 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 /* Flex item for other gender text input */
-.flex-gender-text-input{
-    flex-basis: 50%;
-    min-width: 140px;
-}
-
-/* Override width for gender text input */
-.gender-text-input{
-    width: 100% !important;
+#othergender{
+    flex-basis: 50% !important;
+    min-width: 140px !important;
     max-width: 230px !important;
-    min-width: 60px !important;
     margin:2px 0 0px !important;
 }
+
 /* Override margins for gender fieldset */
 .gender-fieldset{
     margin-left: 0px;
@@ -623,15 +620,26 @@ select{
 
 /* Fieldset styling */
 fieldset{
-display: block;
-margin-left: 10%;
-margin-right: 10%;
-margin-bottom: 3%;
-padding-top: 0.35em;
-padding-bottom: 0.625em;
-padding-left: 0.75em;
-padding-right: 0.75em;
-border: 2px groove rgba(214, 191, 182, 0.326);
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove rgba(214, 191, 182, 0.326);
+}
+
+input[type=submit]{
+    flex-basis:20%;
+    padding: 0.4em;
+    align-self:left;
+    font-weight: bold;
+}
+
+#jobRefNo{
+    width: calc(50% - 25px);
 }
 
 /* Label Styling */
@@ -640,7 +648,7 @@ font-size: 1.2em;
 }
 
 /* Form headings styling */
-form fieldset span span h3,h4{
+form fieldset div h3,h4{
 margin-bottom: 2px;
 margin-top: 0px;
 }
