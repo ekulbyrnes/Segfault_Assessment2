@@ -17,6 +17,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    min-width: 500px;
 }
 header, nav, article, section, aside, article {
     display: block;
@@ -220,7 +221,9 @@ a dynamic image within the flexbox. Enhancement 2
     margin: 1em;
   }
 
-  /* There are 25% viewport classes specifically for the positions page, according to the rubric. */
+  /* There are 25% viewport classes specifically for the positions page, according to the rubric.
+  Instead of float left/right and clear with inline and inline block display parameters, we are using CSS3
+  flex shorthand to set the size of the content (100%w of parent), and what percentage it should occupy.*/
   .job-left, .job-right {
     flex: 1 0 25%;
     margin: 1em;
@@ -398,6 +401,8 @@ classes, and can be used for other tables going forward.
 - Nicole
 */
 .solidtable {
+    background-color: #eee;
+    margin: 0 auto;
 
 }
 .solidtable thead {
@@ -414,6 +419,9 @@ classes, and can be used for other tables going forward.
     padding: 10px;
 }
 
+/* groupdetails organises our dt/dd items in about.html and displays items
+inline with flex. we then use simple left/right floats to enforce content, but this
+could be cleaner with flex-basis/growth. -- Nicole */
 .groupdetails {
     display: flex;
 }
@@ -427,6 +435,16 @@ classes, and can be used for other tables going forward.
     padding: .7em;
 }
 
+@media only screen and (max-width:600px) {
+    .groupdetails {
+        display: block;
+        text-align: center;
+    }
+    .groupdetails dt,dd{
+        float:none;
+    }
+
+}
 
 
 /* !FIXME
