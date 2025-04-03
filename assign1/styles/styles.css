@@ -220,6 +220,12 @@ a dynamic image within the flexbox. Enhancement 2
     margin: 1em;
   }
 
+  /* There are 25% viewport classes specifically for the positions page, according to the rubric. */
+  .job-left, .job-right {
+    flex: 1 0 25%;
+    margin: 1em;
+  }
+
 
 /*
 Overflow-item is similar to a line-break <br> tag, but for flexbox items.
