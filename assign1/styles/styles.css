@@ -22,11 +22,16 @@ header, nav, article, section, aside, article {
     display: block;
     overflow:hidden;
 }
-
+/* Setting H1 via shorthand */
 h1 {
-    font-size: 2.75em;
+    font: 2.75em Inconsolata, sans-serif;
 }
 
+@font-face {
+    font-family: Inconsolata;
+    src: url(fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf);
+
+}
 
 /* Global HTML tag definitions END */
 
@@ -215,6 +220,12 @@ a dynamic image within the flexbox. Enhancement 2
     margin: 1em;
   }
 
+  /* There are 25% viewport classes specifically for the positions page, according to the rubric. */
+  .job-left, .job-right {
+    flex: 1 0 25%;
+    margin: 1em;
+  }
+
 
 /*
 Overflow-item is similar to a line-break <br> tag, but for flexbox items.
@@ -377,6 +388,7 @@ It is relative and also sets the text to be white.
 
 .profile {
     border-radius: 1em;
+    border: .3em solid lightgray;
 }
 
 /*
@@ -403,19 +415,33 @@ classes, and can be used for other tables going forward.
 }
 
 .groupdetails {
+    display: flex;
+}
+.groupdetails dt {
+    float:left;
+    width: 10%;
+    padding: .5em;
+}
+.groupdetails dd {
+    float:right;
+    padding: .7em;
+}
 
-}
-.groupdetails h4 {
-    margin-block-start: 0.66em;
-    margin-block-end: 0.66em;
-}
+
 
 /* !FIXME
 .verticaltable {
     scope: none;
 }*/
 /* Section content end */
-
+/* Jobs HTML Start - Nicole */
+.job-listing {
+    border:.3em solid lightgray;
+    border-top-width: .6em;
+    border-radius: .5em;
+    padding: .5em;
+}
+h1 {}
 /* Footer content start */
 /*
 This is a static footer that should be always in the browser.
