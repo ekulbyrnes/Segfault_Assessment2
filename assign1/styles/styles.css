@@ -22,11 +22,16 @@ header, nav, article, section, aside, article {
     display: block;
     overflow:hidden;
 }
-
+/* Setting H1 via shorthand */
 h1 {
-    font-size: 2.75em;
+    font: 2.75em Inconsolata, sans-serif;
 }
 
+@font-face {
+    font-family: Inconsolata;
+    src: url(fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf);
+
+}
 
 /* Global HTML tag definitions END */
 
@@ -415,7 +420,14 @@ classes, and can be used for other tables going forward.
     scope: none;
 }*/
 /* Section content end */
-
+/* Jobs HTML Start - Nicole */
+.job-listing {
+    border:.3em solid lightgray;
+    border-top-width: .6em;
+    border-radius: .5em;
+    padding: .5em;
+}
+h1 {}
 /* Footer content start */
 /*
 This is a static footer that should be always in the browser.
