@@ -72,9 +72,10 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 .logo {
     display: inline-block;
 }
+
 .logo img {
     width: auto;
-    max-height: 20px;
+    max-height: 45px;
 }
 
 .header nav {
