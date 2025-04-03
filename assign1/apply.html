@@ -53,30 +53,29 @@
 
                     <div class="form-container"><!--Open flex container for the layout of form items-->
                         <!--The flex container is treated as if it has 12 columns-->
-                        <!--class col-6 around the job reference number and it's input to have it take up half the form width-->
+                        <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
                         <label for="jobRefNo" class="col-12">Job reference number<br><!--Label using "for" attribute linking it to its input-->
                             <input type="text" name="jobRefNo" id="jobRefNo" pattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
                         </label>
-                        
-                        <!--Force a new "row" by completing the set of 12 "columns"-->
 <!--blank line between each "row" of flex items-->
 
                         <label for="firstName" class="col-6">Name
                         <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
                             <input type="text" name="firstName" id="firstName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="First Name" required>
                         </label>
-                        <input  class="col-6" type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
+                        <input class="col-6" type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
 
                         <label for="DOB" class="col-6">Date of birth
                             <!--Text input with regex validating a pattern with 1 or 2 digits, followed by a "/", another 1 or 2 digits, followed by another "/" and then 4 more digits-->
                             <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
                         </label>
 
-                        <span class="col-6">
-                            <fieldset class="gender-fieldset"><!--Fieldset containing all gender items-->
+                        <!--IMPORTANT! ask davi if this use of div is acceptable-->
+                        <div class="col-6"><!--Contain entire gender fieldset in a flex-item--> 
+                            <fieldset id="genderFieldset" ><!--Fieldset containing all gender items-->
                                 <legend><h4>Gender</h4></legend>
-                                <span class="gender-flex-container"><!--Flex container containing all gender items-->
-                                    <label class="gender-flex-item" for="female"><!--Flex item ensuring that the radio input and label for "Female" wrap at the same time-->
+                                <div class="gender-flex-container"><!--Flex container containing all gender items-->
+                                    <label for="female" class="gender-flex-item" ><!--Flex item ensuring that the radio input and label for "Female" wrap at the same time-->
                                         <input type="radio" name="gender" value="female" id="female" required>
                                         Female
                                     </label>
@@ -84,6 +83,7 @@
                                         <input type="radio" name="gender" value="male" id="male">
                                         Male
                                     </label>
+
                                     <span class="flex-break"></span><!--Span with class "flex-break" fills the remaining width of the current row, forcing a new row-->
                                     <label for="other" class="gender-flex-item">
                                         <input type="radio" name="gender" value="other" id="other">
@@ -91,9 +91,9 @@
                                     </label>
                                     <!--Flex item ensuring the gender text input remains large enough to use-->
                                     <input type="text" name="othergender" id="othergender" pattern="[a-zA-Z -]{1,20}">
-                                </span>
+                                </div>
                             </fieldset>
-                        </span>             
+                        </div>
 
                         <!--Full row flex item to contain address heading-->
                         <h3 class="col-12">Address</h3>

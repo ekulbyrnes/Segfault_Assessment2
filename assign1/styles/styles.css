@@ -495,7 +495,6 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 .col-6{
     flex-basis: 50%;
     min-width: 180px;
-    background: salmon;
 }
 
 /* Flex item with a width of 4 columns */
@@ -552,7 +551,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 /* Override margins for gender fieldset */
-.gender-fieldset{
+#genderFieldset{
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -560,7 +559,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 /* Label styling within gender field */
-span.gender-flex-container label{
+div.gender-flex-container label{
     font-size: 1em !important;
 }
 
@@ -569,11 +568,16 @@ span.gender-flex-container label{
 input[type=text],input[type=email]{
     width: calc(100% - 25px);
     padding:4px;
-    margin:2px 0 15px;
+    margin:2px 0 15px 0;
     background-color: whitesmoke;
     border:2px solid lightgray;
     border-radius:4px;
     outline: none;
+}
+
+/* Padding and margin from the input are added to the flex-basis width, so this subtracts that extra width from the flex-basis */
+input.col-6{
+    flex-basis: calc(50% - 12px)
 }
 
 /* Textarea styling */
@@ -638,6 +642,7 @@ input[type=submit]{
     font-weight: bold;
 }
 
+/* Job reference number text input is within a col-12 flex item, but I want the text box to be sized the same as a text input within a col-6 */
 #jobRefNo{
     width: calc(50% - 25px);
 }
