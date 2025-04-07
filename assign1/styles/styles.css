@@ -19,7 +19,7 @@ html, body {
     font-family: sans-serif;
     min-width: 500px;
 }
-header, nav, article, section, aside, article {
+header, nav, section, aside {
     display: block;
     overflow:hidden;
 }
@@ -165,6 +165,12 @@ tables, sections, or asides.
 }
 .no-list-decor li {
     list-style-type: none;
+}
+
+/* Specific text decoration on bullets in lists */ /* lbyrnes */
+.underscore {
+    list-style-type:"_ "; /* &#rdsh */
+    padding: 1.5em;
 }
 
 /* Utility classes END */
@@ -503,7 +509,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 
-/* OLD APPLY.CSS 
+/* OLD APPLY.CSS
    - Marcus */
 /* flex */
 /* Flex container for all flex items in the apply form. */
@@ -700,4 +706,55 @@ font-size: 1.2em;
 form fieldset div h3,h4{
 margin-bottom: 2px;
 margin-top: 0px;
+}
+
+/* Article styling below designed by Luke for use in the reach.html page.
+Made use of the flex-settings from other pages and added additional parameters like
+colors, paddings, and box-shadowing
+This provides a crisp article-style layout that centres the content on the page
+using the column classes, but with additional formatting applied for this segment.
+Reference: https://www.w3schools.com. */
+
+/* Made use of general HTML elements and narrowed element specificity using nested elements */
+
+article {
+    /* Switch me on to switch style */
+    /* background-color:black;
+    color:  greenyellow;
+    font-family: 'Courier New', Courier, monospace; */
+    margin: 1em;
+    padding: 2em;
+    box-shadow: 1px 1px 1px 10px gray;
+    display: flex;
+    width:50%;
+    max-width: 100%;
+    justify-content: left;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+article section {
+    padding: 1em;
+    display: inline;
+    width:100%;
+    max-width: 100%;
+    justify-content: left;
+    justify-self: left;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+article section .stub {
+    padding: 1em;
+    display: inline;
+    width:100%;
+    max-width: 100%;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
