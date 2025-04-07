@@ -6,7 +6,7 @@
     gap: 100px;
     margin-top: 5%;
     margin-bottom: 3%;
-    
+
 }
 
 .job-link {
@@ -60,7 +60,7 @@
     line-height: 50px;
 }
 
-#infoLogo {
+.infoLogo {
     position: relative;
     top: 20px;
     right: 7px;
@@ -68,7 +68,7 @@
 }
 /*This might need to go into the enhancement page*/
 /*
-citation: https://www.geeksforgeeks.org/css-floating-animation/ 
+citation: https://www.geeksforgeeks.org/css-floating-animation/
 */
 @keyframes float {
     0% {
