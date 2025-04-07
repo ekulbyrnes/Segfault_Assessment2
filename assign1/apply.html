@@ -27,6 +27,7 @@
                     <li><a href="apply.html" class="navpage">Work with Us</a></li>
                     <li><a href="about.html" class="navpage">About Us</a></li>
                     <li><a href="jobs.html" class="navpage">Jobs</a></li>
+                    <li><a href="reach.html" class="navpage">Reach Out</a></li><!-- added lbyrnes-->
                     <li><a href="enhancements.html" class="navpage">Enhancements</a></li>
                 </ul>
             </nav>
@@ -71,7 +72,7 @@
                         </label>
 
                         <!--IMPORTANT! ask davi if this use of div is acceptable-->
-                        <div class="col-6"><!--Contain entire gender fieldset in a flex-item--> 
+                        <div class="col-6"><!--Contain entire gender fieldset in a flex-item-->
                             <fieldset id="genderFieldset" ><!--Fieldset containing all gender items-->
                                 <legend><h4>Gender</h4></legend>
                                 <div class="gender-flex-container"><!--Flex container containing all gender items-->
@@ -105,7 +106,7 @@
                         <label class="col-6" for="suburb">Suburb
                             <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
                         </label>
-                        
+
                         <label class="col-4" for="postcode">Postcode<!--Flex item with column width of 4 to give space for the "state" dropdown on the same line-->
                             <input type="text" name="postcode" id="postcode" pattern="\d{4}" maxlength="4" required><!--Text input with regex validating exactly 4 digits-->
                         </label>
@@ -158,13 +159,13 @@
                                 <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
                                 Other
                         </label>
-    
+
                         <textarea class="col-12" name="skill-other-details" id="skill-other-details" placeholder="Other skills..." rows="8" cols="70"></textarea>
 
                         <input class="col-12" type="submit" value="Apply"><!--Button to submit form-->
                     </div>
                 </fieldset>
-            </form>  
+            </form>
         </section>
 
 
