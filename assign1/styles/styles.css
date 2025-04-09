@@ -758,3 +758,151 @@ article section .stub {
     align-items: flex-end;
     flex-wrap: wrap;
 }
+
+#job {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.job-link {
+    text-decoration: none;
+    color: rgb(255, 243, 243);
+}
+
+#job1 {
+    background-image: url(./images/kotlin.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50em;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 50px;
+}
+
+#job2 {
+    background-image: url(./images/SRE.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50em;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 50px;
+}
+
+.heading2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+#siteInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    line-height: 50px;
+}
+
+.infoLogo {
+    position: relative;
+    top: 20px;
+    right: 7px;
+    animation: float 1.2s ease-in-out infinite;
+}
+/*This might need to go into the enhancement page*/
+/*
+citation: https://www.geeksforgeeks.org/css-floating-animation/
+*/
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#howToStart {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 8%;
+}
+
+.heading3 {
+    font-size: 26px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    padding: 15px;
+}
+
+#achieved {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8%;
+    gap: 100px;
+}
+
+.achievement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    line-height: 0;
+    overflow: visible;
+    width: 20em;
+    height: 10em
+}
+
+#worker {
+    font-size: 34px;
+}
+
+#number1 {
+    font-size: 34px;
+}
+
+.child1 {
+    font-size: 22px;
+}
+
+.child2 {
+    color: gray;
+}
+
+#info {
+    color: rgb(63, 63, 63);
+}
+
+iframe{
+    display: block;
+    justify-self: center;
+    height: 450px;
+    width: 800px;
+    margin-bottom: 4em;
+    margin-top: 1em;
+}
