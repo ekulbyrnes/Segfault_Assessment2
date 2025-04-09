@@ -32,14 +32,14 @@
             </nav>
         </div>
     </header>
-    <!-- Element below and contents Completed by -- lbyrnes -->
+    <!-- Element below and contents Completed by (lbyrnes)-->
     <article>
         <section>
             <h1><span class="terminalblink">_</span>Did we miss something?</h1>
             <p>Got a skill that might be useful, but no match in the jobs page?</p>
             <p><em>We might not have even thought about it yet!</em></p>
-            <p>Tell us about what you could bring to the table at <img class="infoLogo" src ="./images/logo.png" alt="logo" width="200px"> to see if there's a shared vision to discuss together.</p>
-            <p>At <img class="infoLogo" src ="./images/logo.png" alt="logo" width="200px">, we're looking for switched-on individuals who can: </p>
+            <p>Tell us about what you could bring to the table at <img class="infoLogo" src ="./images/logo.png" alt="logo" width="200"> to see if there's a shared vision to discuss together.</p>
+            <p>At <img class="infoLogo" src ="./images/logo.png" alt="logo" width="200">, we're looking for switched-on individuals who can: </p>
             <ul class="underscore">
                 <li>Anticipate problems before they occur</li>
                 <li>Plan early, and update often</li>
@@ -52,7 +52,7 @@
             <p>If your idea works for our mutual benefit, we'd love to hear from you!</p>
         </section>
         <section>
-        <!--Start of EOI form -- lbyrnes - structure copied and adjusted from Marcus's apply.html form, with elements updated and additional parameters added. -->
+        <!--Start of EOI form (lbyrnes) - structure copied and adjusted from Marcus's apply.html form, with elements updated and additional parameters added. -->
             <form id="reach-out" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php"><!--Form posts data to the swinburne mercury test server-->
                 <fieldset class=""><!-- contain the form elements-->
                     <legend class="center-text"><h2>Tell us what you can do</h2></legend><!-- Title of form -->
@@ -70,7 +70,7 @@
                         </label>
                         <!-- Update email prompts -->
                         <label class="col-6" for="email">Email me at
-                            <input type="email" name="email" id="email" placeholder="myname@example.com"required>
+                            <input type="email" name="email" id="email" placeholder="myname@example.com" required>
                         </label>
                         <!-- Skill and value section -->
                         <h3 class="col-12">Skills and Value</h3>
@@ -88,27 +88,31 @@
                         </label>
                         <!-- renamed and relabelled elements from apply.html by lbyrnes -->
                         <textarea class="col-12" name="motivation-details" id="motivation-details" placeholder="Segfault would benefit from my contributions because..." rows="12" cols="70"></textarea>
-                        <h2 class="col-12">I have mastered...</h4>
+                        <h2 class="col-12">I have mastered...</h2>
                         <!--Check boxes for skills-->
-                        <label class="col-3" for="skill-java">
+                        <label class="col-2" for="skill-java">
                             <input type="checkbox" name="skill-java" value="skill-java" id="skill-java">
                             Java
                         </label>
-                        <label class="col-3" for="skill-cpp">
+                        <label class="col-2" for="skill-cpp">
                                 <input type="checkbox" name="skill-cpp" value="skill-cpp" id="skill-cpp">
                                 C++
                         </label>
-                        <label class="col-3" for="skill-php">
+                        <label class="col-2" for="skill-php">
                                 <input type="checkbox" name="skill-php" value="skill-php" id="skill-php">
                                 PHP
-                        </label>
-                        <label class="col-3" for="skill-sql">
-                                <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
-                                MySQL
                         </label>
                         <label class="col-2" for="skill-python">
                                 <input type="checkbox" name="skill-python" value="skill-python" id="skill-python">
                                 Python
+                        </label>
+                        <label class="col-2" for="skill-sql">
+                                <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
+                                MySQL
+                        </label>
+                        <label class="col-2" for="skill-postgres">
+                                <input type="checkbox" name="skill-postgres" value="skill-postgres" id="skill-postgres">
+                                Postgres
                         </label>
                         <label class="col-10" for="skill-other">
                                 <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
