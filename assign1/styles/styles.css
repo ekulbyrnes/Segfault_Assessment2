@@ -898,7 +898,7 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     color: rgb(63, 63, 63);
 }
 
-iframe{
+embed{
     display: block;
     justify-self: center;
     height: 450px;
