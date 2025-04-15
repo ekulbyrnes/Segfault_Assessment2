@@ -812,6 +812,7 @@ article section .stub {
 
 .infoLogo {
     position: relative;
+    width: 200px;
     top: 20px;
     right: 7px;
     animation: float 1.2s ease-in-out infinite;
