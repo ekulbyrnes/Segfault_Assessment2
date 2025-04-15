@@ -432,24 +432,28 @@ could be cleaner with flex-basis/growth. -- Nicole */
     display: flex;
 }
 .groupdetails dt {
-    float:left;
-    width: 10%;
+    text-align: right;
+    flex-basis: 10%;
     padding: .5em;
 }
 .groupdetails dd {
-    float:right;
-    padding: .7em;
+    text-align: left;
+    flex-basis: 15%;
+    margin-left: 0px;
+    margin-right: 3%;
+    padding: .5em;
 }
 
-@media only screen and (max-width:600px) {
+
+@media only screen and (max-width:750px) {
     .groupdetails {
         display: block;
         text-align: center;
     }
-    .groupdetails dt,dd{
+    .groupdetails dt, .groupdetails dd{
         float:none;
+        text-align: left;
     }
-
 }
 
 /* !FIXME
