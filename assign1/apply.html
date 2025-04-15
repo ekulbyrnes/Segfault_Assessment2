@@ -55,16 +55,21 @@
                     <div class="form-container"><!--Open flex container for the layout of form items-->
                         <!--The flex container is treated as if it has 12 columns-->
                         <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
-                        <label for="jobRefNo" class="col-12">Job reference number<br><!--Label using "for" attribute linking it to its input-->
+                        
+                        <label for="jobRefNo" class="col-6">Job reference number<br><!--Label using "for" attribute linking it to its input-->
                             <input type="text" name="jobRefNo" id="jobRefNo" pattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
                         </label>
+                        <!--Empty element with class "col-6" to complete first row-->
+                        <aside class="col-6"></aside>
 <!--blank line between each "row" of flex items-->
 
                         <label for="firstName" class="col-6">Name
                         <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
                             <input type="text" name="firstName" id="firstName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="First Name" required>
                         </label>
-                        <input class="col-6" type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
+                        <label for="lastName" class="col-6">
+                            <input type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
+                        </label>
 
                         <label for="DOB" class="col-6">Date of birth
                             <!--Text input with regex validating a pattern with 1 or 2 digits, followed by a "/", another 1 or 2 digits, followed by another "/" and then 4 more digits-->
