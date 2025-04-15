@@ -128,19 +128,8 @@ tables, sections, or asides.
 .left-text {
     text-align: left !important;
 }
-.inline {
-    display: inline-block;
-}
-
 .two-grid {
     width: 45%;
-}
-
-.left {
-    float: left;
-}
-.right {
-    float:right;
 }
 
 /* No text decoration on links or no bullets on lists, if desired! */
@@ -253,23 +242,6 @@ flex-shout/side-panel elements to 'jut out' from the left.
     padding: 0 1em;
   }
 
-.side-panel {
-    transform: translate(-20%, 0%);
-    transition: 0.5s;
-}
-.side-panel:hover {
-    transform: translate(-6%, 0%);
-    /* using -6 to cancel out focus padding */
-}
-.section-image {
-    box-sizing: border-box;
-    overflow: visible;
-}
-.section-image img {
-    width: 100%;
-    border-radius: 1em;
-}
-
 /* TODO: This could be folded into display-flex technically.
 We use center-flex and newline-flex to organise the flexbox that is in the main 'hero' section, to create a bold header
 and a subheader call-to-action.
@@ -297,7 +269,6 @@ to change opacity.
 */
 .terminalblink {
     animation: blinker 0.3s infinite;
-
 }
 
 @keyframes blinker {
@@ -521,16 +492,6 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
     min-width: 180px;
 }
 
-/* Flex item with a width of 9 columns. UNUSED */
-.col-9{
-    flex-basis: 75%;
-}
-
-/* Flex item with a width of 8 columns. UNUSED */
-.col-8{
-    flex-basis: 66.667%;
-}
-
 /* Flex item with a width of 6 columns */
 .col-6{
     flex-basis: 50%;
@@ -543,21 +504,11 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
     min-width: 86px;
 }
 
-/* Flex item with a width of 3 columns. UNUSED */
-.col-3{
-    flex-basis: 25%;
-}
-
 /* Flex item with a width of 2 columns */
 .col-2{
     flex-basis: 16.667%;
     min-width: 90px;
     align-self: stretch;
-}
-
-/* Flex item with a width of 1 column.  UNUSED */
-.col-1{
-    flex-basis: 8.333%;
 }
 
 /* Flex item to force a new row */
@@ -883,6 +834,7 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     color: rgb(63, 63, 63);
 }
 
+/* Styling of embedded video on index page - Marcus */
 embed{
     display: block;
     justify-self: center;
