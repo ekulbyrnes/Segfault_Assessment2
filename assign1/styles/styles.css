@@ -36,18 +36,6 @@ h1 {
 
 /* Global HTML tag definitions END */
 
-/* ID section -
-this can be used for anchor linking or single ID CSS assignment
-- Nicole
-*/
-#enhancement_1 {
-
-}
-
-#enhancement_2 {
-
-}
-
 /* Header and Nav START */
 /*
 These are the classes mostly associated with the navigation element, of what the header tag in our HTML contains the unordered list
@@ -444,7 +432,6 @@ could be cleaner with flex-basis/growth. -- Nicole */
     padding: .5em;
 }
 
-
 @media only screen and (max-width:750px) {
     .groupdetails {
         display: block;
@@ -468,7 +455,7 @@ could be cleaner with flex-basis/growth. -- Nicole */
     border-radius: .5em;
     padding: .5em;
 }
-h1 {}
+
 /* Footer content start */
 /*
 This is a static footer that should be always in the browser.
