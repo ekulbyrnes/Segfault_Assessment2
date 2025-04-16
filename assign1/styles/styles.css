@@ -612,7 +612,7 @@ input[type=text],input[type=email], input[type=date]{
 
 /* Padding and margin from the input are added to the flex-basis width, so this subtracts that extra width from the flex-basis */
 input.col-6{
-    flex-basis: calc(50% - 12px)
+    flex-basis: calc(50% - 12px);
 }
 
 /* Textarea styling */
