@@ -66,9 +66,9 @@
                         <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
                         <label for="firstName" class="col-6">Name
                         <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
-                            <input type="text" name="firstName" id="firstName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="First Name" required>
+                            <input type="text" name="firstName" id="firstName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
                         </label>
-                        <input class="col-6" type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
+                        <input class="col-6" type="text" name="lastName" id="lastName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
                         <!-- Update phone prompts -->
                         <label class="" for="phonenumber">Call me on
                             <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" placeholder="+61" required><!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
