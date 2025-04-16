@@ -816,6 +816,10 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
     margin-bottom: 8%;
 }
 
+#howToStart > div {
+    flex-basis: 20%;
+}
+
 .heading3 {
     font-size: 26px;
     border-bottom: 1px solid rgb(202, 202, 202);
