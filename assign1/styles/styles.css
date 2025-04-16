@@ -61,6 +61,7 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 }
 
 .header aside {
+    flex: 1 0 20%;
     justify-content: flex-start;
 }
 .logo {
@@ -68,13 +69,14 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 }
 
 .logo img {
-    width: auto;
+    width: 100%;
     max-height: 45px;
 }
 
 .header nav {
     justify-content: flex-end;
     align-content: center;
+    flex: 1 0 80%;
     top: 0px;
     color: white;
 }
@@ -82,13 +84,16 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 /* margin and padding should come from navpadding */
     list-style-type: none;
     overflow: hidden;
+    width: 100%;
+    padding: 0;
     margin: 0;
 
 }
 .header nav li {
     /* keeps items in float left with flex-justify */
     margin-right: 1em;
-    float: left;
+    display: inline-flex;
+    float: right;
 }
 /* NAV and related CSS */
 .navpage {
@@ -104,6 +109,31 @@ navpage is for links, and creates a 'small' rotation when hovered on.
     padding-top: 15px;
     padding-bottom: 5px;
     transform: rotate(-5deg);
+}
+
+@media only screen and (max-width:1150px) {
+    .navpadding {
+        display: block;
+    }
+    .header nav {
+        text-align: center;
+    }
+    .header aside {
+        margin: 0 auto;
+        width: 20%;
+        min-width: 100px;
+    }
+    .header nav li {
+        margin: 0;
+        float:none;
+    }
+
+}
+
+@media only screen and (max-width:800px) {
+    .header nav li {
+        float: none;
+    }
 }
 
 /* Header and Nav END */
