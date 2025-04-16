@@ -843,3 +843,12 @@ embed{
     margin-bottom: 4em;
     margin-top: 1em;
 }
+
+/* Left align text within asides on the job page - Marcus */
+aside.job-listing > * {
+    text-align: left;
+}
+
+aside.job-listing > h3 {
+    text-align: center;
+}
