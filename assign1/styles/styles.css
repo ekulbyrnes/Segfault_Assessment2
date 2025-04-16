@@ -585,7 +585,7 @@ div.gender-flex-container label{
 
 /* Input styling */
 /* Textbox & email styling */
-input[type=text],input[type=email]{
+input[type=text],input[type=email], input[type=date]{
     width: calc(100% - 25px);
     padding:4px;
     margin:2px 0 15px 0;

@@ -63,16 +63,15 @@
     <!--blank line between each "row" of flex items-->
 
                     <label for="firstName" class="col-6">Name
-                    <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
-                        <input type="text" name="firstName" id="firstName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="First Name" required>
+                    <!--Text input with regex validating between 1 and 20 letters. Using "(?:\s*\-*[a-zA-Z]){1,20}" allows the user to input spaces or dashes for multi-word names -->
+                        <input type="text" name="firstName" id="firstName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
                     </label>
                     <label for="lastName" class="col-6">
-                        <input type="text" name="lastName" id="lastName" pattern="[\p{Letter}\p{Mark}]{1,20}" maxlength="20" placeholder="Last Name" required>
+                        <input type="text" name="lastName" id="lastName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
                     </label>
 
                     <label for="DOB" class="col-6">Date of birth
-                        <!--Text input with regex validating a pattern with 1 or 2 digits, followed by a "/", another 1 or 2 digits, followed by another "/" and then 4 more digits-->
-                        <input type="text" name="DOB" id="DOB" pattern="\d{1,2}\/\d{1,2}\/\d{4}" placeholder="dd/mm/yyyy" required>
+                        <input type="date" name="DOB" id="DOB" required>
                     </label>
 
                     <!--IMPORTANT! ask davi if this use of div is acceptable-->
@@ -129,7 +128,8 @@
                     </label>
 
                     <label class="col-6" for="phonenumber">Phone Number
-                        <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required><!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
+                        <!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
+                        <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required>
                     </label>
 
                     <label class="col-6" for="email">Email Address
@@ -144,24 +144,24 @@
                         Java
                     </label>
                     <label class="col-2" for="skill-cpp">
-                            <input type="checkbox" name="skill-cpp" value="skill-cpp" id="skill-cpp">
-                            C++
+                        <input type="checkbox" name="skill-cpp" value="skill-cpp" id="skill-cpp">
+                        C++
                     </label>
                     <label class="col-2" for="skill-php">
-                            <input type="checkbox" name="skill-php" value="skill-php" id="skill-php">
-                            PHP
+                        <input type="checkbox" name="skill-php" value="skill-php" id="skill-php">
+                        PHP
                     </label>
                     <label class="col-2" for="skill-sql">
-                            <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
-                            MySQL
+                        <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
+                        MySQL
                     </label>
                     <label class="col-2" for="skill-python">
-                            <input type="checkbox" name="skill-python" value="skill-python" id="skill-python">
-                            Python
+                        <input type="checkbox" name="skill-python" value="skill-python" id="skill-python">
+                        Python
                     </label>
                     <label class="col-2" for="skill-other">
-                            <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
-                            Other
+                        <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
+                        Other
                     </label>
 
                     <textarea class="col-12" name="skill-other-details" id="skill-other-details" placeholder="Other skills..." rows="8" cols="70"></textarea>
