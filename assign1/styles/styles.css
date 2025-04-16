@@ -207,7 +207,6 @@ a dynamic image within the flexbox. Enhancement 2
 
 @keyframes enhancementtarget {
   from {background-color: yellow;}
-  to {background-color: ;}
 }
 .details-flex {
 
