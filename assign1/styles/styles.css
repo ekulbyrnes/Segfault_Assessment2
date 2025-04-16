@@ -865,8 +865,9 @@ citation: https://www.geeksforgeeks.org/css-floating-animation/
 }
 
 /* Styling of embedded video on index page - Marcus */
-embed{
-    display: block;
+embed {
+    display: inline-flex;
+    flex: 1 1 100%;
     justify-self: center;
     height: 450px;
     width: 800px;
