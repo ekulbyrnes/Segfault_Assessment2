@@ -194,6 +194,21 @@ a dynamic image within the flexbox. Enhancement 2
 - Nicole
 */
 
+#enhancement_1:target {
+    animation: enhancementtarget 2s normal;
+    animation-iteration-count: 1;
+
+}
+#enhancement_2:target {
+    animation: enhancementtarget 2s normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes enhancementtarget {
+  from {background-color: yellow;}
+  to {background-color: ;}
+}
 .details-flex {
 
     display: flex;
