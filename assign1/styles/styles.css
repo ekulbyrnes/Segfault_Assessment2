@@ -470,8 +470,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
 }
 
 
-/* OLD APPLY.CSS
-   - Marcus */
+/* Apply Styling - Marcus */
 /* flex */
 /* Flex container for all flex items in the apply form. */
 .form-container{
@@ -642,6 +641,7 @@ form fieldset div h3,h4{
 margin-bottom: 2px;
 margin-top: 0px;
 }
+/* End Apply Styling - Marcus */
 
 /* Article styling below designed by Luke for use in the reach.html page.
 Made use of the flex-settings from other pages and added additional parameters like
