@@ -17,7 +17,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    min-width: 500px;
+   /*min-width: 500px;*/
 }
 header, nav, section, aside {
     display: block;
@@ -114,6 +114,7 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 @media only screen and (max-width:1150px) {
     .navpadding {
         display: block;
+        padding: 0;
     }
     .header nav {
         text-align: center;
