@@ -734,6 +734,15 @@ article section {
     flex-wrap: wrap;
 }
 
+article .form-container {
+    align-items: flex-start;
+    justify-content: left;
+}
+
+article .form-container .form-label {
+    font-size: 1.25em;
+}
+
 article section .stub {
     padding: 1em;
     display: inline;
