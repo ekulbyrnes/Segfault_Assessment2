@@ -560,6 +560,13 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
     flex-basis: 100%;
 }
 
+/* change the label for job reference number to col-6 instead of col-12 when the window gets too small to align it with other elements. */
+@media only screen and (max-width:1046px) {
+    #jobRefNo-label{
+        flex-basis: 50% !important;
+    }
+}
+
 /* Gender */
 /* Flex container for gender items */
 .gender-flex-container{
@@ -577,7 +584,7 @@ This can be more flashy, has aside, lists and link tags defined for us to insert
     flex-basis: 90px;
 }
 
-/* Flex item for other gender text input */
+/* Flex item for  the 'other gender' text input */
 #othergender{
     flex-basis: 50% !important;
     min-width: 140px !important;
