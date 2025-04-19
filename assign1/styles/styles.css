@@ -45,7 +45,7 @@ a small portion of the screen, such as links, lists and asides.
 navpage is for links, and creates a 'small' rotation when hovered on.
 - Nicole
 */
-.header {
+header {
     position: sticky;
     z-index: 1000;
     background-color: black;
@@ -60,7 +60,7 @@ navpage is for links, and creates a 'small' rotation when hovered on.
     justify-content: space-between !important;
 }
 
-.header aside {
+header aside {
     flex: 1 0 20%;
     justify-content: flex-start;
 }
@@ -73,14 +73,14 @@ navpage is for links, and creates a 'small' rotation when hovered on.
     max-height: 45px;
 }
 
-.header nav {
+header nav {
     justify-content: flex-end;
     align-content: center;
     flex: 1 0 80%;
     top: 0px;
     color: white;
 }
-.header nav ul {
+header nav ul {
 /* margin and padding should come from navpadding */
     list-style-type: none;
     overflow: hidden;
@@ -89,7 +89,7 @@ navpage is for links, and creates a 'small' rotation when hovered on.
     margin: 0;
 
 }
-.header nav li {
+header nav li {
     /* keeps items in float left with flex-justify */
     margin-right: 1em;
     display: inline-flex;
@@ -116,15 +116,15 @@ navpage is for links, and creates a 'small' rotation when hovered on.
         display: block;
         padding: 0;
     }
-    .header nav {
+    header nav {
         text-align: center;
     }
-    .header aside {
+    header aside {
         margin: 0 auto;
         width: 20%;
         min-width: 100px;
     }
-    .header nav li {
+    header nav li {
         margin: 0;
         float:none;
     }
@@ -132,7 +132,7 @@ navpage is for links, and creates a 'small' rotation when hovered on.
 }
 
 @media only screen and (max-width:800px) {
-    .header nav li {
+    header nav li {
         float: none;
     }
 }
