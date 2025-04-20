@@ -420,6 +420,7 @@ classes, and can be used for other tables going forward.
 .solidtable thead {
     font-size: 14px;
     font-style: italic;
+    font-weight: bold;
 }
 
 .solidtable td {
