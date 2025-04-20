@@ -20,6 +20,11 @@ html, body {
    /*min-width: 500px;*/
 }
 
+header, nav, section, aside {
+    display: block;
+    overflow:hidden;
+}
+
 /* Setting H1 via shorthand */
 h1 {
     font: 2.75em Inconsolata, sans-serif;
