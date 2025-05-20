@@ -4,35 +4,21 @@
     <meta name="author" content="SegFault Services">
     <meta name="charset" content="utf-8">
     <meta name="keywords" content="computing, recruiting, services">
-    <title>Positions - SegFault Services</title>
     <!-- Adding in the global styles -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <title>Positions - SegFault Services</title>
 </head>
 
 
 <body>
     <!-- Header with aside logo and navbar -->
-    <header>
-        <div class="navpadding">
-            <aside>
-                <a href="index.html" class="logo"><img src="logo.png" alt="Segfault logo" width="80"></a>
-            </aside>
-
-            <nav class="navbar">
-                <ul class="navmenu">
-                    <li><a href="index.html" class="navpage">Homepage</a></li>
-                    <li><a href="apply.html" class="navpage">Work with Us</a></li>
-                    <li><a href="about.html" class="navpage">About Us</a></li>
-                    <li><a href="jobs.html" class="navpage">Jobs</a></li>
-                    <li><a href="reach.html" class="navpage">Reach Out</a></li><!-- added (lbyrnes)-->
-                    <li><a href="enhancements.html" class="navpage">Enhancements</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        include "include/header.inc";
+    ?>
+    <!-- end of header -->
 
     <section class="slideshow center-flex">
         <h1>Positions Available</h1><br>
@@ -167,18 +153,10 @@
         </div>
     </section>
 
-    <section class="pagefooter">
-        <img src="logo.png" alt="Segfault logo" width="300">
-        <aside>
-            <ul>
-                <li><a href="mailto:100589839@student.swin.edu.au">&#9993; Mail Us</a></li>
-            </ul>
-        </aside>
-    </section>
-
-    <footer class="staticfooter center-text">
-        <span>COS10032 Assignment One</span>
-    </footer>
+    <!-- Footer -->
+    <?php
+        include "include/footer.inc";
+    ?>
 
 </body>
 </html>

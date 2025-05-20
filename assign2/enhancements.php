@@ -15,24 +15,11 @@
 
 <body>
     <!-- Header with aside logo and navbar -->
-    <header>
-        <div class="navpadding" id="enhancement_2">
-            <aside>
-                <a href="index.html" class="logo"><img src="logo.png" alt="Segfault logo" width="80"></a>
-            </aside>
+    <?php
+        include "include/header.inc";
+    ?>
+    <!-- end of header -->
 
-            <nav class="navbar" >
-                <ul class="navmenu">
-                    <li><a href="index.html" class="navpage">Homepage</a></li>
-                    <li><a href="apply.html" class="navpage">Work with Us</a></li>
-                    <li><a href="about.html" class="navpage">About Us</a></li>
-                    <li><a href="jobs.html" class="navpage">Jobs</a></li>
-                    <li><a href="reach.html" class="navpage">Reach Out</a></li><!-- added lbyrnes-->
-                    <li><a href="enhancements.html" class="navpage">Enhancements</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
     <!-- Nicole HTML START -->
     <section class="slideshow center-flex">
         <h1>Enhancements</h1><br>
@@ -123,21 +110,10 @@
             </aside>
         </div>
     </section>
-        <!-- Nicole HTML END -->
-        <!-- Nicole Footer -->
-        <section class="pagefooter">
-            <!-- Warning here since there is no Header HTML Tag -->
-            <img src="logo.png" alt="Segfault logo" width="300">
-            <aside>
-                <ul>
-                    <li><a href="mailto:100589839@student.swin.edu.au">&#9993; Mail Us</a></li>
-                </ul>
-            </aside>
-        </section>
-
-    <footer class="staticfooter center-text">
-        <span>COS10032 Assignment One</span>
-    </footer>
-    <!-- Nicole END -->
+    <!-- Nicole HTML END -->
+    <!-- Nicole Footer -->
+    <?php
+        include "include/footer.inc";
+    ?>
 </body>
 </html>

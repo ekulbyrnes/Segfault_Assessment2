@@ -4,34 +4,21 @@
     <meta name="author" content="SegFault Services">
     <meta name="charset" content="utf-8">
     <meta name="keywords" content="computing, recruiting, services">
-    <title>Reach Out - SegFault Services</title>
+    
     <!-- Adding in the global styles -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <title>Reach Out - SegFault Services</title>
 </head>
 <body>
     <!-- Header with aside logo and navbar -->
-    <header>
-        <div class="navpadding">
-            <aside>
-                <a href="index.html" class="logo"><img src="logo.png" alt="Segfault logo" width="80"></a>
-            </aside>
-
-            <nav class="navbar">
-                <ul class="navmenu">
-                    <li><a href="index.html" class="navpage">Homepage</a></li>
-                    <li><a href="apply.html" class="navpage">Work with Us</a></li>
-                    <li><a href="about.html" class="navpage">About Us</a></li>
-                    <li><a href="jobs.html" class="navpage">Jobs</a></li>
-                    <li><a href="reach.html" class="navpage">Reach Out</a></li><!-- added lbyrnes-->
-                    <li><a href="enhancements.html" class="navpage">Enhancements</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        include "include/header.inc";
+    ?>
+    <!-- end of header -->
 
     <section class="slideshow center-flex">
         <h1>Reach Out</h1><br>
@@ -64,27 +51,23 @@
                     <div class="form-container"><!-- Duplicate of Apply form. Open flex container for the layout of form items-->
                         <!--The flex container is treated as if it has 12 columns-->
                         <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
+                        <label for="firstName" class="col-6">Name
                         <!--Text input with regex validating between 1 and 20 letters. Using "[\p{Letter}\p{Mark} ]" to allow special characters from other languages but not numbers or symbols-->
-                        <span class="col-4 form-label">Name
-                            <label for="firstName" class="col-4">
-                                <input type="text" name="firstName" id="firstName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
-                            </label>
-                            <label for="lastName" class="col-4">
-                                <input type="text" name="lastName" id="lastName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
-                            </label>
-                        </span>
+                            <input type="text" name="firstName" id="firstName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
+                        </label>
+                        <input class="col-6" type="text" name="lastName" id="lastName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
                         <!-- Update phone prompts -->
-                        <label class="col-4" for="phonenumber">Call me on
+                        <label class="" for="phonenumber">Call me on
                             <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" placeholder="+61" required><!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
                         </label>
                         <!-- Update email prompts -->
-                        <label class="col-4" for="email">Email me at
+                        <label class="col-6" for="email">Email me at
                             <input type="email" name="email" id="email" placeholder="myname@example.com" required>
                         </label>
                         <!-- Skill and value section -->
                         <h3 class="col-12">Skills and Value</h3>
                         <!--Flex item with a column width of 10 containing the "What do you bring to Segfault form" dropdown-->
-                        <label for="state">Where are you at?<br>
+                        <label class="col-10" for="state">Where are you at?<br>
                             <select name="state" id="state" required>
                                 <option value="">---</option><!--Placeholder option, needed due to the select element having the attribute "required"-->
                                 <!-- Updated option sequence by lbyrnes -->
@@ -119,7 +102,11 @@
                                 <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
                                 MySQL
                         </label>
-                        <label for="skill-other">
+                        <label class="col-2" for="skill-postgres">
+                                <input type="checkbox" name="skill-postgres" value="skill-postgres" id="skill-postgres">
+                                Postgres
+                        </label>
+                        <label class="col-10" for="skill-other">
                                 <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
                                 Other - let me tell you below!
                         </label>
@@ -133,19 +120,10 @@
         </section>
     </article>
     <!-- end of block-level lbyrnes contribution for this page -->
-    <section class="pagefooter">
-        <img src="logo.png" alt="Segfault logo" width="300">
-        <aside>
-            <ul>
-                <!-- update mailto: reference for this page only to go to lbyrnes -->
-                <li><a href="mailto:7194587@student.swin.edu.au">&#9993; Mail Us</a></li>
-            </ul>
-        </aside>
-    </section>
-
-    <footer class="staticfooter center-text">
-        <span>COS10032 Assignment One</span>
-    </footer>
+    <!-- Footer -->
+    <?php
+        include "include/footer.inc";
+    ?>
 
 </body>
 </html>

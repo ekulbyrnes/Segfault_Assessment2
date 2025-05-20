@@ -15,24 +15,10 @@
 
 <body>
     <!-- Header with aside logo and navbar -->
-    <header>
-        <div class="navpadding">
-            <aside>
-                <a href="index.html" class="logo"><img src="logo.png" alt="Segfault logo"></a>
-            </aside>
-
-            <nav class="navbar">
-                <ul class="navmenu">
-                    <li><a href="index.html" class="navpage">Homepage</a></li>
-                    <li><a href="apply.html" class="navpage">Work with Us</a></li>
-                    <li><a href="about.html" class="navpage">About Us</a></li>
-                    <li><a href="jobs.html" class="navpage">Jobs</a></li>
-                    <li><a href="reach.html" class="navpage">Reach Out</a></li><!-- added lbyrnes-->
-                    <li><a href="enhancements.html" class="navpage">Enhancements</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        include "include/header.inc";
+    ?>
+    <!-- end of header -->
 
     <section class="slideshow center-flex">
         <h1>Apply</h1><br>
@@ -55,15 +41,12 @@
                     <!--The flex container is treated as if it has 12 columns-->
                     <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
                     
-                    <label for="jobRefNo" class="col-12" id="jobRefNo-label">
-                        Job reference number<!--Label using "for" attribute linking it to its input-->
-                    </label>
-
-                    <div class="col-6">
+                    <label for="jobRefNo" class="col-6">Job reference number<br><!--Label using "for" attribute linking it to its input-->
                         <input type="text" name="jobRefNo" id="jobRefNo" pattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
-                    </div>
-                    <!--Empty element with class "col-6" to complete row-->
+                    </label>
+                    <!--Empty element with class "col-6" to complete first row-->
                     <aside class="col-6"></aside>
+    <!--blank line between each "row" of flex items-->
 
                     <label for="firstName" class="col-6">Name
                     <!--Text input with regex validating between 1 and 20 letters. Using "(?:\s*\-*[a-zA-Z]){1,20}" allows the user to input spaces or dashes for multi-word names -->
@@ -77,6 +60,7 @@
                         <input type="date" name="DOB" id="DOB" required>
                     </label>
 
+                    <!--IMPORTANT! ask davi if this use of div is acceptable-->
                     <div class="col-6"><!--Contain entire gender fieldset in a flex-item-->
                         <fieldset id="genderFieldset" ><!--Fieldset containing all gender items-->
                             <legend><h4>Gender</h4></legend>
@@ -89,8 +73,8 @@
                                     <input type="radio" name="gender" value="male" id="male">
                                     Male
                                 </label>
+
                                 <span class="flex-break"></span><!--Span with class "flex-break" fills the remaining width of the current row, forcing a new row-->
-                                
                                 <label for="other" class="gender-flex-item">
                                     <input type="radio" name="gender" value="other" id="other">
                                     Other:
@@ -174,19 +158,10 @@
         </form>
     </section>
 
-
-    <section class="pagefooter">
-        <img src="logo.png" alt="Segfault logo" width="300">
-        <aside>
-            <ul>
-                <li><a href="mailto:100589839@student.swin.edu.au">&#9993; Mail Us</a></li>
-            </ul>
-        </aside>
-    </section>
-
-    <footer class="staticfooter center-text">
-        <span>COS10032 Assignment One</span>
-    </footer>
+    <!-- Footer -->
+    <?php
+        include "include/footer.inc";
+    ?>
 
 </body>
 </html>
