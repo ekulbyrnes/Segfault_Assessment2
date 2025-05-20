@@ -125,32 +125,32 @@
                     <h3 class="col-12">Skills</h3>
 
                     <!--Check boxes for skills-->
-                    <label class="col-2" for="skill-java">
-                        <input type="checkbox" name="skill-java" value="skill-java" id="skill-java">
+                    <label class="col-2" for="skill_java">
+                        <input type="checkbox" name="skill_java" value="skill_java" id="skill_java">
                         Java
                     </label>
-                    <label class="col-2" for="skill-cpp">
-                        <input type="checkbox" name="skill-cpp" value="skill-cpp" id="skill-cpp">
+                    <label class="col-2" for="skill_cpp">
+                        <input type="checkbox" name="skill_cpp" value="skill_cpp" id="skill_cpp">
                         C++
                     </label>
-                    <label class="col-2" for="skill-php">
-                        <input type="checkbox" name="skill-php" value="skill-php" id="skill-php">
+                    <label class="col-2" for="skill_php">
+                        <input type="checkbox" name="skill_php" value="skill_php" id="skill_php">
                         PHP
                     </label>
-                    <label class="col-2" for="skill-sql">
-                        <input type="checkbox" name="skill-sql" value="skill-sql" id="skill-sql">
+                    <label class="col-2" for="skill_sql">
+                        <input type="checkbox" name="skill_sql" value="skill_sql" id="skill_sql">
                         MySQL
                     </label>
-                    <label class="col-2" for="skill-python">
-                        <input type="checkbox" name="skill-python" value="skill-python" id="skill-python">
+                    <label class="col-2" for="skill_python">
+                        <input type="checkbox" name="skill_python" value="skill_python" id="skill_python">
                         Python
                     </label>
-                    <label class="col-2" for="skill-other">
-                        <input type="checkbox" name="skill-other" value="skill-other" id="skill-other">
+                    <label class="col-2" for="skill_other">
+                        <input type="checkbox" name="skill_other" value="skill_other" id="skill_other">
                         Other
                     </label>
 
-                    <textarea class="col-12" name="skill-other-details" id="skill-other-details" placeholder="Other skills..." rows="8" cols="70"></textarea>
+                    <textarea class="col-12" name="skill_other_details" id="skill_other_details" placeholder="Other skills..." rows="8" cols="70"></textarea>
 
                     <input class="col-12" type="submit" value="Apply"><!--Button to submit form-->
                 </div>
