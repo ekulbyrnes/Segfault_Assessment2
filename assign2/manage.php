@@ -34,9 +34,32 @@
                     - list all EOIs
                     - List all EOIs for a position (job reference number, dropdown?)
                     - List all EOIs for an applicant (name inputs)
+                        - Change the status of an EOI (dropdown)
                     - Delete all EOIs for a position (job reference number, dropdown?)
-                    - Change the status of an EOI (dropdown)
         -->
+
+
+        <form method="post" action="search_eois.php">
+            <label>
+                Job Reference Number
+                <input type="text" placeholder="00000">
+            </label>
+            <label>
+                Name
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+            </label>
+            <input type="submit" placeholder="Search EOIs">
+        </form>
+
+        <form method="post" action="delete_eois.php">
+            <label>
+                Job Reference Number
+                <input type="text" placeholder="00000">
+            </label>
+            <input type="submit" placeholder="Delete EOIs">
+        </form>
+
         <?php
 
         ?>
