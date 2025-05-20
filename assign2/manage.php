@@ -39,7 +39,7 @@
         -->
 
 
-        <form method="post" action="search_eois.php">
+        <form method="post" action="processmanage.php">
             <label>
                 Job Reference Number
                 <input type="text" placeholder="00000">
