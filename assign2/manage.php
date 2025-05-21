@@ -17,7 +17,7 @@
 <body>
     <!--Nav Bar-->
     <?php
-        include "include/header.inc";
+        include "include/navbar.inc";
     ?>
 
     <section class="slideshow center-flex">

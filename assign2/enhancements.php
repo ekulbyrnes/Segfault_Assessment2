@@ -16,7 +16,7 @@
 <body>
     <!-- Header with aside logo and navbar -->
     <?php
-        include "include/header.inc";
+        include "include/navbar.inc";
     ?>
     <!-- end of header -->
 
