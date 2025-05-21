@@ -42,7 +42,7 @@
                     <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
                     
                     <label for="jobRefNo" class="col-6">Job reference number<br><!--Label using "for" attribute linking it to its input-->
-                        <input type="text" name="jobRefNo" id="jobRefNo" pattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
+                        <input type="text" name="jobRefNo" id="jobRefNo" disabledpattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
                     </label>
                     <!--Empty element with class "col-6" to complete first row-->
                     <aside class="col-6"></aside>
@@ -50,10 +50,10 @@
 
                     <label for="firstName" class="col-6">Name
                     <!--Text input with regex validating between 1 and 20 letters. Using "(?:\s*\-*[a-zA-Z]){1,20}" allows the user to input spaces or dashes for multi-word names -->
-                        <input type="text" name="firstName" id="firstName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
+                        <input type="text" name="firstName" id="firstName" disabledpattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="First Name" required>
                     </label>
                     <label for="lastName" class="col-6">
-                        <input type="text" name="lastName" id="lastName" pattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
+                        <input type="text" name="lastName" id="lastName" disabledpattern="(?:\s*\-*[a-zA-Z]){1,20}" maxlength="20" placeholder="Last Name" required>
                     </label>
 
                     <label for="DOB" class="col-6">Date of birth
@@ -80,7 +80,7 @@
                                     Other:
                                 </label>
                                 <!--Flex item ensuring the gender text input remains large enough to use-->
-                                <input type="text" name="othergender" id="othergender" pattern="[a-zA-Z -]{1,20}">
+                                <input type="text" name="othergender" id="othergender" disabledpattern="[a-zA-Z -]{1,20}">
                             </div>
                         </fieldset>
                     </div>
@@ -89,15 +89,15 @@
                     <h3 class="col-12">Address</h3>
 
                     <label class="col-12" for="address">Street Address
-                        <input type="text" name="address" id="address" pattern=".{1,40}" maxlength="40" required><!--Text input with regex validating any pattern between 1 and 40 characters-->
+                        <input type="text" name="address" id="address" disabledpattern=".{1,40}" maxlength="40" required><!--Text input with regex validating any pattern between 1 and 40 characters-->
                     </label>
 
                     <label class="col-6" for="suburb">Suburb
-                        <input type="text" name="suburb" id="suburb" pattern=".{1,40}" maxlength="40" required>
+                        <input type="text" name="suburb" id="suburb" disabledpattern=".{1,40}" maxlength="40" required>
                     </label>
 
                     <label class="col-4" for="postcode">Postcode<!--Flex item with column width of 4 to give space for the "state" dropdown on the same line-->
-                        <input type="text" name="postcode" id="postcode" pattern="\d{4}" maxlength="4" required><!--Text input with regex validating exactly 4 digits-->
+                        <input type="text" name="postcode" id="postcode" disabledpattern="\d{4}" maxlength="4" required><!--Text input with regex validating exactly 4 digits-->
                     </label>
                     <!--Flex item with a column width of 2 containing the "state" dropdown-->
                     <label class="col-2" for="state">State<br>
@@ -115,11 +115,11 @@
 
                     <label class="col-6" for="phonenumber">Phone Number
                         <!--Text input with regex validating between 8 and 12 digits with any number of spaces inbetween-->
-                        <input type="text" name="phonenumber" id="phonenumber" pattern="(?:\s*\d){8,12}" required>
+                        <input type="text" name="phonenumber" id="phonenumber" disabledpattern="(?:\s*\d){8,12}" required>
                     </label>
 
                     <label class="col-6" for="email">Email Address
-                        <input type="email" name="email" id="email" required>
+                        <input type="text" name="email" id="email" required>
                     </label>
 
                     <h3 class="col-12">Skills</h3>
