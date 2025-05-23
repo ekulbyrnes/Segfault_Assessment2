@@ -29,15 +29,7 @@
 
 require_once("settings.php");
 
-// function to sanitise data
-function sanitise_input($input){
-    $input = $_POST[$input];
-    $input = trim($input);
-    $input = stripslashes($input);
-    $input = htmlspecialchars($input);
-
-    return $input;
-}
+require "include/sanitise_input_function.inc";
 
 // get variables
 $jobRefNo_filter       = sanitise_input("jobRefNo_filter");
@@ -65,9 +57,9 @@ $lastName_filter       = sanitise_input("lastName_filter");
 if(!$conn){
         echo "<p>Error: Database connection failure</p>";
     } else{
-        $sql_table = "EOIs";
+        $sql_table = "eoi";
 
-        $query = "  SELECT * FROM eoi WHERE
+        $query = "  SELECT * FROM $sql_table WHERE
                     jobRefNo LIKE '$jobRefNo_filter%'
                     AND firstName LIKE '$firstName_filter%'
                     AND lastName LIKE '$lastName_filter%';";
