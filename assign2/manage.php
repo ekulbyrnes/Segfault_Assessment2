@@ -62,7 +62,7 @@
             <input type="submit" placeholder="Search EOIs">
         </form>
 
-        <form method="post" action="delete_eois.php">
+        <form method="post" action="deleteEOI.php">
             <label>
                 Job Reference Number
                 <?php
