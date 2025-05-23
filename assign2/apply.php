@@ -33,7 +33,7 @@
         <h1><span class="terminalblink">_</span>Application Form</h1>
 
         <!--Start of form-->
-        <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php"><!--Form posts data to the swinburne mercury test server-->
+        <form id="application" method="post" action="processEOI.php"><!--Form posts data to the swinburne mercury test server-->
             <fieldset><!--This fieldset wraps around the entire form-->
                 <legend class="center-text"><h2>Applicant Details</h2></legend>
 
