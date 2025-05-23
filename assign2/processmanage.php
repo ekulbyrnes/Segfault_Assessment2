@@ -77,30 +77,37 @@ if(!$conn){
         // if result is invalid: error
         if(!$result){
             echo "<p>Error: Something is wrong with query: ", $query, "</p>";
-        }else{
+        }else{ // draw table of results
                 echo
-                    "<table>\n"
-                    ."<tr>\n"
-                    ."<th scope=\"col\">Job Reference Number</th>\n"
-                    ."<th scope=\"col\">First Name</th>\n"
-                    ."<th scope=\"col\">Last Name</th>\n"
-                    ."<th scope=\"col\">Status</th>\n"
-                    ."</tr>\n";
+                "<form method='post' action='editEOI.php'>
+                <table>\n
+                    <tr>\n
+                        <th scope=\"col\">Job Reference Number</th>\n
+                        <th scope=\"col\">First Name</th>\n
+                        <th scope=\"col\">Last Name</th>\n
+                        <th scope=\"col\">Status</th>\n
+                    </tr>\n";
                 // loop for each EOI result
                 while($row = mysqli_fetch_assoc($result)){
                     echo
-                        "<tr>\n"
-                        ."<td>", $row["jobRefNo"], "</td>\n"
-                        ."<td>", $row["firstName"], "</td>\n"
-                        ."<td>", $row["lastName"], "</td>\n";
-                        // create a dropdown list for all job reference numbers
-                        echo "<td> <select name='status'>";
-                        while($row = mysqli_fetch_array($jobRefNos)){
-                            echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
-                        }
-                        echo "</tr>\n";
+                    "<tr>\n
+                        <td>", $row["jobRefNo"], "</td>\n
+                        <td>", $row["firstName"], "</td>\n
+                        <td>", $row["lastName"], "</td>\n";
+                        // create a dropdown list for all status options
+                        echo
+                        "<td>\n
+                            <select name='status' id='status'>\n
+                                <option value='New'>New</option>\n
+                                <option value='Current'>Current</option>\n
+                                <option value='Final'>Final</option>\n
+                        </td>\n
+                    </tr>\n";
                 }
-                echo "</table>\n";
+                echo
+                "</table>\n
+                <input type='submit' value='Apply Changes'>\n
+                </form>\n";
 
                 mysqli_free_result($result);
             }
