@@ -40,39 +40,41 @@ function sanitise_input($input){
 }
 
 // get variables
-$jobRefNo       = sanitise_input("jobRefNo");
-$firstName      = sanitise_input("firstName");
-$lastName       = sanitise_input("lastName");
-$DOB            = sanitise_input("DOB");
-$gender         = sanitise_input("gender");
-$othergender    = sanitise_input("othergender");
-$address        = sanitise_input("address");
-$suburb         = sanitise_input("suburb");
-$postcode       = sanitise_input("postcode");
-$state          = sanitise_input("state");
-$phonenumber    = sanitise_input("phonenumber");
-$email          = sanitise_input("email");
-$skill_java     = sanitise_input("skill_java");
-$skill_cpp      = sanitise_input("skill_cpp");
-$skill_php      = sanitise_input("skill_php");
-$skill_sql      = sanitise_input("skill_sql");
-$skill_python   = sanitise_input("skill_python");
-$skill_other    = sanitise_input("skill_other");
-
-$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+$jobRefNo_filter       = sanitise_input("jobRefNo_filter");
+$firstName_filter      = sanitise_input("firstName_filter");
+$lastName_filter       = sanitise_input("lastName_filter");
+/*
+    $DOB            = sanitise_input("DOB");
+    $gender         = sanitise_input("gender");
+    $othergender    = sanitise_input("othergender");
+    $address        = sanitise_input("address");
+    $suburb         = sanitise_input("suburb");
+    $postcode       = sanitise_input("postcode");
+    $state          = sanitise_input("state");
+    $phonenumber    = sanitise_input("phonenumber");
+    $email          = sanitise_input("email");
+    $skill_java     = sanitise_input("skill_java");
+    $skill_cpp      = sanitise_input("skill_cpp");
+    $skill_php      = sanitise_input("skill_php");
+    $skill_sql      = sanitise_input("skill_sql");
+    $skill_python   = sanitise_input("skill_python");
+    $skill_other    = sanitise_input("skill_other");
+    $skill_other_details    = sanitise_input("skill_other_details");
+*/
 
 if(!$conn){
         echo "<p>Error: Database connection failure</p>";
     } else{
         $sql_table = "EOIs";
 
-        $query = "  SELECT * FROM EOIs WHERE
-                    jobRefNo LIKE '$jobRefNo%'
-                    AND firstName LIKE '$firstName%'
-                    AND lastName LIKE '$lastName%';";
+        $query = "  SELECT * FROM eoi WHERE
+                    jobRefNo LIKE '$jobRefNo_filter%'
+                    AND firstName LIKE '$firstName_filter%'
+                    AND lastName LIKE '$lastName_filter%';";
         
         $result = mysqli_query($conn, $query);
 
+        // if result is invalid: error
         if(!$result){
             echo "<p>Error: Something is wrong with query: ", $query, "</p>";
         }else{
@@ -84,15 +86,19 @@ if(!$conn){
                     ."<th scope=\"col\">Last Name</th>\n"
                     ."<th scope=\"col\">Status</th>\n"
                     ."</tr>\n";
-
+                // loop for each EOI result
                 while($row = mysqli_fetch_assoc($result)){
                     echo
                         "<tr>\n"
                         ."<td>", $row["jobRefNo"], "</td>\n"
                         ."<td>", $row["firstName"], "</td>\n"
-                        ."<td>", $row["lastName"], "</td>\n"
-                        ."<td>", $row["status"], "</td>\n"
-                        ."</tr>\n";
+                        ."<td>", $row["lastName"], "</td>\n";
+                        // create a dropdown list for all job reference numbers
+                        echo "<td> <select name='status'>";
+                        while($row = mysqli_fetch_array($jobRefNos)){
+                            echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
+                        }
+                        echo "</tr>\n";
                 }
                 echo "</table>\n";
 

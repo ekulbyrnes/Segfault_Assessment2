@@ -15,8 +15,15 @@
 </head>
 
 <body>
-    <!--Nav Bar-->
     <?php
+        // connect to sql database
+        // if connection fails, draw error, else, continue with php
+        require_once("settings.php");
+        if(!$conn){
+        echo "<p>Error: Database connection failure</p>";
+        } else { // open brace around rest of php, remember to close brace at end of page's php
+
+        // draw nav bar
         include "include/navbar.inc";
     ?>
 
@@ -31,24 +38,26 @@
         <h1><span class="terminalblink">_</span>EOIs</h1>
 
         <!--EOI TABLE
-                Buttons to:
-                    - list all EOIs
-                    - List all EOIs for a position (job reference number, dropdown?)
-                    - List all EOIs for an applicant (name inputs)
-                        - Change the status of an EOI (dropdown)
-                    - Delete all EOIs for a position (job reference number, dropdown?)
+            Buttons to:
+                - list all EOIs
+                - List all EOIs for a position (job reference number, dropdown?)
+                - List all EOIs for an applicant (name inputs)
+                    - Change the status of an EOI (dropdown)
+                - Delete all EOIs for a position (job reference number, dropdown?)
         -->
 
 
         <form method="post" action="processmanage.php">
             <label>
                 Job Reference Number
-                <input type="text" placeholder="00000">
+                <?php
+                    include "include/jobRefNo_select.inc";
+                ?>
             </label>
             <label>
                 Name
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
+                <input type="text" id="firstName_filter" name='firstName_filter' placeholder="First Name">
+                <input type="text" id="lastName_filter" name='lastName_filter' placeholder="Last Name">
             </label>
             <input type="submit" placeholder="Search EOIs">
         </form>
@@ -56,7 +65,9 @@
         <form method="post" action="delete_eois.php">
             <label>
                 Job Reference Number
-                <input type="text" placeholder="00000">
+                <?php
+                    include "include/jobRefNo_select.inc";
+                ?>
             </label>
             <input type="submit" placeholder="Delete EOIs">
         </form>
@@ -70,6 +81,7 @@
 
     <!--Footer-->
     <?php
+        }
         include "include/footer.inc";
     ?>
 </body>
