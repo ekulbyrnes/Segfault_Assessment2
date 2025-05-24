@@ -12,5 +12,6 @@
         while($row = mysqli_fetch_array($result)){
             echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
         }
+        echo "</select>";
     }
 ?>
