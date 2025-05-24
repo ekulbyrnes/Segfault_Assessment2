@@ -12,7 +12,7 @@
                 <li><a href="reach.php" class="navpage">Reach Out</a></li><!-- added lbyrnes-->
                 <li><a href="enhancements.php" class="navpage">Enhancements</a></li>
                 <li><a href="manage.php" class="navpage">Manage EOIs</a></li>
-        </ul>
+            </ul>
         </nav>
     </div>
 </header>
