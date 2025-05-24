@@ -33,14 +33,14 @@
         <h1><span class="terminalblink">_</span>Application Form</h1>
 
         <!--Start of form-->
-        <form id="application" method="post" action="processEOI.php"><!--Form posts data to the swinburne mercury test server-->
+        <form id="application" method="post" action="processEOI.php" novalidate="novalidate"><!--Form posts data to the swinburne mercury test server-->
             <fieldset><!--This fieldset wraps around the entire form-->
                 <legend class="center-text"><h2>Applicant Details</h2></legend>
 
                 <div class="form-container"><!--Open flex container for the layout of form items-->
                     <!--The flex container is treated as if it has 12 columns-->
                     <!--class "col-12" on the label element that wraps the input to make both elements take up the space of the first row of the flex container-->
-                    
+
                     <label for="jobRefNo" class="col-6">Job reference number<br><!--Label using "for" attribute linking it to its input-->
                         <input type="text" name="jobRefNo" id="jobRefNo" disabledpattern="\d{5}" maxlength="5" required><!--Text input with pattern validating that the input has exactly 5 digits-->
                     </label>
@@ -57,7 +57,7 @@
                     </label>
 
                     <label for="DOB" class="col-6">Date of birth
-                        <input type="date" name="DOB" id="DOB" required>
+                        <input type="text" name="DOB" id="DOB" placeholder="dd/mm/yyyy"required>
                     </label>
 
                     <!--IMPORTANT! ask davi if this use of div is acceptable-->
@@ -66,17 +66,17 @@
                             <legend><h4>Gender</h4></legend>
                             <div class="gender-flex-container"><!--Flex container containing all gender items-->
                                 <label for="female" class="gender-flex-item" ><!--Flex item ensuring that the radio input and label for "Female" wrap at the same time-->
-                                    <input type="radio" name="gender" value="female" id="female" required>
+                                    <input type="radio" name="gender" value="2" id="female" required>
                                     Female
                                 </label>
                                 <label for="male" class="gender-flex-item">
-                                    <input type="radio" name="gender" value="male" id="male">
+                                    <input type="radio" name="gender" value="1" id="male">
                                     Male
                                 </label>
 
                                 <span class="flex-break"></span><!--Span with class "flex-break" fills the remaining width of the current row, forcing a new row-->
                                 <label for="other" class="gender-flex-item">
-                                    <input type="radio" name="gender" value="other" id="other">
+                                    <input type="radio" name="gender" value="3" id="other">
                                     Other:
                                 </label>
                                 <!--Flex item ensuring the gender text input remains large enough to use-->
