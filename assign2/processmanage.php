@@ -31,28 +31,18 @@ require_once("settings.php");
 
 require "include/sanitise_input_function.inc";
 
+// redirect back to the manage page
+function redirect(){
+    header ("location: manage.php");
+}
+
+// open session
+session_start();
+
 // get variables
 $jobRefNo_filter       = sanitise_input("jobRefNo_filter");
 $firstName_filter      = sanitise_input("firstName_filter");
 $lastName_filter       = sanitise_input("lastName_filter");
-/*
-    $DOB            = sanitise_input("DOB");
-    $gender         = sanitise_input("gender");
-    $othergender    = sanitise_input("othergender");
-    $address        = sanitise_input("address");
-    $suburb         = sanitise_input("suburb");
-    $postcode       = sanitise_input("postcode");
-    $state          = sanitise_input("state");
-    $phonenumber    = sanitise_input("phonenumber");
-    $email          = sanitise_input("email");
-    $skill_java     = sanitise_input("skill_java");
-    $skill_cpp      = sanitise_input("skill_cpp");
-    $skill_php      = sanitise_input("skill_php");
-    $skill_sql      = sanitise_input("skill_sql");
-    $skill_python   = sanitise_input("skill_python");
-    $skill_other    = sanitise_input("skill_other");
-    $skill_other_details    = sanitise_input("skill_other_details");
-*/
 
 if(!$conn){
         echo "<p>Error: Database connection failure</p>";
@@ -70,39 +60,43 @@ if(!$conn){
         if(!$result){
             echo "<p>Error: Something is wrong with query: ", $query, "</p>";
         }else{ // draw table of results
-                echo
+            $EOItable =
                 "<form method='post' action='editEOI.php'>
                 <table>\n
                     <tr>\n
                         <th scope=\"col\">Job Reference Number</th>\n
+                        <th scope=\"col\">Status</th>\n
                         <th scope=\"col\">First Name</th>\n
                         <th scope=\"col\">Last Name</th>\n
-                        <th scope=\"col\">Status</th>\n
                     </tr>\n";
-                // loop for each EOI result
-                while($row = mysqli_fetch_assoc($result)){
-                    echo
+            // loop for each EOI result
+            while($row = mysqli_fetch_assoc($result)){
+                $EOItable .=
                     "<tr>\n
-                        <td>", $row["jobRefNo"], "</td>\n
-                        <td>", $row["firstName"], "</td>\n
-                        <td>", $row["lastName"], "</td>\n";
-                        // create a dropdown list for all status options
-                        echo
-                        "<td>\n
+                        <td>". $row["jobRefNo"]. "</td>\n
+                        <td>\n
                             <select name='status' id='status'>\n
                                 <option value='New'>New</option>\n
                                 <option value='Current'>Current</option>\n
                                 <option value='Final'>Final</option>\n
                         </td>\n
+                        <td>". $row["firstName"]. "</td>\n
+                        <td>". $row["lastName"]. "</td>\n
                     </tr>\n";
                 }
-                echo
+            $EOItable .=
                 "</table>\n
                 <input type='submit' value='Apply Changes'>\n
                 </form>\n";
 
-                mysqli_free_result($result);
+            mysqli_free_result($result);
+            
+            // send table result back to the manage page
+            $_SESSION["EOItable"] = $EOItable;
+            redirect();
             }
+    // exit session
+    exit();
 
     mysqli_close($conn);
     }

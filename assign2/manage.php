@@ -73,7 +73,13 @@
         </form>
 
         <?php
-
+            // open session
+            session_start();
+            // if EOI table set
+            if(isset($_SESSION["EOItable"])){
+                $EOItable = $_SESSION["EOItable"];
+                echo "$EOItable";
+            }
         ?>
 
 
