@@ -46,42 +46,56 @@
                 - Delete all EOIs for a position (job reference number, dropdown?)
         -->
 
-
-        <form method="post" action="processmanage.php">
-            <label>
-                Job Reference Number
-                <?php
-                    include "include/jobRefNo_select.inc";
-                ?>
-            </label>
-            <label>
-                Name
-                <input type="text" id="firstName_filter" name='firstName_filter' placeholder="First Name">
-                <input type="text" id="lastName_filter" name='lastName_filter' placeholder="Last Name">
-            </label>
-            <input type="submit" placeholder="Search EOIs">
-        </form>
-
-        <form method="post" action="deleteEOI.php">
-            <label>
-                Job Reference Number
-                <?php
-                    include "include/jobRefNo_select.inc";
-                ?>
-            </label>
-            <input type="submit" placeholder="Delete EOIs">
-        </form>
-
+        <!--draw search results-->
         <?php
             // open session
             session_start();
             // if EOI table set
-            if(isset($_SESSION["EOItable"])){
-                $EOItable = $_SESSION["EOItable"];
-                echo "$EOItable";
+            if(isset($_SESSION["EOI_search_table"])){
+                $EOI_search_table = $_SESSION["EOI_search_table"];
+                echo "$EOI_search_table";
             }
+            // clear variables so the table isn't always drawn with the most recent search
+            session_unset();
         ?>
 
+        <form method="post" action="searchEOI.php">
+            <fieldset>
+                <legend class="center-text"><h2>Search EOIs</h2></legend>
+
+                <div class="form-container">
+                    <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
+                        <?php
+                            include "include/jobRefNo_select.inc";
+                        ?>
+                    </label>
+                    <aside class="col-6"></aside>
+
+                    <label for="firstName_filter" class="col-6">Name
+                        <input type="text" name="firstName_filter" id="firstName_filter" maxlength="20" placeholder="First Name">
+                    </label>
+                    <label for="lastName_filter" class="col-6">
+                        <input type="text" name="lastName_filter" id="lastName_filter"maxlength="20" placeholder="Last Name">
+                    </label>
+                    <input type="submit" value="Search">
+                </div>
+            </fieldset>
+        </form>
+
+        <form method="post" action="deleteEOI.php">
+            <fieldset>
+                <legend class="center-text"><h2>Delete EOIs</h2></legend>
+
+                <div class="form-container">
+                    <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
+                        <?php
+                            include "include/jobRefNo_select.inc";
+                        ?>
+                    </label>
+                    <input type="submit" value="Delete">
+                </div>
+            </fieldset>
+        </form>
 
     </section>
 

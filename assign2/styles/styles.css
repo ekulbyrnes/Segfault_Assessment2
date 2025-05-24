@@ -701,7 +701,7 @@ margin-top: 0px;
 /* Article styling below designed by Luke for use in the reach.html page.
 Made use of the flex-settings from other pages and added additional parameters like
 colors, paddings, and box-shadowing
-This provides a crisp article-style layout that centres the content on the page
+This provides a crisp article-style layout that centers the content on the page
 using the column classes, but with additional formatting applied for this segment.
 Reference: https://www.w3schools.com. */
 
@@ -920,4 +920,19 @@ aside.job-listing > * {
 
 aside.job-listing > h3 {
     text-align: center;
+}
+
+.EOItable {
+    margin: 0 auto;
+
+}
+.EOItable th {
+    font-size: 1.2em;
+    width: 100px;
+}
+
+.EOItable td {
+    border: 2px solid lightgray;
+    background-color: #eee;
+    width: 100px;
 }

@@ -8,7 +8,7 @@
         echo "<p>Error: Something is wrong with query: ", $query, "</p>";
     } else {
         echo "<select id='jobRefNo_filter' name='jobRefNo_filter'>\n"
-            ."<option value=''>---</option>\n";
+            ."<option value=''>Any</option>\n";
         while($row = mysqli_fetch_array($result)){
             echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
         }
