@@ -48,13 +48,18 @@
 
         <!--draw search results-->
         <?php
-            // open session
             session_start();
-            // if EOI table set
-            if(isset($_SESSION["EOI_search_table"])){
+            if(isset($_SESSION["EOI_edit"])){
+                $EOI_edit_msg = $_SESSION["EOI_edit"];
+                echo "$EOI_edit_msg";
+            } else if(isset($_SESSION["EOI_search_table"])){
                 $EOI_search_table = $_SESSION["EOI_search_table"];
                 echo "$EOI_search_table";
+            } else if(isset($_SESSION["EOI_delete"])){
+            $EOI_delete_msg = $_SESSION["EOI_delete"];
+            echo "$EOI_delete_msg";
             }
+            
             // clear variables so the table isn't always drawn with the most recent search
             session_unset();
         ?>
@@ -66,7 +71,21 @@
                 <div class="form-container">
                     <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
                         <?php
-                            include "include/jobRefNo_select.inc";
+                            // create a dropdown list for all job reference numbers
+                            $query = "SELECT jobRefNo FROM eoi;";
+
+                            $result = mysqli_query($conn, $query);
+
+                            if(!$result){
+                                echo "<p>Error: Something is wrong with query: ", $query, "</p>";
+                            } else {
+                                echo "<select id='jobRefNo_filter' name='jobRefNo_filter'>\n
+                                        <option value='' selected>Any</option>\n";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
+                                }
+                                echo "</select>";
+                            }
                         ?>
                     </label>
                     <aside class="col-6"></aside>
@@ -89,7 +108,21 @@
                 <div class="form-container">
                     <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
                         <?php
-                            include "include/jobRefNo_select.inc";
+                            // create a dropdown list for all job reference numbers
+                            $query = "SELECT jobRefNo FROM eoi;";
+
+                            $result = mysqli_query($conn, $query);
+
+                            if(!$result){
+                                echo "<p>Error: Something is wrong with query: ", $query, "</p>";
+                            } else {
+                                echo "<select id='jobRefNo_filter' name='jobRefNo_filter' required>\n
+                                        <option value='' selected>---</option>\n";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
+                                }
+                                echo "</select>";
+                            }
                         ?>
                     </label>
                     <input type="submit" value="Delete">

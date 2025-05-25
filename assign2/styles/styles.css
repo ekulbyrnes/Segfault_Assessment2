@@ -929,10 +929,18 @@ aside.job-listing > h3 {
 .EOItable th {
     font-size: 1.2em;
     width: 100px;
+    &#EOInum{
+        width: 50px;
+    }
+    &#email{
+        width: 200px;
+    }
+    &#skills{
+        width: 150px;
+    }
 }
 
 .EOItable td {
     border: 2px solid lightgray;
     background-color: #eee;
-    width: 100px;
 }
