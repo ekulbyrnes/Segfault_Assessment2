@@ -86,6 +86,7 @@
                             }
                         ?>
                     </label>
+
                     <aside class="col-6"></aside>
  
                     <label for="firstName_filter" class="col-6">Name
@@ -93,6 +94,28 @@
                     </label>
                     <label for="lastName_filter" class="col-6">
                         <input type="text" name="lastName_filter" id="lastName_filter"maxlength="20" placeholder="Last Name">
+                    </label>
+
+                    <label for="skillPick" class="col-12">Skills</label>
+                    <label class="col-2" for="skill_java">
+                        <input type="checkbox" name="skill_java" value="1" id="skill_java">
+                        Java
+                    </label>
+                    <label class="col-2" for="skill_cpp">
+                        <input type="checkbox" name="skill_cpp" value="1" id="skill_cpp">
+                        C++
+                    </label>
+                    <label class="col-2" for="skill_php">
+                        <input type="checkbox" name="skill_php" value="1" id="skill_php">
+                        PHP
+                    </label>
+                    <label class="col-2" for="skill_sql">
+                        <input type="checkbox" name="skill_sql" value="1" id="skill_sql">
+                        MySQL
+                    </label>
+                    <label class="col-2" for="skill_python">
+                        <input type="checkbox" name="skill_python" value="1" id="skill_python">
+                        Python
                     </label>
                     <input type="submit" value="Search">
                 </div>

@@ -12,7 +12,11 @@ function redirect(){
 $jobRefNo_filter       = sanitise_input("jobRefNo_filter");
 $firstName_filter      = sanitise_input("firstName_filter");
 $lastName_filter       = sanitise_input("lastName_filter");
-
+$skill_java_filter     = sanitise_input("skill_java");
+$skill_cpp_filter      = sanitise_input("skill_cpp");
+$skill_php_filter      = sanitise_input("skill_php");
+$skill_sql_filter      = sanitise_input("skill_sql");
+$skill_python_filter   = sanitise_input("skill_python");
 // open form/table
 $EOI_search_table =
 "<fieldset>\n
@@ -31,7 +35,24 @@ $sql_table = "eoi";
 $query = "  SELECT * FROM $sql_table WHERE
             jobRefNo LIKE '$jobRefNo_filter%'
             AND firstName LIKE '$firstName_filter%'
-            AND lastName LIKE '$lastName_filter%';";
+            AND lastName LIKE '$lastName_filter%'";
+if($skill_java_filter) {
+    $query .= " AND skill_java LIKE 1";
+}
+if($skill_cpp_filter) {
+    $query .=  " AND skill_cpp LIKE 1";
+}
+if($skill_php_filter) {
+    $query .=  " AND skill_php LIKE 1";
+}
+if($skill_sql_filter) {
+    $query .=  " AND skill_sql LIKE 1";
+}
+if($skill_python_filter) {
+    $query .=  " AND skill_python LIKE 1";
+}
+
+$query .= ";";
 
 $result = mysqli_query($conn, $query);
 
@@ -114,10 +135,6 @@ if(!$result){
             if($row["skill_other"]){
                 $EOI_search_table .= "Other Skills Here\n";
             }
-            
-            
-            
-            
             
             $EOI_search_table .= "</td>\n
         </form>
