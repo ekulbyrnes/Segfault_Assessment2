@@ -133,7 +133,7 @@ if(!$result){
             $EOI_search_table .= "</ul>\n";
 
             if($row["skill_other"]){
-                $EOI_search_table .= "Other Skills Here\n";
+                $EOI_search_table .= $row["skill_other_details"]. "\n";
             }
             
             $EOI_search_table .= "</td>\n
