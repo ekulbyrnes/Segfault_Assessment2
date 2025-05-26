@@ -98,7 +98,8 @@ CREATE TABLE IF NOT EXISTS eoi (
     skill_php TINYINT(1) NOT NULL DEFAULT 0,
     skill_sql TINYINT(1) NOT NULL DEFAULT 0,
     skill_python TINYINT(1) NOT NULL DEFAULT 0,
-    skill_other TEXT,
+    skill_other TINYINT(1) NOT NULL DEFAULT 0,
+    skill_other_details TEXT,
     status INT NOT NULL DEFAULT 1,
     FOREIGN KEY (gender) REFERENCES gender(gender_id),
     FOREIGN KEY (state) REFERENCES states(state_id),
@@ -128,7 +129,6 @@ $postcode = clean_input($_POST['postcode']);
 $email = clean_input($_POST['email']);
 $phonenumber = clean_input($_POST['phonenumber']);
 $skill_other = isset($_POST['skill_other_details']) ? clean_input($_POST['skill_other_details']) : '';
-
 $skills = [
     'skill_java' => isset($_POST['skill_java']) ? 1 : 0,
     'skill_cpp' => isset($_POST['skill_cpp']) ? 1 : 0,
@@ -136,6 +136,7 @@ $skills = [
     'skill_sql' => isset($_POST['skill_sql']) ? 1 : 0,
     'skill_python' => isset($_POST['skill_python']) ? 1 : 0
 ];
+$skill_other_details = ($skill_other && isset($_POST['skill_other_details'])) ? clean_input($_POST['skill_other_details']) : "";
 
 // Validation rules
 if (!preg_match('/^[A-Za-z0-9]{5}$/', $jobRefNo)) die("Job Ref invalid.");
@@ -163,6 +164,7 @@ $state_id = $state_map[$stateCode];
 // Other skill
 if ($skill_other && empty($skill_other))
 if (!empty($_POST['skill_other_details']) && empty($skill_other)) die("Please specify 'other' skill.");
+$skill_other = isset($_POST['skill_other']) ? 1 : 0;
 
 // Set status default
 $status = 1;
@@ -171,17 +173,17 @@ $status = 1;
 $stmt = $conn->prepare("INSERT INTO eoi (
     jobRefNo, firstName, lastName, DOB, gender, othergender,
     address, suburb, state, postcode, phonenumber, email,
-    skill_java, skill_cpp, skill_php, skill_sql, skill_python, skill_other, status
-) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    skill_java, skill_cpp, skill_php, skill_sql, skill_python, skill_other, skill_other_details, status
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if (!$stmt) die("Prepare failed: " . $conn->error);
 
 // Prepare SQL query to send values to the db placeholder locations
-$stmt->bind_param("ssssisssiissiiiiiis",
+$stmt->bind_param("ssssisssiissiiiiissi",
     $jobRefNo, $firstName, $lastName, $DOB_mysql, $gender, $othergender,
     $address, $suburb, $state_id, $postcode, $phonenumber, $email,
     $skills['skill_java'], $skills['skill_cpp'], $skills['skill_php'],
-    $skills['skill_sql'], $skills['skill_python'], $skill_other, $status
+    $skills['skill_sql'], $skills['skill_python'], $skill_other, $skill_other_details, $status
 );
 
 // Execute the SQL insertion or return error
@@ -192,3 +194,4 @@ $eoiNumber = $stmt->insert_id;
 echo "<h2>Thank you for your application!</h2>";
 echo "<p>Your application has been received. Your EOI number is: <strong>$eoiNumber</strong></p>";
 ?>
+
