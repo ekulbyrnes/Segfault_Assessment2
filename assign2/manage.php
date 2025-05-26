@@ -81,15 +81,13 @@
                             } else {
                                 echo "<select id='jobRefNo_filter' name='jobRefNo_filter'>\n
                                         <option value='' selected>Any</option>\n";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
-                                }
+                                include "include/jobRefNo_options.inc";
                                 echo "</select>";
                             }
                         ?>
                     </label>
                     <aside class="col-6"></aside>
-
+ 
                     <label for="firstName_filter" class="col-6">Name
                         <input type="text" name="firstName_filter" id="firstName_filter" maxlength="20" placeholder="First Name">
                     </label>
@@ -118,9 +116,7 @@
                             } else {
                                 echo "<select id='jobRefNo_filter' name='jobRefNo_filter' required>\n
                                         <option value='' selected>---</option>\n";
-                                while($row = mysqli_fetch_array($result)){
-                                    echo "<option value='", $row['jobRefNo'], "'>", $row['jobRefNo'], "</option>\n";
-                                }
+                                include "include/jobRefNo_options.inc";
                                 echo "</select>";
                             }
                         ?>
