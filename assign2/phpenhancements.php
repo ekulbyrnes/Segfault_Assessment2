@@ -37,6 +37,7 @@
                     Any duplicate reference numbers are removed.</p>
                 <pre class="code-block">
 
+<span><strong>In jobRefNo_options.inc</strong></span>
 // Fill an array of all job ref numbers from the database
 <span>unset</span>($array);
 $array = [];
@@ -53,6 +54,21 @@ $arraysize = <span>sizeof</span>($array, SORT_STRING);
 <span>for</span>($i = 0; $i < $arraysize; $i++){
 ?&#62;&#60;option value='&#60;?php echo "$array[$i]" ?&#62;'&#62; &#60;?php echo "$array[$i]" ?&#62;&#60;/option&#62;
 &#60;?php \}
+
+<span><strong>In manage.php</strong></span>       
+// create a dropdown list for all job reference numbers
+$query = "SELECT jobRefNo FROM eoi;";
+
+$result = <span>mysqli_query</span>($conn, $query);
+
+<span>if</span>(!$result){
+    <span>echo</span> "&#60;p&#62;Error: Something is wrong with query: ", $query, "&#60;/p&#62;";
+} <span>else</span> {
+    <span>echo</span> "&#60;select id='jobRefNo_filter' name='jobRefNo_filter'&#62;\n
+            &#60;option value='' selected&#62;Any&#60;/option&#62;\n";
+    <span>include</span> "include/jobRefNo_options.inc";
+    <span>echo</span> "&#60;/select&#62;";
+}                    
                 </pre>
             </aside>
             <aside class="right-item">
