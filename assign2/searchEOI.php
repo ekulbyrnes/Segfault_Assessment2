@@ -72,67 +72,70 @@ if(!$result){
         // -- table results       
         $EOI_search_table .=
         "<tr>\n
-            <form method='post' action='editEOI.php?edit=". $row["EOInumber"]. "'>\n
-                <td class='center-text'>". $row["EOInumber"]. "</td>\n
             
-                <td>". $row["jobRefNo"]. "</td>\n
+            <td class='center-text'>". $row["EOInumber"]. "</td>\n
+        
+            <td>". $row["jobRefNo"]. "</td>\n
 
-                <td>\n
-                    <select name='status' id='status'>\n
-                        <option id='". $row["EOInumber"]. "' value='1'";
-                            // if the status of the current EOI is 1, add 'selected' to the current option
-                            if($row["status"] == '1'){
-                                $EOI_search_table .= " selected";
-                        }
-                        $EOI_search_table .= ">New</option>\n
-                        <option id='". $row["EOInumber"]. "' value='2'";
-                            // if the status of the current EOI is 2, add 'selected' to the current option
-                            if($row["status"] == '2'){
-                                $EOI_search_table .= " selected";
-                        }
-                        $EOI_search_table .= ">Current</option>\n
-                        <option id='". $row["EOInumber"]. "' value='3'";
-                            // if the status of the current EOI is 3, add 'selected' to the current option
-                            if($row["status"] == '3'){
-                                $EOI_search_table .= " selected";
-                        }
-                        $EOI_search_table .= ">Final</option>\n
-                    </select><br>\n
+            <td>\n
+                <form method='post' action='editEOI.php?edit=". $row["EOInumber"]. "'>\n
+                    <label for='status". $row["EOInumber"]. "'>\n
+                        <select name='status' id='status". $row["EOInumber"]. "'>\n
+                            <option class='jobRefNo_". $row["EOInumber"]. "' value='1'";
+                                // if the status of the current EOI is 1, add 'selected' to the current option
+                                if($row["status"] == '1'){
+                                    $EOI_search_table .= " selected";
+                            }
+                            $EOI_search_table .= ">New</option>\n
+                            <option class='jobRefNo_". $row["EOInumber"]. "' value='2'";
+                                // if the status of the current EOI is 2, add 'selected' to the current option
+                                if($row["status"] == '2'){
+                                    $EOI_search_table .= " selected";
+                            }
+                            $EOI_search_table .= ">Current</option>\n
+                            <option class='jobRefNo_". $row["EOInumber"]. "' value='3'";
+                                // if the status of the current EOI is 3, add 'selected' to the current option
+                                if($row["status"] == '3'){
+                                    $EOI_search_table .= " selected";
+                            }
+                            $EOI_search_table .= ">Final</option>\n
+                        </select><br>\n
+                    </label>\n
                     <input type='submit' value='Apply Changes'>\n
-                </td>\n
+                </form>\n
+            </td>\n
 
-                <td>". $row["firstName"]. "</td>\n
+            <td>". $row["firstName"]. "</td>\n
 
-                <td>". $row["lastName"]. "</td>\n
+            <td>". $row["lastName"]. "</td>\n
 
-                <td>". $row["email"]. "</td>\n
+            <td>". $row["email"]. "</td>\n
 
-                <td>\n
-                    <ul>\n";
-                // if the current EOI has skill_java, add java to their list of skills
-                if($row["skill_java"]){
-                    $EOI_search_table .= "<li>Java</li>\n";
-                }
-                if($row["skill_php"]){
-                    $EOI_search_table .= "<li>PHP</li>\n";
-                }
-                if($row["skill_cpp"]){
-                    $EOI_search_table .= "<li>C++</li>\n";
-                }
-                if($row["skill_sql"]){
-                    $EOI_search_table .= "<li>MySQL</li>\n";
-                }
-                if($row["skill_python"]){
-                    $EOI_search_table .= "<li>Python</li>\n";
-                }
-                $EOI_search_table .= "</ul>\n";
+            <td>\n
+                <ul>\n";
+            // if the current EOI has skill_java, add java to their list of skills
+            if($row["skill_java"]){
+                $EOI_search_table .= "<li>Java</li>\n";
+            }
+            if($row["skill_php"]){
+                $EOI_search_table .= "<li>PHP</li>\n";
+            }
+            if($row["skill_cpp"]){
+                $EOI_search_table .= "<li>C++</li>\n";
+            }
+            if($row["skill_sql"]){
+                $EOI_search_table .= "<li>MySQL</li>\n";
+            }
+            if($row["skill_python"]){
+                $EOI_search_table .= "<li>Python</li>\n";
+            }
+            $EOI_search_table .= "</ul>\n";
 
-                if($row["skill_other"]){
-                    $EOI_search_table .= $row["skill_other_details"]. "\n";
-                }
-                
-                $EOI_search_table .= "</td>\n
-            </form>
+            if($row["skill_other"]){
+                $EOI_search_table .= $row["skill_other_details"]. "\n";
+            }
+            
+            $EOI_search_table .= "</td>\n
         </tr>\n";
     }
 }

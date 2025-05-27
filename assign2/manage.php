@@ -52,7 +52,7 @@
                 // Loop for each statusid (1=New, 2=Current, 3=Final)
                 for($i = 1; $i <= 3; $i++){
                     // searchstring finds the appropriate part of the string to edit
-                    $searchstring = "<option id='$EOI_edit' value='$i'";
+                    $searchstring = "<option class='jobRefNo_$EOI_edit' value='$i'";
                     // searchstring_selected is used to either find the currently selected status, or replace the updated status
                     $searchstring_selected = $searchstring." selected";
                     // if the loop is currently editting the statusid we want to update

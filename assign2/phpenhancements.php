@@ -51,9 +51,9 @@ $array = <span>array_unique</span>($array);
 $array = <span>array_values</span>($array);
 // Echo the array
 $arraysize = <span>sizeof</span>($array, SORT_STRING);
-<span>for</span>($i = 0; $i < $arraysize; $i++){
-?&#62;&#60;option value='&#60;?php echo "$array[$i]" ?&#62;'&#62; &#60;?php echo "$array[$i]" ?&#62;&#60;/option&#62;
-&#60;?php \}
+<span>for</span>($i = 0; $i &#60; $arraysize; $i++){
+<span>?</span>&#62;&#60;<span>option</span> value='&#60;<span>?php echo</span> "$array[$i]" <span>?</span>&#62;'&#62; &#60;<span>?php echo</span> "$array[$i]" <span>?</span>&#62;&#60;/<span>option</span>&#62;
+&#60;<span>?php</span> \}
 
 <span><strong>In manage.php</strong></span>       
 // create a dropdown list for all job reference numbers
@@ -83,7 +83,7 @@ $result = <span>mysqli_query</span>($conn, $query);
 &#60;<span>label</span> class="col-2" for="skill_java_filter"&#62;
     &#60;<span>input</span> type="checkbox" name="skill_java_filter" value="1" id="skill_java_filter"&#62;
     Java
-&#60;/label&#62;
+&#60;/<span>label</span>&#62;
 
 <span><strong>In searchEOI.php</strong></span>
 $query = "  <span>SELECT</span> * <span>FROM</span> eoi <span>WHERE</span>
