@@ -11,6 +11,7 @@ function redirect(){
 // get variables
 $EOInumber = $_GET['edit'];
 $statusid = $_POST['status'];
+$previous_status_id = $_POST['previous_status_id'];
 // create array of statuses
 $statuses = array("New", "Current", "Final");
 // select the appropriate status
@@ -51,6 +52,7 @@ $EOI_edit_msg .= "</fieldset>\n";
     // create variable to transfer to manage page
     $_SESSION["EOI_edit"] = $EOInumber;
     $_SESSION["statusid_edit"] = $statusid;
+    $_SESSION["previous_status_id"] = $previous_status_id;
     $_SESSION["EOI_edit_msg"] = $EOI_edit_msg;
     
     mysqli_close($conn);

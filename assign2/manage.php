@@ -47,6 +47,7 @@
                 $EOI_search_table2 = $_SESSION["EOI_search_table2"];
                 // get the statusid & EOI number of the EOI that was editted
                 $statusid_edit = $_SESSION["statusid_edit"];
+                $previous_status_id = $_SESSION["previous_status_id"];
                 $EOI_edit = $_SESSION["EOI_edit"];
                 // -- Edit the search table to reflect the edit changes
                 // Loop for each statusid (1=New, 2=Current, 3=Final)
@@ -57,8 +58,11 @@
                     $searchstring_selected = $searchstring." selected";
                     // if the loop is currently editting the statusid we want to update
                     if($i == $statusid_edit){
-                        // add selected to option
-                        $EOI_search_table2 = str_replace("$searchstring", "$searchstring_selected", $EOI_search_table2);
+                        if($statusid_edit !== $previous_status_id){
+                            // add selected to option
+                            $EOI_search_table2 = str_replace("$searchstring", "$searchstring_selected", $EOI_search_table2);
+                            echo "<p>add selected to $statusid_edit despite $previous_status_id</p>";
+                        }
                     } else{
                         // remove selected from option
                         $EOI_search_table2 = str_replace("$searchstring_selected", "$searchstring", $EOI_search_table2);

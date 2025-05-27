@@ -99,7 +99,8 @@ if(!$result){
                                     $EOI_search_table .= " selected";
                             }
                             $EOI_search_table .= ">Final</option>\n
-                        </select><br>\n
+                        </select>\n
+                        <input type='hidden' name='previous_status_id' value='". $row["status"]. "'>\n
                     </label>\n
                     <input type='submit' value='Apply Changes'>\n
                 </form>\n
