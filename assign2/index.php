@@ -27,9 +27,17 @@
         </p>
         <p><strong><em>Check out what we are about below!<br>There might be something that interests you in our jobs listings.</em></strong></p>
     </section>
+
     <section class="focus center-text">
+        <h2>Assignment 2 Video Demonstration</h2>
+    <embed src="https://www.youtube.com/embed/3A0m7V_WyEU?si=gDDt4C3e41P4ZzQz">
+    </section>
+
+    <section class="focus center-text">
+        <h2>Assignment 1 Video Demonstration</h2>
     <embed src="https://www.youtube.com/embed/46mrM8aR24E?si=d7NQkm3qRX2ggB8G">
     </section>
+
     <section id="achieved">
         <div class="achievement" id="happyWorker">
             <h3 id="worker">4+</h3>
