@@ -2,19 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta name="author" content="SegFault Services">
-    <meta name="charset" content="utf-8">
-    <meta name="keywords" content="computing, recruiting, services">
-    <!-- Adding in the global styles -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-
+    <?php include "include/header.inc";?>
     <title>Manage Enquiries - SegFault Services</title>
 </head>
 
 <body>
+    <!-- Header with aside logo and navbar -->
+    <?php include "include/navbar.inc";?>
+
     <?php
         // connect to sql database
         // if connection fails, draw error, else, continue with php
@@ -22,9 +17,6 @@
         if(!$conn){
         echo "<p>Error: Database connection failure</p>";
         } else { // open brace around rest of php, remember to close brace at end of page's php
-
-        // draw nav bar
-        include "include/navbar.inc";
     ?>
 
     <section class="slideshow center-flex">
@@ -205,11 +197,10 @@
 
     </section>
 
+    <?php } // close brace around all php code ?>
+
     <!--Footer-->
-    <?php
-        }
-        include "include/footer.inc";
-    ?>
+    <?php include "include/footer.inc";?>
 </body>
 
 </html>

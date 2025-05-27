@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="author" content="SegFault Services">
-    <meta name="charset" content="utf-8">
-    <meta name="keywords" content="computing, recruiting, services">
-    
-    <!-- Adding in the global styles -->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
+    <?php include "include/header.inc";?>
     <title>Reach Out - SegFault Services</title>
 </head>
 <body>
     <!-- Header with aside logo and navbar -->
-    <?php
-        include "include/navbar.inc";
-    ?>
+    <?php include "include/navbar.inc";?>
     <!-- end of header -->
 
     <section class="slideshow center-flex">
@@ -120,10 +109,9 @@
         </section>
     </article>
     <!-- end of block-level lbyrnes contribution for this page -->
+     
     <!-- Footer -->
-    <?php
-        include "include/footer.inc";
-    ?>
+    <?php include "include/footer.inc";?>
 
 </body>
 </html>

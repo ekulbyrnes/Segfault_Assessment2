@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="author" content="SegFault Services">
-    <meta name="charset" content="utf-8">
-    <meta name="keywords" content="computing, recruiting, services">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This website is a group project for class COS10032. It is a job board project.">
-
-    
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <?php include "include/header.inc";?>
     <title>Segfault Services</title>
 </head>
 
 
 <body>
     <!-- Header with aside logo and navbar - Nicole -->
-    <?php
-        include "include/navbar.inc";
-    ?>
+    <?php include "include/navbar.inc";?>
     <!-- end of header -->
 
     <!-- Vandy - Section on Index.html -->
@@ -91,9 +79,7 @@
     <!-- Vandy -->
 
     <!-- Footer -->
-    <?php
-        include "include/footer.inc";
-    ?>
+    <?php include "include/footer.inc";?>
 
 </body>
 </html>
