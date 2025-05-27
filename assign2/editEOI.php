@@ -5,11 +5,15 @@ require_once("settings.php");
 // redirect back to the manage page
 function redirect(){
     header ("location: manage.php#belowheader");
+    exit();
 }
 
+// get variables
 $EOInumber = $_GET['edit'];
 $statusid = $_POST['status'];
+// create array of statuses
 $statuses = array("New", "Current", "Final");
+// select the appropriate status
 $status = $statuses[$statusid -1];
 
 // open fieldset

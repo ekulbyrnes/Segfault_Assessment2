@@ -109,8 +109,11 @@
                 // unset session variable so it is not rendered when the page is refreshed
                 unset($_SESSION["EOI_delete"]);
             }
+
+            session_write_close();
         ?>
 
+        <!-- Search EOIs form-->
         <form method="post" action="searchEOI.php">
             <fieldset>
                 <legend class="center-text"><h2>Search EOIs</h2></legend>
@@ -144,25 +147,29 @@
                     </label>
 
                     <label for="skillPick" class="col-12">Skills</label>
-                    <label class="col-2" for="skill_java">
-                        <input type="checkbox" name="skill_java" value="1" id="skill_java">
+                    <label class="col-2" for="skill_java_filter">
+                        <input type="checkbox" name="skill_java_filter" value="1" id="skill_java_filter">
                         Java
                     </label>
-                    <label class="col-2" for="skill_cpp">
-                        <input type="checkbox" name="skill_cpp" value="1" id="skill_cpp">
+                    <label class="col-2" for="skill_cpp_filter">
+                        <input type="checkbox" name="skill_cpp_filter" value="1" id="skill_cpp_filter">
                         C++
                     </label>
-                    <label class="col-2" for="skill_php">
-                        <input type="checkbox" name="skill_php" value="1" id="skill_php">
+                    <label class="col-2" for="skill_php_filter">
+                        <input type="checkbox" name="skill_php_filter" value="1" id="skill_php_filter">
                         PHP
                     </label>
-                    <label class="col-2" for="skill_sql">
-                        <input type="checkbox" name="skill_sql" value="1" id="skill_sql">
+                    <label class="col-2" for="skill_sql_filter">
+                        <input type="checkbox" name="skill_sql_filter" value="1" id="skill_sql_filter">
                         MySQL
                     </label>
-                    <label class="col-2" for="skill_python">
-                        <input type="checkbox" name="skill_python" value="1" id="skill_python">
+                    <label class="col-2" for="skill_python_filter">
+                        <input type="checkbox" name="skill_python_filter" value="1" id="skill_python_filter">
                         Python
+                    </label>
+                    <label class="col-2" for="skill_other_filter">
+                        <input type="checkbox" name="skill_other_filter" value="1" id="skill_other_filter">
+                        Other
                     </label>
                     <input type="submit" value="Search">
                 </div>
