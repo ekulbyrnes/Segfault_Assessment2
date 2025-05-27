@@ -15,6 +15,13 @@
     </section>
 
 <?php
+// Function to error out but still draw the footer -- Marcus
+function die_with_footer($death_string){
+    echo "<p>$death_string</p>";
+    include 'include/footer.inc';
+    die();
+}
+
 // Restrict direct access to processEOI.php file from browser
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: apply.php');
@@ -33,7 +40,7 @@ CREATE TABLE IF NOT EXISTS gender (
 SQL;
 
 // Check table creation successful
-mysqli_query($conn, $createGender) or die("Gender table creation failed: " . mysqli_error($conn));
+mysqli_query($conn, $createGender) or die_with_footer("Gender table creation failed: " . mysqli_error($conn));
 
 // Populate gender if empty
 $genderCheck = mysqli_query($conn, "SELECT COUNT(*) as count FROM gender");
@@ -54,7 +61,7 @@ CREATE TABLE IF NOT EXISTS states (
 );
 SQL;
 
-mysqli_query($conn, $createStates) or die("States table creation failed: " . mysqli_error($conn));
+mysqli_query($conn, $createStates) or die_with_footer("States table creation failed: " . mysqli_error($conn));
 
 // Populate states if table is empty
 $statesCheck = mysqli_query($conn, "SELECT COUNT(*) as count FROM states");
@@ -81,7 +88,7 @@ CREATE TABLE IF NOT EXISTS status (
 );
 SQL;
 
-mysqli_query($conn, $createstatus) or die("status table creation failed: " . mysqli_error($conn));
+mysqli_query($conn, $createstatus) or die_with_footer("status table creation failed: " . mysqli_error($conn));
 
 // Populate status if empty
 $statusCheck = mysqli_query($conn, "SELECT COUNT(*) as count FROM status");
@@ -124,7 +131,7 @@ CREATE TABLE IF NOT EXISTS eoi (
 SQL;
 
 // Display error if table doesn't create cleanly
-mysqli_query($conn, $createTable) or die("Table creation error: " . mysqli_error($conn));
+mysqli_query($conn, $createTable) or die_with_footer("Table creation error: " . mysqli_error($conn));
 
 include "include/sanitise_input_function.inc";
 
@@ -152,26 +159,26 @@ $skills = [
 $skill_other_details = ($skill_other && isset($_POST['skill_other_details'])) ? sanitise_input("skill_other_details") : "";
 
 // Validation rules
-if (!preg_match('/^[A-Za-z0-9]{5}$/', $jobRefNo)) die("Job Ref invalid.");
-if (!preg_match('/^[A-Za-z]{1,20}$/', $firstName)) die("Invalid First Name.");
-if (!preg_match('/^[A-Za-z]{1,20}$/', $lastName)) die("Invalid Last Name.");
-if (!preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $DOB)) die("DOB must be in dd/mm/yyyy format.");
-if (!in_array($gender, [1, 2, 3])) die("Invalid gender selected.");
+if (!preg_match('/^[A-Za-z0-9]{5}$/', $jobRefNo)) die_with_footer("Job Ref invalid.");
+if (!preg_match('/^[A-Za-z]{1,20}$/', $firstName)) die_with_footer("Invalid First Name.");
+if (!preg_match('/^[A-Za-z]{1,20}$/', $lastName)) die_with_footer("Invalid Last Name.");
+if (!preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $DOB)) die_with_footer("DOB must be in dd/mm/yyyy format.");
+if (!in_array($gender, [1, 2, 3])) die_with_footer("Invalid gender selected.");
 
 // DOB Management
 $DOB_parts = explode('/', $DOB);
-if (count($DOB_parts) !== 3 || !checkdate($DOB_parts[1], $DOB_parts[0], $DOB_parts[2])) die("Invalid DOB.");
+if (count($DOB_parts) !== 3 || !checkdate($DOB_parts[1], $DOB_parts[0], $DOB_parts[2])) die_with_footer("Invalid DOB.");
 $DOB_mysql = "{$DOB_parts[2]}-{$DOB_parts[1]}-{$DOB_parts[0]}";
 $age = (int)date('Y') - (int)$DOB_parts[2];
-if ($age < 15 || $age > 80) die("Invalid age. Must be between 15 - 80.");
+if ($age < 15 || $age > 80) die_with_footer("Invalid age. Must be between 15 - 80.");
 
 // Email and phonenumber
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) die("Invalid email.");
-if (!preg_match('/^[0-9 ]{8,12}$/', $phonenumber)) die("Invalid phonenumber.");
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) die_with_footer("Invalid email.");
+if (!preg_match('/^[0-9 ]{8,12}$/', $phonenumber)) die_with_footer("Invalid phonenumber.");
 
 // State code to ID
 $state_map = ['VIC'=>1,'NSW'=>2,'QLD'=>3,'NT'=>4,'WA'=>5,'SA'=>6,'TAS'=>7,'ACT'=>8];
-if (!isset($state_map[$stateCode])) die("Invalid state.");
+if (!isset($state_map[$stateCode])) die_with_footer("Invalid state.");
 $state_id = $state_map[$stateCode];
 
 // Check postcode matches state -- Marcus
@@ -185,50 +192,50 @@ switch ($state_id) {
         if(between($postcode, 3000, 3996) 
         || between($postcode, 8000, 8999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 2: // New South Wales
         if(between($postcode, 1000, 1999) 
         || between($postcode, 2000, 2599)
         || between($postcode, 2619, 2899)
         || between($postcode, 2921, 2999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 3: // Queensland
         if(between($postcode, 4000, 4999)
         || between($postcode, 9000, 9999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 4: // Northern Territory
         if(between($postcode, 800, 999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 5: // Western Australia
         if(between($postcode, 6000, 6797)
         || between($postcode, 6800, 6999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 6: // South Australia
         if(between($postcode, 5000, 5999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 7: // Tasmania
         if(between($postcode, 7000, 7999)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     case 8: // Australian Capital Territory
         if(between($postcode, 200, 299)
         || between($postcode, 2600, 2618)
         || between($postcode, 2900, 2920)){
             break;
-        } else die($invalidpostcode_msg);
+        } else die_with_footer($invalidpostcode_msg);
     default:
-        die($invalidpostcode_msg);
+        die_with_footer($invalidpostcode_msg);
         break;
 }
 
 // Other skill
 if ($skill_other && empty($skill_other))
-if (!empty($_POST['skill_other_details']) && empty($skill_other)) die("Please specify 'other' skill.");
+if (!empty($_POST['skill_other_details']) && empty($skill_other)) die_with_footer("Please specify 'other' skill.");
 $skill_other = isset($_POST['skill_other']) ? 1 : 0;
 
 // Set status default
@@ -241,7 +248,7 @@ $stmt = $conn->prepare("INSERT INTO eoi (
     skill_java, skill_cpp, skill_php, skill_sql, skill_python, skill_other, skill_other_details, status
 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-if (!$stmt) die("Prepare failed: " . $conn->error);
+if (!$stmt) die_with_footer("Prepare failed: " . $conn->error);
 
 // Prepare SQL query to send values to the db placeholder locations
 $stmt->bind_param("ssssisssiissiiiiissi",
@@ -252,7 +259,7 @@ $stmt->bind_param("ssssisssiissiiiiissi",
 );
 
 // Execute the SQL insertion or return error
-$stmt->execute() or die("Insert failed: " . $stmt->error);
+$stmt->execute() or die_with_footer("Insert failed: " . $stmt->error);
 $eoiNumber = $stmt->insert_id;
 ?>
 
