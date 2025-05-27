@@ -29,16 +29,7 @@
     <section class="focus">
         <a id="belowheader"></a>
         <h1><span class="terminalblink">_</span>EOIs</h1>
-
-        <!--EOI TABLE
-            Buttons to:
-                - list all EOIs
-                - List all EOIs for a position (job reference number, dropdown?)
-                - List all EOIs for an applicant (name inputs)
-                    - Change the status of an EOI (dropdown)
-                - Delete all EOIs for a position (job reference number, dropdown?)
-        -->
-
+        
         <!--draw results from other php pages-->
         <?php
             session_start();
@@ -111,7 +102,7 @@
                 <legend class="center-text"><h2>Search EOIs</h2></legend>
 
                 <div class="form-container">
-                    <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
+                    <label for="jobRefNo_filter" class="col-6" id="jobRefNo_filter">Job Reference Number<br>
                         <?php
                             // create a dropdown list for all job reference numbers
                             $query = "SELECT jobRefNo FROM eoi;";
@@ -173,7 +164,7 @@
                 <legend class="center-text"><h2>Delete EOIs</h2></legend>
 
                 <div class="form-container">
-                    <label for="jobRefNo_select" class="col-6">Job Reference Number<br>
+                    <label for="jobRefNo_filter" class="col-6">Job Reference Number<br>
                         <?php
                             // create a dropdown list for all job reference numbers
                             $query = "SELECT jobRefNo FROM eoi;";

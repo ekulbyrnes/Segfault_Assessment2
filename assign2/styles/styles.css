@@ -377,6 +377,7 @@ We define keywords (functions, classes, id, etc) in the span tag as it is natura
     color: white;
     border-radius: 5px;
     line-height: 1.5em ;
+    text-align: left;
 }
 .code-block > span {
     color: #e5b567;
