@@ -4,7 +4,7 @@ require_once("settings.php");
 
 // redirect back to the manage page
 function redirect(){
-    header ("location: manage.php");
+    header ("location: manage.php#belowheader");
 }
 
 $EOInumber = $_GET['edit'];
@@ -43,10 +43,11 @@ $EOI_edit_msg .= "</fieldset>\n";
 
     // send table result back to the manage page
     // open session
-    session_id('edit');
     session_start();
     // create variable to transfer to manage page
-    $_SESSION["EOI_edit"] = $EOI_edit_msg;
+    $_SESSION["EOI_edit"] = $EOInumber;
+    $_SESSION["statusid_edit"] = $statusid;
+    $_SESSION["EOI_edit_msg"] = $EOI_edit_msg;
     
     mysqli_close($conn);
 

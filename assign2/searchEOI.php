@@ -5,7 +5,7 @@ require "include/sanitise_input_function.inc";
 
 // redirect back to the manage page
 function redirect(){
-    header ("location: manage.php");
+    header ("location: manage.php#belowheader");
 }
 
 // get variables
@@ -88,17 +88,17 @@ if(!$result){
 
             <td>\n
                 <select name='status' id='status'>\n
-                    <option value='1'";
+                    <option id='". $row["EOInumber"]. "' value='1'";
                         if($rowstatus == '1'){
                         $EOI_search_table .= " selected";
                     }
                     $EOI_search_table .= ">New</option>\n
-                    <option value='2'";
+                    <option id='". $row["EOInumber"]. "' value='2'";
                         if($rowstatus == '2'){
                         $EOI_search_table .= " selected";
                     }
                     $EOI_search_table .= ">Current</option>\n
-                    <option value='3'";
+                    <option id='". $row["EOInumber"]. "' value='3'";
                     if($rowstatus == '3'){
                         $EOI_search_table .= " selected";
                     }
@@ -151,7 +151,6 @@ mysqli_free_result($result);
 
 // send table result back to the manage page
 // open session
-session_id('search');
 session_start();
 // create variable to transfer to manage page
 $_SESSION["EOI_search_table"] = $EOI_search_table;

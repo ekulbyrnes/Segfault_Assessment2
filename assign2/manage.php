@@ -35,6 +35,7 @@
     </section>
 
     <section class="focus">
+        <a id="belowheader"></a>
         <h1><span class="terminalblink">_</span>EOIs</h1>
 
         <!--EOI TABLE
@@ -46,22 +47,68 @@
                 - Delete all EOIs for a position (job reference number, dropdown?)
         -->
 
-        <!--draw search results-->
+        <!--draw results from other php pages-->
         <?php
             session_start();
-            if(isset($_SESSION["EOI_edit"])){
-                $EOI_edit_msg = $_SESSION["EOI_edit"];
+
+            // if the edit message is set
+            if(isset($_SESSION["EOI_edit_msg"])){
+                // get session variable for edit message confirmation
+                $EOI_edit_msg = $_SESSION["EOI_edit_msg"];
+                // draw message
                 echo "$EOI_edit_msg";
-            } else if(isset($_SESSION["EOI_search_table"])){
-                $EOI_search_table = $_SESSION["EOI_search_table"];
-                echo "$EOI_search_table";
-            } else if(isset($_SESSION["EOI_delete"])){
-            $EOI_delete_msg = $_SESSION["EOI_delete"];
-            echo "$EOI_delete_msg";
+
+                // unset the error message variable so it does not render when the page is refreshed
+                unset($_SESSION["EOI_edit_msg"]);
+                // get the last rendered search table
+                $EOI_search_table2 = $_SESSION["EOI_search_table2"];
+                // get the statusid & EOI number of the EOI that was editted
+                $statusid_edit = $_SESSION["statusid_edit"];
+                $EOI_edit = $_SESSION["EOI_edit"];
+                // -- Edit the search table to reflect the edit changes
+                // Loop for each statusid (1=New, 2=Current, 3=Final)
+                for($i = 1; $i <= 3; $i++){
+                    // searchstring finds the appropriate part of the string to edit
+                    $searchstring = "<option id='$EOI_edit' value='$i'";
+                    // searchstring_selected is used to either find the currently selected status, or replace the updated status
+                    $searchstring_selected = $searchstring." selected";
+                    // if the loop is currently editting the statusid we want to update
+                    if($i == $statusid_edit){
+                        // add selected to option
+                        $EOI_search_table2 = str_replace("$searchstring", "$searchstring_selected", $EOI_search_table2);
+                    } else{
+                        // remove selected from option
+                        $EOI_search_table2 = str_replace("$searchstring_selected", "$searchstring", $EOI_search_table2);
+                    }
+                }
+                // update session variable to the updated table
+                $_SESSION["EOI_search_table2"] = $EOI_search_table2;
+
+                // draw updated table
+                echo "$EOI_search_table2";
             }
-            
-            // clear variables so the table isn't always drawn with the most recent search
-            session_unset();
+            // if the search table is set
+            if(isset($_SESSION["EOI_search_table"])){
+                // get the session variable
+                $EOI_search_table = $_SESSION["EOI_search_table"];
+                // draw search table results
+                echo "$EOI_search_table";
+
+                // unset session variable so it is not rendered when the page is refreshed
+                unset($_SESSION["EOI_search_table"]);
+                // back up the search table to a new session variable, used for redrawing the table when an EOI is modified
+                $_SESSION["EOI_search_table2"] = $EOI_search_table;
+            }
+            // if the delete confirmation message is set
+            if(isset($_SESSION["EOI_delete"])){
+                // get the session variable
+                $EOI_delete_msg = $_SESSION["EOI_delete"];
+                // draw delete confirmation message
+                echo "$EOI_delete_msg";
+
+                // unset session variable so it is not rendered when the page is refreshed
+                unset($_SESSION["EOI_delete"]);
+            }
         ?>
 
         <form method="post" action="searchEOI.php">

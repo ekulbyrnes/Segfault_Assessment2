@@ -5,7 +5,7 @@ require "include/sanitise_input_function.inc";
 
 // redirect back to the manage page
 function redirect(){
-    header ("location: manage.php");
+    header ("location: manage.php#belowheader");
 }
 
 // get variables
@@ -42,7 +42,6 @@ $EOI_delete_msg .= "</fieldset>\n";
 
     // send table result back to the manage page
     // open session
-    session_id('delete');
     session_start();
     // create variable to transfer to manage page
     $_SESSION["EOI_delete"] = $EOI_delete_msg;
