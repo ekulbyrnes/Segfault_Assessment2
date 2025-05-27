@@ -174,6 +174,58 @@ $state_map = ['VIC'=>1,'NSW'=>2,'QLD'=>3,'NT'=>4,'WA'=>5,'SA'=>6,'TAS'=>7,'ACT'=
 if (!isset($state_map[$stateCode])) die("Invalid state.");
 $state_id = $state_map[$stateCode];
 
+// Check postcode matches state -- Marcus
+// Function to check if a value is between two other values
+function between($value, $min, $max){
+    return ($value >= $min && $value <= $max);
+}
+$invalidpostcode_msg = "Postcode and state do not match.";
+switch ($state_id) {
+    case 1: // Victoria
+        if(between($postcode, 3000, 3996) 
+        || between($postcode, 8000, 8999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 2: // New South Wales
+        if(between($postcode, 1000, 1999) 
+        || between($postcode, 2000, 2599)
+        || between($postcode, 2619, 2899)
+        || between($postcode, 2921, 2999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 3: // Queensland
+        if(between($postcode, 4000, 4999)
+        || between($postcode, 9000, 9999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 4: // Northern Territory
+        if(between($postcode, 800, 999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 5: // Western Australia
+        if(between($postcode, 6000, 6797)
+        || between($postcode, 6800, 6999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 6: // South Australia
+        if(between($postcode, 5000, 5999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 7: // Tasmania
+        if(between($postcode, 7000, 7999)){
+            break;
+        } else die($invalidpostcode_msg);
+    case 8: // Australian Capital Territory
+        if(between($postcode, 200, 299)
+        || between($postcode, 2600, 2618)
+        || between($postcode, 2900, 2920)){
+            break;
+        } else die($invalidpostcode_msg);
+    default:
+        die($invalidpostcode_msg);
+        break;
+}
+
 // Other skill
 if ($skill_other && empty($skill_other))
 if (!empty($_POST['skill_other_details']) && empty($skill_other)) die("Please specify 'other' skill.");
