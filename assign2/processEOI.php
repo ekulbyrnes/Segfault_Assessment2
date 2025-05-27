@@ -17,7 +17,7 @@
 <?php
 // Restrict direct access to processEOI.php file from browser
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: application_form.php'); // or whatever your form filename is
+    header('Location: apply.php');
     exit();
 }
     // Add DB connection
