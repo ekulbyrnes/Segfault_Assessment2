@@ -63,6 +63,26 @@ $arraysize = <span>sizeof</span>($array, SORT_STRING);
                 </p>
                 <pre class="code-block">
 
+<span><strong>In manage.php</strong></span>
+&#60;<span>label</span> class="col-2" for="skill_java_filter"&#62;
+    &#60;<span>input</span> type="checkbox" name="skill_java_filter" value="1" id="skill_java_filter"&#62;
+    Java
+&#60;/label&#62;
+
+<span><strong>In searchEOI.php</strong></span>
+$query = "  <span>SELECT</span> * <span>FROM</span> eoi <span>WHERE</span>
+            jobRefNo <span>LIKE</span> '$jobRefNo_filter%'
+            <span>AND</span> firstName <span>LIKE</span> '$firstName_filter%'
+            <span>AND</span> lastName <span>LIKE</span> '$lastName_filter%'
+            <span>AND</span> skill_java <span>LIKE</span> '$skill_java_filter%'
+            <span>AND</span> skill_cpp <span>LIKE</span> '$skill_cpp_filter%'
+            <span>AND</span> skill_php <span>LIKE</span> '$skill_php_filter%'
+            <span>AND</span> skill_sql <span>LIKE</span> '$skill_sql_filter%'
+            <span>AND</span> skill_python <span>LIKE</span> '$skill_python_filter%'
+            <span>AND</span> skill_other <span>LIKE</span> '$skill_other_filter%'
+            ;";
+
+$result = <span>mysqli_query</span>($conn, $query);
                 </pre>
             </aside>
         </div>
