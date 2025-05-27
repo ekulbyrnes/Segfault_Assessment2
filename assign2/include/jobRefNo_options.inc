@@ -13,6 +13,6 @@
     // Echo the array
     $arraysize = sizeof($array, SORT_STRING);
     for($i = 0; $i < $arraysize; $i++){
-        echo "<option value='", $array[$i], "'>", $array[$i], "</option>\n";
+        echo "\t\t\t\t\t\t\t<option value='", $array[$i], "'>", $array[$i], "</option>\n";
     }
 ?>
