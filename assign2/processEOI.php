@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include "include/header.inc";?>
+    <title>EOI Received - SegFault Services</title>
+</head>
+
+<body>
+    <!-- Header with aside logo and navbar -->
+    <?php include "include/navbar.inc";?>
+    <!-- end of header -->
+
+    <section class="slideshow center-flex">
+        <h1>EOI Received</h1>
+    </section>
+
 <?php
 // Restrict direct access to processEOI.php file from browser
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -189,9 +205,16 @@ $stmt->bind_param("ssssisssiissiiiiissi",
 // Execute the SQL insertion or return error
 $stmt->execute() or die("Insert failed: " . $stmt->error);
 $eoiNumber = $stmt->insert_id;
-
-// Provide confirmation messages on successful submission.
-echo "<h2>Thank you for your application!</h2>";
-echo "<p>Your application has been received. Your EOI number is: <strong>$eoiNumber</strong></p>";
 ?>
 
+    <section class="focus"> <!--Content Section-->
+        <h1><span class="terminalblink">_</span>Thank you for your application!</h1>
+        <p>Your application has been received. Your EOI number is: <strong><?php echo "$eoiNumber";?></strong></p>
+    </section>
+
+
+    <!-- Footer -->
+    <?php include "include/footer.inc";?>
+
+</body>
+</html>
