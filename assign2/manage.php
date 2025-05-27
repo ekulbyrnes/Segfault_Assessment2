@@ -135,7 +135,7 @@
                         <input type="text" name="firstName_filter" id="firstName_filter" maxlength="20" placeholder="First Name">
                     </label>
                     <label for="lastName_filter" class="col-6">
-                        <input type="text" name="lastName_filter" id="lastName_filter"maxlength="20" placeholder="Last Name">
+                        <input type="text" name="lastName_filter" id="lastName_filter" maxlength="20" placeholder="Last Name">
                     </label>
 
                     <label for="skillPick" class="col-12">Skills</label>
