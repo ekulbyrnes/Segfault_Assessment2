@@ -126,25 +126,22 @@ SQL;
 // Display error if table doesn't create cleanly
 mysqli_query($conn, $createTable) or die("Table creation error: " . mysqli_error($conn));
 
-// Sanitize data
-function clean_input($data) {
-    return htmlspecialchars(stripslashes(trim($data)));
-}
+include "include/sanitise_input_function.inc";
 
 // Retrieve and sanitize inputs
-$jobRefNo = clean_input($_POST['jobRefNo']);
-$firstName = clean_input($_POST['firstName']);
-$lastName = clean_input($_POST['lastName']);
-$DOB = clean_input($_POST['DOB']);
+$jobRefNo = sanitise_input("jobRefNo");
+$firstName = sanitise_input("firstName");
+$lastName = sanitise_input("lastName");
+$DOB = sanitise_input("DOB");
 $gender = isset($_POST['gender']) ? (int) $_POST['gender'] : 0;
-$othergender = ($gender == 3) ? clean_input($_POST['othergender']) : '';
-$address = clean_input($_POST['address']);
-$suburb = clean_input($_POST['suburb']);
-$stateCode = clean_input($_POST['state']); // e.g., 'VIC'
-$postcode = clean_input($_POST['postcode']);
-$email = clean_input($_POST['email']);
-$phonenumber = clean_input($_POST['phonenumber']);
-$skill_other = isset($_POST['skill_other_details']) ? clean_input($_POST['skill_other_details']) : '';
+$othergender = ($gender == 3) ? sanitise_input("othergender") : '';
+$address = sanitise_input("address");
+$suburb = sanitise_input("suburb");
+$stateCode = sanitise_input("state"); // e.g., 'VIC'
+$postcode = sanitise_input("postcode");
+$email = sanitise_input("email");
+$phonenumber = sanitise_input("phonenumber");
+$skill_other = isset($_POST['skill_other_details']) ? sanitise_input("skill_other_details") : '';
 $skills = [
     'skill_java' => isset($_POST['skill_java']) ? 1 : 0,
     'skill_cpp' => isset($_POST['skill_cpp']) ? 1 : 0,
@@ -152,7 +149,7 @@ $skills = [
     'skill_sql' => isset($_POST['skill_sql']) ? 1 : 0,
     'skill_python' => isset($_POST['skill_python']) ? 1 : 0
 ];
-$skill_other_details = ($skill_other && isset($_POST['skill_other_details'])) ? clean_input($_POST['skill_other_details']) : "";
+$skill_other_details = ($skill_other && isset($_POST['skill_other_details'])) ? sanitise_input("skill_other_details") : "";
 
 // Validation rules
 if (!preg_match('/^[A-Za-z0-9]{5}$/', $jobRefNo)) die("Job Ref invalid.");
