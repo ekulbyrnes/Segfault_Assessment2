@@ -163,7 +163,7 @@
                         <input type="checkbox" name="skill_other_filter" value="1" id="skill_other_filter">
                         Other
                     </label>
-                    <input type="submit" value="Search">
+                    <input class="col-12" type="submit" value="Search">
                 </div>
             </fieldset>
         </form>

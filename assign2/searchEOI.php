@@ -73,7 +73,7 @@ if(!$result){
         $EOI_search_table .=
         "<tr>\n
             <form method='post' action='editEOI.php?edit=". $row["EOInumber"]. "'>\n
-                <td>". $row["EOInumber"]. "</td>\n
+                <td class='center-text'>". $row["EOInumber"]. "</td>\n
             
                 <td>". $row["jobRefNo"]. "</td>\n
 
@@ -98,7 +98,7 @@ if(!$result){
                         }
                         $EOI_search_table .= ">Final</option>\n
                     </select><br>\n
-                    <input type='submit' value='Apply Changes' class='centerimage'>\n
+                    <input type='submit' value='Apply Changes'>\n
                 </td>\n
 
                 <td>". $row["firstName"]. "</td>\n

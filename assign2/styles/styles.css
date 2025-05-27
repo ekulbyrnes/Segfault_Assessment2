@@ -625,6 +625,16 @@ input.col-6{
     flex-basis: calc(50% - 12px);
 }
 
+input[type=submit]{
+    flex-basis:20%;
+    margin: 15px 0 2px;
+    padding: 0.4em;
+    font-weight: bold;
+    background-color: rgb(232, 232, 232);
+    border:2px solid rgb(160, 160, 160);
+    border-radius:4px;
+}
+
 /* Textarea styling */
 textarea{
     width: 96.5%;
@@ -667,6 +677,10 @@ select{
     width: calc(100% - 15px);
 }
 
+select#status{
+    width: 100%;
+}
+
 /* Fieldset styling */
 fieldset{
     display: block;
@@ -678,12 +692,6 @@ fieldset{
     padding-left: 0.75em;
     padding-right: 0.75em;
     border: 2px groove rgba(214, 191, 182, 0.326);
-}
-
-input[type=submit]{
-    flex-basis:20%;
-    padding: 0.4em;
-    font-weight: bold;
 }
 
 /* Label Styling */
