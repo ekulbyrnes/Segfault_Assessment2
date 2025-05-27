@@ -10,7 +10,7 @@ function redirect(){
 }
 
 // get variables
-$jobRefNo_filter = sanitise_input("jobRefNo_filter");
+$jobRefNo_delete = sanitise_input("jobRefNo_delete");
 
 // open fieldset
 $EOI_delete_msg = "<fieldset>\n
@@ -23,7 +23,7 @@ if(!$conn){
         redirect();
 }
 
-$query = "DELETE FROM eoi WHERE jobRefNo = '$jobRefNo_filter';";
+$query = "DELETE FROM eoi WHERE jobRefNo = '$jobRefNo_delete';";
 
 $result = mysqli_query($conn, $query);
 
@@ -32,7 +32,7 @@ if(!$result){
     $EOI_delete_msg .= "<p>Error: EOIs with reference number $jobRefNo were not succesfully deleted.\n
                         Something wrong with query: $query.</p>\n";
 } else{
-    $EOI_delete_msg .= "<p>EOIs with reference number $jobRefNo_filter were successfully deleted.</p>\n";
+    $EOI_delete_msg .= "<p>EOIs with reference number $jobRefNo_delete were successfully deleted.</p>\n";
 }
 // close fieldset
 $EOI_delete_msg .= "</fieldset>\n";

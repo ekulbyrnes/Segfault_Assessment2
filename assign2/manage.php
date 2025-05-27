@@ -102,7 +102,7 @@
                 <legend class="center-text"><h2>Search EOIs</h2></legend>
 
                 <div class="form-container">
-                    <label for="jobRefNo_filter" class="col-6" id="jobRefNo_filter">Job Reference Number<br>
+                    <label for="jobRefNo_filter" class="col-6" id="enhancement_3">Job Reference Number<br>
                         <?php
                             // create a dropdown list for all job reference numbers
                             $query = "SELECT jobRefNo FROM eoi;";
@@ -129,7 +129,7 @@
                         <input type="text" name="lastName_filter" id="lastName_filter" maxlength="20" placeholder="Last Name">
                     </label>
 
-                    <label for="skillPick" class="col-12">Skills</label>
+                    <label class="col-12" id="enhancement_4">Skills</label>
                     <label class="col-2" for="skill_java_filter">
                         <input type="checkbox" name="skill_java_filter" value="1" id="skill_java_filter">
                         Java
@@ -164,7 +164,7 @@
                 <legend class="center-text"><h2>Delete EOIs</h2></legend>
 
                 <div class="form-container">
-                    <label for="jobRefNo_filter" class="col-6">Job Reference Number<br>
+                    <label for="jobRefNo_delete" class="col-6">Job Reference Number<br>
                         <?php
                             // create a dropdown list for all job reference numbers
                             $query = "SELECT jobRefNo FROM eoi;";
@@ -174,7 +174,7 @@
                             if(!$result){
                                 echo "<p>Error: Something is wrong with query: ", $query, "</p>";
                             } else {
-                                echo "<select id='jobRefNo_filter' name='jobRefNo_filter' required>\n
+                                echo "<select id='jobRefNo_delete' name='jobRefNo_delete' required>\n
                                         <option value='' selected>---</option>\n";
                                 include "include/jobRefNo_options.inc";
                                 echo "</select>";

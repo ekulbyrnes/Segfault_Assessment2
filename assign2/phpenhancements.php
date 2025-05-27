@@ -32,7 +32,7 @@
         <div class="details-flex centertext" >
             <aside class="left-item">
                 <h4>Auto-Populating Dropdown List</h4>
-                <h6 class="pulse"><a href="manage.php#jobRefNo_filter" class="no-link-decor">[Click to go to Enhancement (#jobRefNo_filter)]</a></h6>
+                <h6 class="pulse"><a href="manage.php#enhancement_3" class="no-link-decor">[Click to go to Enhancement (#enhancement_3)]</a></h6>
                 <p>On our manage EOIs page, we created an dropdown list that automatically fills its options with job reference numbers from the database. 
                     Any duplicate reference numbers are removed.</p>
                 <pre class="code-block">
@@ -73,7 +73,7 @@ $result = <span>mysqli_query</span>($conn, $query);
             </aside>
             <aside class="right-item">
                 <h4>Check Boxes to Filter EOIs</h4>
-                <h6 class="pulse"><a href="manage.php#skill_java_filter" class="no-link-decor">[Click to go to Enhancement (#skill_java_filter)]</a></h6>
+                <h6 class="pulse"><a href="manage.php#enhancement_4" class="no-link-decor">[Click to go to Enhancement (#enhancement_4)]</a></h6>
                 <p>We also added checkboxes to filter EOIs by the skills an applicant has. 
                     They work very similarly to the filters for reference number and name.
                 </p>
