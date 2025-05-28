@@ -9,6 +9,12 @@ function redirect(){
     exit();
 }
 
+// Restrict direct access to searchEOI.php file from browser
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: manage.php');
+    exit();
+}
+
 // get variables
 $jobRefNo_filter       = sanitise_input("jobRefNo_filter");
 $firstName_filter      = sanitise_input("firstName_filter");

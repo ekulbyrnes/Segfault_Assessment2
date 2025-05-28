@@ -14,9 +14,10 @@
         // connect to sql database
         // if connection fails, draw error, else, continue with php
         require_once("settings.php");
+        include "include/die_with_footer.inc";
         if(!$conn){
-        echo "<p>Error: Database connection failure</p>";
-        } else { // open brace around rest of php, remember to close brace at end of page's php
+            die_with_footer("Error: Database connection failure.");
+        }
     ?>
 
     <section class="slideshow center-flex">
@@ -45,7 +46,7 @@
                 unset($_SESSION["EOI_edit_msg"]);
                 // get the last rendered search table
                 $EOI_search_table2 = $_SESSION["EOI_search_table2"];
-                // get the statusid & EOI number of the EOI that was editted
+                // get the statusid & EOI number of the EOI that was edited
                 $statusid_edit = $_SESSION["statusid_edit"];
                 $previous_status_id = $_SESSION["previous_status_id"];
                 $EOI_edit = $_SESSION["EOI_edit"];
@@ -56,12 +57,11 @@
                     $searchstring = "<option class='jobRefNo_$EOI_edit' value='$i'";
                     // searchstring_selected is used to either find the currently selected status, or replace the updated status
                     $searchstring_selected = $searchstring." selected";
-                    // if the loop is currently editting the statusid we want to update
+                    // if the loop is currently editing the statusid we want to update
                     if($i == $statusid_edit){
                         if($statusid_edit !== $previous_status_id){
                             // add selected to option
                             $EOI_search_table2 = str_replace("$searchstring", "$searchstring_selected", $EOI_search_table2);
-                            echo "<p>add selected to $statusid_edit despite $previous_status_id</p>";
                         }
                     } else{
                         // remove selected from option
@@ -191,8 +191,6 @@
         </form>
 
     </section>
-
-    <?php } // close brace around all php code ?>
 
     <!--Footer-->
     <?php include "include/footer.inc";?>

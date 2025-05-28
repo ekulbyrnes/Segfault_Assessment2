@@ -49,8 +49,8 @@ $i = 0;
 // Cull duplicate job ref numbers from the array
 $array = <span>array_unique</span>($array);
 $array = <span>array_values</span>($array);
-// Echo the array
 $arraysize = <span>sizeof</span>($array, SORT_STRING);
+// Echo the array as option elements
 <span>for</span>($i = 0; $i &#60; $arraysize; $i++){
 <span>?</span>&#62;&#60;<span>option</span> value='&#60;<span>?php echo</span> "$array[$i]" <span>?</span>&#62;'&#62; &#60;<span>?php echo</span> "$array[$i]" <span>?</span>&#62;&#60;/<span>option</span>&#62;
 &#60;<span>?php</span> \}

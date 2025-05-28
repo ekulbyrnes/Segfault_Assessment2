@@ -15,21 +15,16 @@
     </section>
 
 <?php
-// Function to error out but still draw the footer -- Marcus
-function die_with_footer($death_string){
-    echo "<p>$death_string</p>";
-    include 'include/footer.inc';
-    die();
-}
+
+include "include/die_with_footer.inc";
 
 // Restrict direct access to processEOI.php file from browser
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: apply.php');
     exit();
 }
-    // Add DB connection
-    require_once "settings.php";
-    $conn = mysqli_connect ($host,$user,$pwd,$sql_db);
+// Add DB connection
+require_once "settings.php";
 
 // CREATE gender table if it doesn't already exist
 $createGender = <<<SQL
@@ -52,7 +47,7 @@ if ((int)$genderRow['count'] === 0) {
     ");
 }
 
-// CREATE states table if it doesn't already exists
+// CREATE states table if it doesn't already exist
 $createStates = <<<SQL
 CREATE TABLE IF NOT EXISTS states (
     state_id INT AUTO_INCREMENT PRIMARY KEY,

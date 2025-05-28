@@ -9,6 +9,12 @@ function redirect(){
     exit();
 }
 
+// Restrict direct access to deleteEOI.php file from browser
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: manage.php');
+    exit();
+}
+
 // get variables
 $jobRefNo_delete = sanitise_input("jobRefNo_delete");
 

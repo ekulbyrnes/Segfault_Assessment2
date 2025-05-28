@@ -8,6 +8,12 @@ function redirect(){
     exit();
 }
 
+// Restrict direct access to editEOI.php file from browser
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: manage.php');
+    exit();
+}
+
 // get variables
 $EOInumber = $_GET['edit'];
 $statusid = $_POST['status'];
