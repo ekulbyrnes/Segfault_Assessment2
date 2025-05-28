@@ -64,7 +64,7 @@ if(!$result){
             <th scope='col'>Status</th>\n
             <th scope='col'>First Name</th>\n
             <th scope='col'>Last Name</th>\n
-            <th scope='col' id='email'>Email</th>\n
+            <th scope='col' id='tableemail'>Email</th>\n
             <th scope='col' id='skills'>Skills</th>\n
         </tr>\n";
     // loop for each EOI result

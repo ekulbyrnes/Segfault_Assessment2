@@ -611,7 +611,7 @@ div.gender-flex-container label{
 
 /* Input styling */
 /* Textbox & email styling */
-input[type=text],input[type=email], input[type=date]{
+input[type=text],input#email, input[type=date]{
     width: calc(100% - 25px);
     padding:4px;
     margin:2px 0 15px 0;
@@ -622,9 +622,9 @@ input[type=text],input[type=email], input[type=date]{
 }
 
 /* Padding and margin from the input are added to the flex-basis width, so this subtracts that extra width from the flex-basis */
-input.col-6{
+/*input.col-6{
     flex-basis: calc(50% - 12px);
-}
+}*/
 
 input[type=submit]{
     flex-basis:20%;
@@ -943,7 +943,7 @@ aside.job-listing > h3 {
 #EOInum{
     width: 50px;
 }
-#email{
+#tableemail{
     width: 200px;
 }
 #skills{
